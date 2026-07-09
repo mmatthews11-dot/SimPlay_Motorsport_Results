@@ -1,16 +1,17 @@
-// Connects to the G-Portal ACC server over SFTP, downloads any results files we
-// haven't seen yet, parses them, and updates data/results.json.
+// Connects to the G-Portal ACC server over plain FTP (G-Portal's "SFTP Access"
+// panel is misleadingly named — it's actually vanilla FTP, no TLS), downloads
+// any results files we haven't seen yet, parses them, and updates
+// data/results.json.
 //
 // Required environment variables (set these as GitHub Actions secrets, or in a
 // local .env file if running by hand):
-//   GPORTAL_HOST      - SFTP host, e.g. eu123.g-portal.com
-//   GPORTAL_PORT      - SFTP port (G-Portal uses a non-standard port, check your panel)
+//   GPORTAL_HOST      - FTP host, e.g. 176.57.174.147
+//   GPORTAL_PORT       - FTP port from your G-Portal panel, e.g. 30221
 //   GPORTAL_USERNAME
 //   GPORTAL_PASSWORD
-//   GPORTAL_RESULTS_PATH - remote path to the "results" folder, e.g.
-//                           /config/results  (varies by server, check via an FTP client first)
+//   GPORTAL_RESULTS_PATH - remote path to the "results" folder, e.g. /results
 
-import SftpClient from "ssh2-sftp-client";
+import { Client } from "basic-ftp";
 import { promises as fs } from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -44,34 +45,34 @@ async function loadExistingData() {
 
 async function main() {
   const host = requireEnv("GPORTAL_HOST");
-  const port = Number(process.env.GPORTAL_PORT || 2022);
-  const username = requireEnv("GPORTAL_USERNAME");
+  const port = Number(process.env.GPORTAL_PORT || 21);
+  const user = requireEnv("GPORTAL_USERNAME");
   const password = requireEnv("GPORTAL_PASSWORD");
   const remoteResultsPath = requireEnv("GPORTAL_RESULTS_PATH");
 
   const data = await loadExistingData();
   const processed = new Set(data.processedFiles || []);
 
-  const sftp = new SftpClient();
-  await sftp.connect({ host, port, username, password });
+  const client = new Client();
+  // G-Portal's FTP server rejects AUTH TLS/SSL outright, so this has to be
+  // plain FTP. Don't set secure: true here or the connection will fail.
+  await client.access({ host, port, user, password, secure: false });
 
   try {
     // ACC names result files "<date>_<time>_<TYPE>.json" where TYPE is
     // FP (practice), Q / Q1 / Q2 (qualifying), or R / R1 / R2 (race).
-    // We only care about qualifying and race results, so practice files are
-    // skipped entirely — but still marked as "seen" so we don't re-check them.
+    // We only care about qualifying and race results.
     const QUALI_OR_RACE = /_((Q|R)\d*)\.json$/i;
 
-    const remoteFiles = await sftp.list(remoteResultsPath);
+    const remoteFiles = await client.list(remoteResultsPath);
     const allNewFiles = remoteFiles
-      .filter((f) => f.type === "-" && f.name.toLowerCase().endsWith(".json"))
+      .filter((f) => f.isFile && f.name.toLowerCase().endsWith(".json"))
       .filter((f) => !processed.has(f.name))
       .sort((a, b) => a.name.localeCompare(b.name));
 
     const skippedPractice = allNewFiles.filter((f) => !QUALI_OR_RACE.test(f.name));
     const newJsonFiles = allNewFiles.filter((f) => QUALI_OR_RACE.test(f.name));
 
-    // Mark practice files as processed so they're not re-evaluated every run.
     skippedPractice.forEach((f) => processed.add(f.name));
     if (skippedPractice.length > 0) {
       console.log(`Skipping ${skippedPractice.length} practice file(s): ${skippedPractice.map((f) => f.name).join(", ")}`);
@@ -79,7 +80,6 @@ async function main() {
 
     if (newJsonFiles.length === 0) {
       console.log("No new qualifying/race result files.");
-      // Still persist processedFiles so skipped practice files stay skipped.
       data.processedFiles = Array.from(processed);
       await fs.mkdir(path.dirname(DATA_FILE), { recursive: true });
       await fs.writeFile(DATA_FILE, JSON.stringify(data, null, 2));
@@ -92,7 +92,7 @@ async function main() {
       const remotePath = `${remoteResultsPath.replace(/\/$/, "")}/${file.name}`;
       const localPath = path.join(TMP_DIR, file.name);
       console.log(`Downloading ${file.name}...`);
-      await sftp.get(remotePath, localPath);
+      await client.downloadTo(localPath, remotePath);
 
       const raw = JSON.parse(decodeAccJson(await fs.readFile(localPath)));
       const summary = parseAccResults(raw, file.name);
@@ -109,7 +109,7 @@ async function main() {
     await fs.writeFile(DATA_FILE, JSON.stringify(data, null, 2));
     console.log(`Added ${newJsonFiles.length} new session(s).`);
   } finally {
-    await sftp.end();
+    client.close();
     await fs.rm(TMP_DIR, { recursive: true, force: true });
   }
 }

@@ -7,6 +7,6 @@
     "sync": "node scripts/sync-from-gportal.mjs"
   },
   "dependencies": {
-    "ssh2-sftp-client": "^11.0.0"
+    "basic-ftp": "^5.0.5"
   }
 }

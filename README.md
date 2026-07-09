@@ -6,8 +6,9 @@ displays them on a live-updating webpage — no server of your own required.
 ## How it works
 
 1. **`scripts/sync-from-gportal.mjs`** connects to your G-Portal server over
-   SFTP, finds any result `.json` files it hasn't seen before, parses them,
-   and adds them to `data/results.json`.
+   FTP (G-Portal's panel calls it "SFTP Access" but it's actually plain,
+   unencrypted FTP — no TLS), finds any result `.json` files it hasn't seen
+   before, parses them, and adds them to `data/results.json`.
 2. **A GitHub Actions workflow** (`.github/workflows/sync-results.yml`) runs
    that script automatically every 15 minutes and commits the updated data.
 3. **`index.html`** is a static page that reads `data/results.json` and
@@ -15,17 +16,17 @@ displays them on a live-updating webpage — no server of your own required.
 
 ## One-time setup
 
-### 1. Find your G-Portal SFTP details
-In the G-Portal web panel for your ACC server, go to **FTP Access** (G-Portal
-has moved to SFTP-only). You need:
-- Host
-- Port
+### 1. Find your G-Portal FTP details
+In the G-Portal web panel for your ACC server, go to **FTP Access** (labelled
+"SFTP" in the panel, but it's plain FTP). You need:
+- Host (an IP address, e.g. `176.57.174.147`)
+- Port (e.g. `30221`)
 - Username
 - Password
-- The path to the results folder — on most ACC servers this is something like
-  `/config/results` or `/server/results`. Connect once with an FTP client
-  (e.g. FileZilla) to confirm the exact path — it's the folder where files
-  named like `250101_190000_FP.json` land after each session.
+- The results folder path — for most G-Portal ACC servers this is simply
+  `/results`. You can confirm it with an FTP client (e.g. FileZilla, no TLS/
+  encryption option needed) — it's the folder where files named like
+  `250101_190000_FP.json` land after each session.
 
 ### 2. Create a GitHub repository
 Push this whole folder to a new **public** GitHub repository (Pages'
@@ -66,6 +67,9 @@ If you ever want practice sessions included too, remove the `QUALI_OR_RACE`
 filter in `scripts/sync-from-gportal.mjs`.
 
 ## Notes on the ACC file format
+- G-Portal's FTP access is **plain FTP with no TLS** — the server actively
+  rejects `AUTH SSL`/`AUTH TLS` requests, so don't set `secure: true` if
+  you modify the connection code.
 - ACC writes result files as **UTF-16LE**, not UTF-8 — the sync script
   handles that decoding automatically.
 - Car model names in `scripts/parse-acc-results.mjs` are a best-effort
