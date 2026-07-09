@@ -128,10 +128,13 @@
   display:flex;
   align-items:center;
   gap:.7rem;
-  margin-bottom:.8rem;
+  margin-bottom:1.2rem;
+  text-decoration:none;
+  color:var(--text-dim);
+  font-size:.8rem;
 }
 .sponsor-strip img{
-  height:32px;
+  height:50px;
 }
 
   footer{max-width:960px;margin:2rem auto 0;padding:0 1.5rem;color:var(--text-dim);font-size:.75rem;}
@@ -142,6 +145,10 @@
 <header class="hero">
   <div class="hero-inner">
     <img src="assets/SPM_Logo.png" alt="Team logo" class="team-logo">
+    <a href="https://designedmanchester.com" target="_blank" rel="noopener" class="sponsor-strip">
+      <span>Sponsored by</span>
+      <img src="assets/DM_Sponsor.png" alt="Designed Manchester">
+    </a>
     <h1>Qualifying and Race Results</h1>
     <p class="sync-note" id="sync-note"></p>
   </div>
@@ -154,12 +161,6 @@
 
 <footer>
   Data pulled automatically from the G-Portal ACC server results folder.
-  <div class="sponsor-strip">
-    <span>Sponsored by</span>
-    <a href="https://www.facebook.com/designedmanchester" target="_blank" rel="noopener">
-      <img src="assets/DM_Sponsor.png" alt="Designed Manchester">
-    </a>
-  </div>
 </footer>
 
 <script>
