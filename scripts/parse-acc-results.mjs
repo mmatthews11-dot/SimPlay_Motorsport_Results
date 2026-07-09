@@ -23,7 +23,7 @@ const CAR_MODELS = {
   11: "Bentley Continental GT3 2015",
   12: "Aston Martin V12 Vantage GT3",
   13: "Lamborghini Gallardo (Reiter) R-EX",
-  14: "Jaguar G3"
+  14: "Jaguar G3",
   15: "Lexus RC F GT3",
   16: "Lamborghini Huracán Evo 2019 GT3",
   17: "Honda NSX GT3",
