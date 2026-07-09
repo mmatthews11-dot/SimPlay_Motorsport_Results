@@ -1,0 +1,39 @@
+{
+  "sessions": [
+    {
+      "id": "260528_205428_FP",
+      "sourceFile": "260528_205428_FP.json",
+      "sessionType": "FP",
+      "sessionName": "Practice",
+      "trackName": "zolder",
+      "serverName": "SimPlay Motorsport sponsored by Designed Manchester",
+      "raceWeekendIndex": 4,
+      "isWetSession": false,
+      "fastestLapDriver": "Mike Matthews",
+      "fastestLapTime": "1:28.850",
+      "penaltyCount": 0,
+      "standings": [
+        {
+          "position": 1,
+          "raceNumber": 11,
+          "driver": "Mike Matthews",
+          "allDrivers": [
+            "Mike Matthews"
+          ],
+          "car": "Lamborghini Huracán Evo2 GT3 (GT3)",
+          "teamName": null,
+          "laps": 9,
+          "bestLap": "1:28.850",
+          "bestLapMs": 88850,
+          "lastLap": "1:29.065",
+          "gap": "-",
+          "hasMandatoryPitstopIssue": false
+        }
+      ]
+    }
+  ],
+  "processedFiles": [
+    "260528_205428_FP.json"
+  ],
+  "lastSync": "2026-07-08T17:42:50.319Z"
+}
