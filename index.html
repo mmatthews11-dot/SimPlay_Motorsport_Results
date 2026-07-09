@@ -38,8 +38,8 @@
   }
   .hero-inner{max-width:960px;margin:0 auto;}
   .team-logo{
-  height:56px;
-  margin-bottom:.8rem;
+  height:120px;
+  margin-bottom:1rem;
   display:block;
 }
   .eyebrow{color:var(--amber);font-size:.78rem;font-weight:600;letter-spacing:.14em;margin:0 0 .4rem;}
@@ -141,10 +141,8 @@
 
 <header class="hero">
   <div class="hero-inner">
-    <img src="assets/SPM_Logo.png" alt="SPM logo" class="team-logo">
-    <p class="eyebrow">Results Tower</p>
-    <h1 id="server-title">Loading server…</h1>
-    <p class="server-name" id="server-sub"></p>
+    <img src="assets/SPM_Logo.png" alt="Team logo" class="team-logo">
+    <h1>Qualifying and Race Results</h1>
     <p class="sync-note" id="sync-note"></p>
   </div>
 </header>
@@ -155,13 +153,13 @@
 </main>
 
 <footer>
+  Data pulled automatically from the G-Portal ACC server results folder.
   <div class="sponsor-strip">
     <span>Sponsored by</span>
     <a href="https://www.facebook.com/designedmanchester" target="_blank" rel="noopener">
-      <img src="assets/DM_Logo.png" alt="Designed Manchester">
+      <img src="assets/DM_Sponsor.png" alt="Designed Manchester">
     </a>
   </div>
-  Data pulled automatically from the G-Portal ACC server results folder.
 </footer>
 
 <script>
@@ -190,8 +188,6 @@ function render() {
   document.getElementById('sync-note').textContent = formatSyncTime(DATA.lastSync);
 
   if (sessions.length === 0) {
-    document.getElementById('server-title').textContent = 'No results yet';
-    document.getElementById('server-sub').textContent = '';
     document.getElementById('session-tabs').innerHTML = '';
     document.getElementById('board').innerHTML = `
       <div class="empty">
@@ -203,9 +199,7 @@ function render() {
   }
 
   const first = sessions[0];
-  document.getElementById('server-title').textContent = first.serverName || 'ACC Server';
-  document.getElementById('server-sub').textContent = 'Latest activity across all sessions';
-
+  
   if (!ACTIVE_ID || !sessions.find(s => s.id === ACTIVE_ID)) {
     ACTIVE_ID = first.id;
   }
