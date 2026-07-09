@@ -37,6 +37,11 @@
       linear-gradient(180deg, rgba(255,122,26,0.08), transparent 60%);
   }
   .hero-inner{max-width:960px;margin:0 auto;}
+  .team-logo{
+  height:56px;
+  margin-bottom:.8rem;
+  display:block;
+}
   .eyebrow{color:var(--amber);font-size:.78rem;font-weight:600;letter-spacing:.14em;margin:0 0 .4rem;}
   h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;margin:0 0 .3rem;color:#fff;}
   .server-name{color:var(--text-dim);font-family:'IBM Plex Mono';font-size:.92rem;}
@@ -119,6 +124,16 @@
   .empty h2{color:#fff;margin-bottom:.5rem;}
   code{background:var(--panel-2);padding:.1rem .35rem;border-radius:3px;color:var(--amber);}
 
+  .sponsor-strip{
+  display:flex;
+  align-items:center;
+  gap:.7rem;
+  margin-bottom:.8rem;
+}
+.sponsor-strip img{
+  height:32px;
+}
+
   footer{max-width:960px;margin:2rem auto 0;padding:0 1.5rem;color:var(--text-dim);font-size:.75rem;}
 </style>
 </head>
@@ -126,6 +141,7 @@
 
 <header class="hero">
   <div class="hero-inner">
+    <img src="assets/SPM_Logo.png" alt="SPM logo" class="team-logo">
     <p class="eyebrow">Results Tower</p>
     <h1 id="server-title">Loading server…</h1>
     <p class="server-name" id="server-sub"></p>
@@ -138,7 +154,15 @@
   <section class="board" id="board"></section>
 </main>
 
-<footer>Data pulled automatically from the G-Portal ACC server results folder.</footer>
+<footer>
+  <div class="sponsor-strip">
+    <span>Sponsored by</span>
+    <a href="https://www.facebook.com/designedmanchester" target="_blank" rel="noopener">
+      <img src="assets/DM_Logo.png" alt="Designed Manchester">
+    </a>
+  </div>
+  Data pulled automatically from the G-Portal ACC server results folder.
+</footer>
 
 <script>
 let DATA = null;
