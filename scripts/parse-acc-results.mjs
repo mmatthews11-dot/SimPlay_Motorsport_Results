@@ -53,12 +53,33 @@ const SESSION_NAMES = { FP: "Practice", Q: "Qualifying", Q1: "Qualifying 1", Q2:
 // handling BST) to determine the day of week.
 const WEEKDAY_CATEGORY = { Wednesday: "PROAM", Thursday: "PRO" };
 
+// G-Portal's server clock appears to run on German time (CET/CEST), not UTC.
+const SOURCE_TIMEZONE = "Europe/Berlin";
+
+function getOffsetMinutes(utcMs, timeZone) {
+  const dtf = new Intl.DateTimeFormat("en-US", {
+    timeZone, hourCycle: "h23",
+    year: "numeric", month: "2-digit", day: "2-digit",
+    hour: "2-digit", minute: "2-digit", second: "2-digit",
+  });
+  const map = {};
+  dtf.formatToParts(new Date(utcMs)).forEach((p) => (map[p.type] = p.value));
+  const asUtc = Date.UTC(+map.year, +map.month - 1, +map.day, +map.hour, +map.minute, +map.second);
+  return (asUtc - utcMs) / 60000;
+}
+
+function zonedTimeToUtc(y, m, d, hh, mm, ss, timeZone) {
+  const naiveUtcMs = Date.UTC(y, m - 1, d, hh, mm, ss);
+  const offsetMinutes = getOffsetMinutes(naiveUtcMs, timeZone);
+  return naiveUtcMs - offsetMinutes * 60000;
+}
+
 function categoryFromFilename(sourceFile) {
   const match = sourceFile.match(/^(\d{2})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})_/);
   if (!match) return "Other";
   const [, yy, mm, dd, hh, min, ss] = match;
-  const utcDate = new Date(Date.UTC(2000 + Number(yy), Number(mm) - 1, Number(dd), Number(hh), Number(min), Number(ss)));
-  const weekday = new Intl.DateTimeFormat("en-GB", { weekday: "long", timeZone: "Europe/London" }).format(utcDate);
+  const utcMs = zonedTimeToUtc(2000 + Number(yy), Number(mm), Number(dd), Number(hh), Number(min), Number(ss), SOURCE_TIMEZONE);
+  const weekday = new Intl.DateTimeFormat("en-GB", { weekday: "long", timeZone: "Europe/London" }).format(new Date(utcMs));
   return WEEKDAY_CATEGORY[weekday] || "Other";
 }
 
