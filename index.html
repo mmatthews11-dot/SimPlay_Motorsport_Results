@@ -68,6 +68,25 @@
     border-color:var(--amber);
     box-shadow:inset 0 0 0 1px var(--amber);
   }
+  .category-tabs{display:flex;gap:.5rem;margin-bottom:1rem;}
+.category-tab{
+  background:transparent;
+  border:1px solid var(--line);
+  color:var(--text-dim);
+  font-family:'Oswald',sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:.82rem;
+  font-weight:600;
+  padding:.5rem 1.3rem;
+  border-radius:20px;
+  cursor:pointer;
+}
+.category-tab[aria-selected="true"]{
+  background:var(--amber);
+  border-color:var(--amber);
+  color:#111;
+}
   .session-tab .track{color:var(--text-dim);font-weight:400;margin-left:.4rem;}
   .session-tab[aria-selected="true"] .track{color:#d9d9d9;}
 
@@ -155,7 +174,8 @@
 </header>
 
 <main>
-  <nav class="session-tabs" id="session-tabs"></nav>
+  <nav class="category-tabs" id="category-tabs"></nav>
+<nav class="session-tabs" id="session-tabs"></nav>
   <section class="board" id="board"></section>
 </main>
 
@@ -166,6 +186,7 @@
 <script>
 let DATA = null;
 let ACTIVE_ID = null;
+let ACTIVE_CATEGORY = 'All';
 
 async function load() {
   try {
@@ -185,10 +206,11 @@ function formatSyncTime(iso) {
 }
 
 function render() {
-  const sessions = DATA.sessions || [];
+  const allSessions = DATA.sessions || [];
   document.getElementById('sync-note').textContent = formatSyncTime(DATA.lastSync);
 
-  if (sessions.length === 0) {
+  if (allSessions.length === 0) {
+    document.getElementById('category-tabs').innerHTML = '';
     document.getElementById('session-tabs').innerHTML = '';
     document.getElementById('board').innerHTML = `
       <div class="empty">
@@ -199,10 +221,30 @@ function render() {
     return;
   }
 
-  const first = sessions[0];
-  
+  const categories = ['All', ...new Set(allSessions.map(s => s.category || 'Other'))];
+  document.getElementById('category-tabs').innerHTML = categories.map(cat => `
+    <button class="category-tab" data-cat="${cat}" aria-selected="${cat === ACTIVE_CATEGORY}">${cat}</button>
+  `).join('');
+  document.querySelectorAll('.category-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      ACTIVE_CATEGORY = btn.dataset.cat;
+      ACTIVE_ID = null;
+      render();
+    });
+  });
+
+  const sessions = ACTIVE_CATEGORY === 'All'
+    ? allSessions
+    : allSessions.filter(s => (s.category || 'Other') === ACTIVE_CATEGORY);
+
+  if (sessions.length === 0) {
+    document.getElementById('session-tabs').innerHTML = '';
+    document.getElementById('board').innerHTML = `<div class="empty"><h2>No ${ACTIVE_CATEGORY} sessions yet</h2></div>`;
+    return;
+  }
+
   if (!ACTIVE_ID || !sessions.find(s => s.id === ACTIVE_ID)) {
-    ACTIVE_ID = first.id;
+    ACTIVE_ID = sessions[0].id;
   }
 
   document.getElementById('session-tabs').innerHTML = sessions.map(s => `

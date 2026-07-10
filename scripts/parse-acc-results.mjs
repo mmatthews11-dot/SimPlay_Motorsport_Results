@@ -48,6 +48,19 @@ const CAR_MODELS = {
 };
 
 const SESSION_NAMES = { FP: "Practice", Q: "Qualifying", Q1: "Qualifying 1", Q2: "Qualifying 2", R: "Race", R1: "Race 1", R2: "Race 2" };
+// ACC result filenames look like "260528_205428_Q.json" (YYMMDD_HHMMSS_TYPE).
+// We treat that timestamp as UTC and convert to UK local time (correctly
+// handling BST) to determine the day of week.
+const WEEKDAY_CATEGORY = { Wednesday: "PROAM", Thursday: "PRO" };
+
+function categoryFromFilename(sourceFile) {
+  const match = sourceFile.match(/^(\d{2})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})_/);
+  if (!match) return "Other";
+  const [, yy, mm, dd, hh, min, ss] = match;
+  const utcDate = new Date(Date.UTC(2000 + Number(yy), Number(mm) - 1, Number(dd), Number(hh), Number(min), Number(ss)));
+  const weekday = new Intl.DateTimeFormat("en-GB", { weekday: "long", timeZone: "Europe/London" }).format(utcDate);
+  return WEEKDAY_CATEGORY[weekday] || "Other";
+}
 
 function msToTime(ms) {
   if (ms == null || ms < 0) return null;
@@ -121,6 +134,7 @@ export function parseAccResults(raw, sourceFile = "") {
   return {
     id: sourceFile.replace(/\.json$/i, "") || `${raw.trackName}-${sessionType}-${Date.now()}`,
     sourceFile,
+    category: categoryFromFilename(sourceFile),
     sessionType,
     sessionName: SESSION_NAMES[sessionType] || sessionType,
     trackName: raw.trackName || "Unknown track",
