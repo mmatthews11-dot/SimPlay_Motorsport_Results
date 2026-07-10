@@ -82,6 +82,13 @@ function categoryFromFilename(sourceFile) {
   const weekday = new Intl.DateTimeFormat("en-GB", { weekday: "long", timeZone: "Europe/London" }).format(new Date(utcMs));
   return WEEKDAY_CATEGORY[weekday] || "Other";
 }
+function dateFromFilename(sourceFile) {
+  const match = sourceFile.match(/^(\d{2})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})_/);
+  if (!match) return null;
+  const [, yy, mm, dd, hh, min, ss] = match;
+  const utcMs = zonedTimeToUtc(2000 + Number(yy), Number(mm), Number(dd), Number(hh), Number(min), Number(ss), SOURCE_TIMEZONE);
+  return new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short", timeZone: "Europe/London" }).format(new Date(utcMs));
+}
 
 function msToTime(ms) {
   if (ms == null || ms < 0) return null;
@@ -156,6 +163,7 @@ export function parseAccResults(raw, sourceFile = "") {
     id: sourceFile.replace(/\.json$/i, "") || `${raw.trackName}-${sessionType}-${Date.now()}`,
     sourceFile,
     category: categoryFromFilename(sourceFile),
+    sessionDate: dateFromFilename(sourceFile),
     sessionType,
     sessionName: SESSION_NAMES[sessionType] || sessionType,
     trackName: raw.trackName || "Unknown track",
