@@ -30,15 +30,10 @@ const CAR_MODELS = {
   5: "McLaren 650S GT3",
   6: "Nissan GT-R Nismo GT3",
   7: "BMW M6 GT3",
-  8: "Bentley Continental GT3 2018",
+  8: "Bentley Continental GT3",
   9: "Porsche 991 II GT3 Cup",
-  10: "Nissan GT-R Nismo GT3 2015",
-  11: "Bentley Continental GT3 2015",
-  12: "Aston Martin V12 Vantage GT3",
-  13: "Lamborghini Gallardo (Reiter) R-EX",
-  14: "Jaguar G3",
   15: "Lexus RC F GT3",
-  16: "Lamborghini Huracán Evo 2019 GT3",
+  16: "Lamborghini Huracán Evo GT3",
   17: "Honda NSX GT3",
   18: "Lamborghini Huracán SuperTrofeo",
   19: "Audi R8 LMS Evo",
@@ -48,15 +43,16 @@ const CAR_MODELS = {
   23: "Porsche 991 II GT3 R",
   24: "Ferrari 488 GT3 Evo",
   25: "Mercedes-AMG GT3 2020",
-  26: "BMW M4 GT3",
+  26: "Ferrari 488 Challenge Evo",
   27: "BMW M2 CS Racing",
   28: "Porsche 992 GT3 Cup",
   29: "Lamborghini Huracán SuperTrofeo EVO2",
+  30: "BMW M4 GT3",
   31: "Audi R8 LMS Evo II",
-  32: "Ferrari 296 GT3",
-  33: "Lamborghini Huracán Evo2 GT3",
-  34: "Porsche 992 GT3 R",
-  35: "McLaren 720S GT3 Evo 2023",
+  32: "Lamborghini Huracán Evo2 GT3",
+  33: "Porsche 992 GT3 R",
+  34: "McLaren 720S GT3 Evo",
+  35: "Ferrari 296 GT3",
   36: "Ford Mustang GT3",
 };
 
@@ -102,6 +98,21 @@ function driverName(driver) {
   return [driver.firstName, driver.lastName].filter(Boolean).join(" ").trim() || driver.shortName || "Unknown driver";
 }
 
+// ACC/G-Portal creates a placeholder entry (0 laps, a nonsense best lap time)
+// for someone who joined a session's roster but didn't actually drive — e.g.
+// a commentator for that particular event. That placeholder's name carries
+// "Commentator" right in the results file itself, which is more reliable than
+// any external entry list: it tells us, for this specific session, that this
+// person wasn't racing, regardless of what class they're normally assigned.
+function isCommentatorEntry(driver) {
+  return (driver?.lastName || "").toLowerCase().includes("commentator");
+}
+
+function cleanDriverName(driver) {
+  const name = driverName(driver);
+  return name.replace(/\s*Commentator\s*/i, "").trim() || name;
+}
+
 function carLabel(car) {
   const model = CAR_MODELS[car.carModel] || `Car #${car.carModel}`;
   return car.carGroup ? `${model} (${car.carGroup})` : model;
@@ -128,7 +139,8 @@ export function parseAccResults(raw, sourceFile = "") {
     const gapMs = referenceTime != null && leaderTime != null ? referenceTime - leaderTime : null;
 
     const playerId = line.currentDriver?.playerId || line.currentDriver?.playerID || null;
-    const driverClass = DRIVER_CLASSES[playerId] || "Unclassified";
+    const isCommentator = isCommentatorEntry(line.currentDriver);
+    const driverClass = isCommentator ? "Unclassified" : (DRIVER_CLASSES[playerId] || "Unclassified");
     classCounters[driverClass] = (classCounters[driverClass] || 0) + 1;
 
     return {
@@ -136,7 +148,7 @@ export function parseAccResults(raw, sourceFile = "") {
       classPosition: classCounters[driverClass],
       driverClass,
       raceNumber: line.car?.raceNumber ?? null,
-      driver: driverName(line.currentDriver),
+      driver: cleanDriverName(line.currentDriver),
       allDrivers: (line.car?.drivers || []).map(driverName),
       car: carLabel(line.car || {}),
       teamName: line.car?.teamName || null,
