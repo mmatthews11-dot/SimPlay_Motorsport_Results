@@ -5,6 +5,19 @@
 // like "250101_190000_FP.json". The schema is documented informally in Kunos'
 // "ACC Server Admin Handbook" (see the "Result files" appendix).
 
+import { readFileSync } from "fs";
+import { fileURLToPath } from "url";
+import path from "path";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+// Maps a driver's ACC playerID -> class name (Platinum/Gold/Silver/Bronze),
+// built from the entry list JSONs. Regenerate this file any time the entry
+// list changes (see README for how).
+const DRIVER_CLASSES = JSON.parse(
+  readFileSync(path.join(__dirname, "..", "data", "driver-classes.json"), "utf-8")
+);
+
 // Best-effort car model ID -> name lookup. ACC's numeric carModel IDs are stable
 // across servers but Kunos doesn't publish a single canonical list, so this only
 // covers common GT3 cars. Extend it if you spot an "Unknown car" in the output.
@@ -48,46 +61,22 @@ const CAR_MODELS = {
 };
 
 const SESSION_NAMES = { FP: "Practice", Q: "Qualifying", Q1: "Qualifying 1", Q2: "Qualifying 2", R: "Race", R1: "Race 1", R2: "Race 2" };
+
 // ACC result filenames look like "260528_205428_Q.json" (YYMMDD_HHMMSS_TYPE).
-// We treat that timestamp as UTC and convert to UK local time (correctly
-// handling BST) to determine the day of week.
+// We treat that timestamp as UTC (typical for cloud-hosted servers) and
+// convert to UK local time (correctly handling BST) to determine the day of
+// the week. Wednesday sessions are PROAM, Thursday sessions are PRO.
+// If your G-Portal server's clock is already set to UK time rather than UTC,
+// tell Claude and this can be adjusted.
 const WEEKDAY_CATEGORY = { Wednesday: "PROAM", Thursday: "PRO" };
-
-// G-Portal's server clock appears to run on German time (CET/CEST), not UTC.
-const SOURCE_TIMEZONE = "Europe/Berlin";
-
-function getOffsetMinutes(utcMs, timeZone) {
-  const dtf = new Intl.DateTimeFormat("en-US", {
-    timeZone, hourCycle: "h23",
-    year: "numeric", month: "2-digit", day: "2-digit",
-    hour: "2-digit", minute: "2-digit", second: "2-digit",
-  });
-  const map = {};
-  dtf.formatToParts(new Date(utcMs)).forEach((p) => (map[p.type] = p.value));
-  const asUtc = Date.UTC(+map.year, +map.month - 1, +map.day, +map.hour, +map.minute, +map.second);
-  return (asUtc - utcMs) / 60000;
-}
-
-function zonedTimeToUtc(y, m, d, hh, mm, ss, timeZone) {
-  const naiveUtcMs = Date.UTC(y, m - 1, d, hh, mm, ss);
-  const offsetMinutes = getOffsetMinutes(naiveUtcMs, timeZone);
-  return naiveUtcMs - offsetMinutes * 60000;
-}
 
 function categoryFromFilename(sourceFile) {
   const match = sourceFile.match(/^(\d{2})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})_/);
   if (!match) return "Other";
   const [, yy, mm, dd, hh, min, ss] = match;
-  const utcMs = zonedTimeToUtc(2000 + Number(yy), Number(mm), Number(dd), Number(hh), Number(min), Number(ss), SOURCE_TIMEZONE);
-  const weekday = new Intl.DateTimeFormat("en-GB", { weekday: "long", timeZone: "Europe/London" }).format(new Date(utcMs));
+  const utcDate = new Date(Date.UTC(2000 + Number(yy), Number(mm) - 1, Number(dd), Number(hh), Number(min), Number(ss)));
+  const weekday = new Intl.DateTimeFormat("en-GB", { weekday: "long", timeZone: "Europe/London" }).format(utcDate);
   return WEEKDAY_CATEGORY[weekday] || "Other";
-}
-function dateFromFilename(sourceFile) {
-  const match = sourceFile.match(/^(\d{2})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})_/);
-  if (!match) return null;
-  const [, yy, mm, dd, hh, min, ss] = match;
-  const utcMs = zonedTimeToUtc(2000 + Number(yy), Number(mm), Number(dd), Number(hh), Number(min), Number(ss), SOURCE_TIMEZONE);
-  return new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short", timeZone: "Europe/London" }).format(new Date(utcMs));
 }
 
 function msToTime(ms) {
@@ -131,14 +120,21 @@ export function parseAccResults(raw, sourceFile = "") {
   // best lap for practice/qualifying, so we trust that order for position numbers.
   const leaderTiming = lines[0]?.timing;
 
+  const classCounters = {};
   const standings = lines.map((line, index) => {
     const timing = line.timing || {};
     const referenceTime = isRace ? timing.totalTime : timing.bestLap;
     const leaderTime = isRace ? leaderTiming?.totalTime : leaderTiming?.bestLap;
     const gapMs = referenceTime != null && leaderTime != null ? referenceTime - leaderTime : null;
 
+    const playerId = line.currentDriver?.playerId || line.currentDriver?.playerID || null;
+    const driverClass = DRIVER_CLASSES[playerId] || "Unclassified";
+    classCounters[driverClass] = (classCounters[driverClass] || 0) + 1;
+
     return {
       position: index + 1,
+      classPosition: classCounters[driverClass],
+      driverClass,
       raceNumber: line.car?.raceNumber ?? null,
       driver: driverName(line.currentDriver),
       allDrivers: (line.car?.drivers || []).map(driverName),
@@ -148,6 +144,7 @@ export function parseAccResults(raw, sourceFile = "") {
       bestLap: msToTime(timing.bestLap),
       bestLapMs: timing.bestLap ?? null,
       lastLap: msToTime(timing.lastLap),
+      referenceTimeMs: referenceTime ?? null,
       gap: index === 0 ? "-" : msToGap(gapMs),
       hasMandatoryPitstopIssue: (line.missingMandatoryPitstop ?? -1) > 0,
     };
@@ -163,7 +160,6 @@ export function parseAccResults(raw, sourceFile = "") {
     id: sourceFile.replace(/\.json$/i, "") || `${raw.trackName}-${sessionType}-${Date.now()}`,
     sourceFile,
     category: categoryFromFilename(sourceFile),
-    sessionDate: dateFromFilename(sourceFile),
     sessionType,
     sessionName: SESSION_NAMES[sessionType] || sessionType,
     trackName: raw.trackName || "Unknown track",
