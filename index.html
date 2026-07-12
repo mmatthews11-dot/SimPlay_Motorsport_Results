@@ -152,6 +152,11 @@
   }
 
   table{width:100%;border-collapse:collapse;}
+  .table-scroll{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+  table{min-width:640px;}
   thead th{
     text-align:left;
     font-family:'Oswald',sans-serif;
@@ -188,6 +193,13 @@
   code{background:var(--panel-2);padding:.1rem .35rem;border-radius:3px;color:var(--amber);}
 
   footer{max-width:960px;margin:2rem auto 0;padding:0 1.5rem;color:var(--text-dim);font-size:.75rem;}
+
+  @media (max-width: 640px) {
+    header.hero{padding:1.6rem 1rem 1.2rem;}
+    main{padding:1.2rem 1rem 0;}
+    .team-logo{height:80px;}
+    .board-head{flex-direction:column;align-items:flex-start;gap:.3rem;}
+  }
 </style>
 </head>
 <body>
@@ -352,6 +364,7 @@ function renderBoard(session) {
     <div class="class-tabs">
       ${classes.map(cls => `<button class="class-tab" data-class="${cls}" aria-selected="${cls === ACTIVE_CLASS}">${cls}</button>`).join('')}
     </div>
+    <div class="table-scroll">
     <table>
       <thead>
         <tr>
@@ -361,6 +374,7 @@ function renderBoard(session) {
       </thead>
       <tbody>${rowsHtml}</tbody>
     </table>
+    </div>
   `;
 
   document.querySelectorAll('.class-tab').forEach(btn => {
