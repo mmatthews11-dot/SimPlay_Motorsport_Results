@@ -42,11 +42,21 @@ const SESSION_TYPES = [
 const BASE_URL = `https://www.thesimgrid.com/championships/${CHAMPIONSHIP_ID}`;
 
 async function fetchHtml(url) {
-  const res = await fetch(url, {
-    headers: { "User-Agent": "Mozilla/5.0 (compatible; results-sync-bot/1.0)" },
-  });
-  if (!res.ok) throw new Error(`Fetch failed (${res.status}): ${url}`);
-  return res.text();
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 20_000); // 20s per request
+  try {
+    const res = await fetch(url, {
+      headers: { "User-Agent": "Mozilla/5.0 (compatible; results-sync-bot/1.0)" },
+      signal: controller.signal,
+    });
+    if (!res.ok) throw new Error(`Fetch failed (${res.status}): ${url}`);
+    return await res.text();
+  } catch (err) {
+    if (err.name === "AbortError") throw new Error(`Timed out after 20s: ${url}`);
+    throw err;
+  } finally {
+    clearTimeout(timeout);
+  }
 }
 
 async function loadExistingData() {
