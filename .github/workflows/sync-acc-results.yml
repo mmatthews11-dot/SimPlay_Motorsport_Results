@@ -2,9 +2,9 @@ name: Sync ACC results from G-Portal
 
 on:
   schedule:
-    # Every 15 minutes, on the hour/quarter-hour. Offset from the LMU
-    # workflow's schedule to reduce the (still possible) chance both try to
-    # commit to data/results.json at the same moment.
+    # Every 15 minutes. Each workflow now writes to its own separate data
+    # file (data/acc-results.json vs data/lmu-results.json), so overlapping
+    # with the LMU workflow's schedule is no longer a conflict risk.
     - cron: "*/15 * * * *"
   workflow_dispatch: {}
 
@@ -36,9 +36,8 @@ jobs:
         run: |
           git config user.name "acc-results-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/results.json
+          git add data/acc-results.json
           git diff --staged --quiet && echo "Nothing to commit" && exit 0
           git commit -m "Update ACC results [automated]"
-          # Pull-rebase first in case the LMU sync committed in the meantime.
           git pull --rebase origin main
           git push

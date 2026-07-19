@@ -1,11 +1,11 @@
 // Discovers new races on a SimGrid championship, fetches each class's results
-// for each session, merges them, and updates data/results.json.
+// for each session, merges them, and updates data/lmu-results.json.
 //
-// This file is SHARED with the ACC/G-Portal sync script — both write to the
-// same data/results.json, each tagging its sessions with a `game` field
-// ("ACC" or "LMU"). This script only ever touches LMU sessions and its own
-// `processedRaces` manifest; it must never delete or overwrite ACC sessions
-// or the ACC sync's `processedFiles` manifest.
+// This has its OWN dedicated data file, separate from the ACC/G-Portal sync's
+// data/acc-results.json. They used to share one file, but that meant two
+// independently-scheduled workflows writing to the same file could hit git
+// merge conflicts if their runs overlapped (which happened in practice).
+// Keeping them fully separate makes that structurally impossible.
 //
 // No login or API token is needed — this reads the same public pages anyone
 // can view in a browser. Because of that, this is inherently a bit more
@@ -20,7 +20,7 @@ import { parseSimGridResultsTable } from "./parse-simgrid-results.mjs";
 import { buildSessionSummary } from "./build-session-summary.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DATA_FILE = path.join(__dirname, "..", "data", "results.json");
+const DATA_FILE = path.join(__dirname, "..", "data", "lmu-results.json");
 
 // ---- Configuration specific to this championship ----
 // Update these if you point this at a different championship/season, or if
@@ -101,7 +101,7 @@ async function main() {
 
   if (newRaces.length === 0) {
     console.log("No new races with published results.");
-    data.lastSyncLmu = new Date().toISOString();
+    data.lastSync = new Date().toISOString();
     await fs.mkdir(path.dirname(DATA_FILE), { recursive: true });
     await fs.writeFile(DATA_FILE, JSON.stringify(data, null, 2));
     return;
@@ -131,7 +131,7 @@ async function main() {
   }
 
   data.processedRaces = Array.from(processed);
-  data.lastSyncLmu = new Date().toISOString();
+  data.lastSync = new Date().toISOString();
 
   await fs.mkdir(path.dirname(DATA_FILE), { recursive: true });
   await fs.writeFile(DATA_FILE, JSON.stringify(data, null, 2));

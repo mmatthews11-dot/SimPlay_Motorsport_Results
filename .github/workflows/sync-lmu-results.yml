@@ -2,10 +2,10 @@ name: Sync LMU results from SimGrid
 
 on:
   schedule:
-    # Offset by 7 minutes from the ACC workflow's schedule to reduce the
-    # (still possible) chance both try to commit to data/results.json at the
-    # same moment.
-    - cron: "7-59/15 * * * *"
+    # Every 15 minutes. Each workflow now writes to its own separate data
+    # file (data/acc-results.json vs data/lmu-results.json), so overlapping
+    # with the ACC workflow's schedule is no longer a conflict risk.
+    - cron: "*/15 * * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -26,9 +26,8 @@ jobs:
         run: |
           git config user.name "lmu-results-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/results.json
+          git add data/lmu-results.json
           git diff --staged --quiet && echo "Nothing to commit" && exit 0
           git commit -m "Update LMU results [automated]"
-          # Pull-rebase first in case the ACC sync committed in the meantime.
           git pull --rebase origin main
           git push

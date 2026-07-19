@@ -249,20 +249,38 @@
 </footer>
 
 <script>
-let DATA = null;
+let DATA = { sessions: [], accLastSync: null, lmuLastSync: null };
 let GAME = 'ACC';
 let ACTIVE_ID = null;
 let ACTIVE_CATEGORY = 'All';
 let ACTIVE_CLASS = 'Overall';
 
-async function load() {
+async function fetchJson(path) {
   try {
-    const res = await fetch('data/results.json', { cache: 'no-store' });
-    if (!res.ok) throw new Error('no data file yet');
-    DATA = await res.json();
-  } catch (e) {
-    DATA = { sessions: [] };
+    const res = await fetch(path, { cache: 'no-store' });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
   }
+}
+
+async function load() {
+  const [accData, lmuData] = await Promise.all([
+    fetchJson('data/acc-results.json'),
+    fetchJson('data/lmu-results.json'),
+  ]);
+
+  const sessions = [
+    ...((accData && accData.sessions) || []),
+    ...((lmuData && lmuData.sessions) || []),
+  ];
+
+  DATA = {
+    sessions,
+    accLastSync: accData?.lastSync ?? null,
+    lmuLastSync: lmuData?.lastSync ?? null,
+  };
   render();
 }
 
@@ -289,7 +307,7 @@ function render() {
   });
 
   document.getElementById('sync-note').textContent =
-    formatSyncTime(GAME === 'ACC' ? DATA.lastSyncAcc : DATA.lastSyncLmu);
+    formatSyncTime(GAME === 'ACC' ? DATA.accLastSync : DATA.lmuLastSync);
 
   const gameSessions = allSessions.filter(s => s.game === GAME);
 
@@ -300,7 +318,7 @@ function render() {
       <div class="empty">
         <h2>Waiting on the first ${GAME} sync</h2>
         <p>Once the sync workflow finds new results, sessions will show up here automatically.<br>
-        Data source: <code>data/results.json</code></p>
+        Data source: <code>data/acc-results.json</code> / <code>data/lmu-results.json</code></p>
       </div>`;
     return;
   }

@@ -1,13 +1,13 @@
 // Connects to the G-Portal ACC server over plain FTP (G-Portal's "SFTP Access"
 // panel is misleadingly named — it's actually vanilla FTP, no TLS), downloads
 // any results files we haven't seen yet, parses them, and updates
-// data/results.json.
+// data/acc-results.json.
 //
-// This file is SHARED with the LMU/SimGrid sync script — both write to the
-// same data/results.json, each tagging its sessions with a `game` field
-// ("ACC" or "LMU"). This script only ever touches ACC sessions and its own
-// `processedFiles` manifest; it must never delete or overwrite LMU sessions
-// or the LMU sync's `processedRaces` manifest.
+// This has its OWN dedicated data file, separate from the LMU/SimGrid sync's
+// data/lmu-results.json. They used to share one file, but that meant two
+// independently-scheduled workflows writing to the same file could hit git
+// merge conflicts if their runs overlapped (which happened in practice).
+// Keeping them fully separate makes that structurally impossible.
 //
 // Required environment variables (set these as GitHub Actions secrets, or in a
 // local .env file if running by hand):
@@ -24,7 +24,7 @@ import { fileURLToPath } from "url";
 import { parseAccResults } from "./parse-acc-results.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DATA_FILE = path.join(__dirname, "..", "data", "results.json");
+const DATA_FILE = path.join(__dirname, "..", "data", "acc-results.json");
 const TMP_DIR = path.join(__dirname, "..", ".tmp-downloads-acc");
 
 // ACC writes result files as UTF-16LE (with a byte-order-mark), not UTF-8.
@@ -111,7 +111,7 @@ async function main() {
     // this ordering only meaningfully affects how ACC sessions are grouped;
     // the dashboard filters by game before rendering tabs anyway.
     data.processedFiles = Array.from(processed);
-    data.lastSyncAcc = new Date().toISOString();
+    data.lastSync = new Date().toISOString();
 
     await fs.mkdir(path.dirname(DATA_FILE), { recursive: true });
     await fs.writeFile(DATA_FILE, JSON.stringify(data, null, 2));
