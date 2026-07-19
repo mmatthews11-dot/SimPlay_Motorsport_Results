@@ -473,6 +473,7 @@ function renderLmuBoard(session) {
 
   const rows = session.standingsByClass[ACTIVE_CLASS] || [];
   const leaderRef = rows[0]?.referenceTimeMs;
+  const fastestMs = Math.min(...rows.map(r => r.bestLapMs ?? Infinity));
 
   const maxGapMs = Math.max(1, ...rows.map(r => {
     if (isRace) return parseRaceGapMs(r.gapDisplay) || 0;
@@ -491,6 +492,7 @@ function renderLmuBoard(session) {
       gapDisplay = i === 0 ? '-' : (s.status !== 'FINISHED' ? s.status : formatGap(gapMs));
       barPct = (maxGapMs && gapMs) ? Math.min(100, (gapMs / maxGapMs) * 100) : 0;
     }
+    const isFastest = s.bestLapMs != null && s.bestLapMs === fastestMs;
     const statusFlag = s.status && s.status !== 'FINISHED' ? `<span class="status-flag">${s.status}</span>` : '';
     return `
       <tr>
@@ -501,7 +503,7 @@ function renderLmuBoard(session) {
           <span class="car">${s.car || ''}</span>
         </td>
         <td class="num">${s.laps ?? '–'}</td>
-        <td class="time">${s.bestLap ?? '–'}</td>
+        <td class="time ${isFastest ? 'best' : ''}">${s.bestLap ?? '–'}</td>
         <td>
           <div class="gap-cell">
             <div class="gap-bar-track"><div class="gap-bar-fill" style="width:${barPct}%"></div></div>
