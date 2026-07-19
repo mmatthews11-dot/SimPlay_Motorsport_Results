@@ -1,0 +1,34 @@
+name: Sync LMU results from SimGrid
+
+on:
+  schedule:
+    # Offset by 7 minutes from the ACC workflow's schedule to reduce the
+    # (still possible) chance both try to commit to data/results.json at the
+    # same moment.
+    - cron: "7-59/15 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm install
+      - name: Pull and parse new results
+        run: npm run sync:lmu
+      - name: Commit updated data
+        run: |
+          git config user.name "lmu-results-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/results.json
+          git diff --staged --quiet && echo "Nothing to commit" && exit 0
+          git commit -m "Update LMU results [automated]"
+          # Pull-rebase first in case the ACC sync committed in the meantime.
+          git pull --rebase origin main
+          git push

@@ -1,0 +1,44 @@
+name: Sync ACC results from G-Portal
+
+on:
+  schedule:
+    # Every 15 minutes, on the hour/quarter-hour. Offset from the LMU
+    # workflow's schedule to reduce the (still possible) chance both try to
+    # commit to data/results.json at the same moment.
+    - cron: "*/15 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - run: npm install
+
+      - name: Pull and parse new results
+        env:
+          GPORTAL_HOST: ${{ secrets.GPORTAL_HOST }}
+          GPORTAL_PORT: ${{ secrets.GPORTAL_PORT }}
+          GPORTAL_USERNAME: ${{ secrets.GPORTAL_USERNAME }}
+          GPORTAL_PASSWORD: ${{ secrets.GPORTAL_PASSWORD }}
+          GPORTAL_RESULTS_PATH: ${{ secrets.GPORTAL_RESULTS_PATH }}
+        run: npm run sync:acc
+
+      - name: Commit updated data
+        run: |
+          git config user.name "acc-results-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/results.json
+          git diff --staged --quiet && echo "Nothing to commit" && exit 0
+          git commit -m "Update ACC results [automated]"
+          # Pull-rebase first in case the LMU sync committed in the meantime.
+          git pull --rebase origin main
+          git push

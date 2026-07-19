@@ -61,6 +61,26 @@
 
   main{max-width:960px;margin:0 auto;padding:1.6rem 1.5rem 0;}
 
+  .game-tabs{display:flex;gap:.6rem;margin-bottom:1.2rem;}
+  .game-tab{
+    background:var(--panel);
+    border:1px solid var(--line);
+    color:var(--text-dim);
+    font-family:'Oswald',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    font-size:.95rem;
+    font-weight:700;
+    padding:.7rem 1.8rem;
+    border-radius:6px;
+    cursor:pointer;
+  }
+  .game-tab[aria-selected="true"]{
+    background:var(--amber);
+    border-color:var(--amber);
+    color:#111;
+  }
+
   .category-tabs{display:flex;gap:.5rem;margin-bottom:1rem;}
   .category-tab{
     background:transparent;
@@ -183,6 +203,7 @@
   .gap-bar-fill{height:100%;background:linear-gradient(90deg, var(--amber), var(--purple));}
   .gap-value{width:5.2rem;text-align:right;color:var(--text-dim);font-size:.8rem;}
   .pit-flag{color:var(--red);font-size:.72rem;margin-left:.4rem;}
+  .status-flag{color:var(--red);font-size:.72rem;margin-left:.4rem;}
 
   .empty{
     padding:3rem 1.5rem;
@@ -217,17 +238,19 @@
 </header>
 
 <main>
+  <nav class="game-tabs" id="game-tabs"></nav>
   <nav class="category-tabs" id="category-tabs"></nav>
   <nav class="session-tabs" id="session-tabs"></nav>
   <section class="board" id="board"></section>
 </main>
 
 <footer>
-  Data pulled automatically from the G-Portal ACC server results folder.
+  ACC results pulled from the G-Portal server folder · LMU results pulled from public SimGrid pages.
 </footer>
 
 <script>
 let DATA = null;
+let GAME = 'ACC';
 let ACTIVE_ID = null;
 let ACTIVE_CATEGORY = 'All';
 let ACTIVE_CLASS = 'Overall';
@@ -251,36 +274,58 @@ function formatSyncTime(iso) {
 
 function render() {
   const allSessions = DATA.sessions || [];
-  document.getElementById('sync-note').textContent = formatSyncTime(DATA.lastSync);
 
-  if (allSessions.length === 0) {
-    document.getElementById('category-tabs').innerHTML = '';
-    document.getElementById('session-tabs').innerHTML = '';
-    document.getElementById('board').innerHTML = `
-      <div class="empty">
-        <h2>Waiting on the first sync</h2>
-        <p>Once the sync workflow pulls a results file from G-Portal, sessions will show up here automatically.<br>
-        Data source: <code>data/results.json</code></p>
-      </div>`;
-    return;
-  }
-
-  const categories = ['All', ...new Set(allSessions.map(s => s.category || 'Other'))];
-  document.getElementById('category-tabs').innerHTML = categories.map(cat => `
-    <button class="category-tab" data-cat="${cat}" aria-selected="${cat === ACTIVE_CATEGORY}">${cat}</button>
+  document.getElementById('game-tabs').innerHTML = ['ACC', 'LMU'].map(g => `
+    <button class="game-tab" data-game="${g}" aria-selected="${g === GAME}">${g}</button>
   `).join('');
-  document.querySelectorAll('.category-tab').forEach(btn => {
+  document.querySelectorAll('.game-tab').forEach(btn => {
     btn.addEventListener('click', () => {
-      ACTIVE_CATEGORY = btn.dataset.cat;
+      GAME = btn.dataset.game;
       ACTIVE_ID = null;
+      ACTIVE_CATEGORY = 'All';
       ACTIVE_CLASS = 'Overall';
       render();
     });
   });
 
-  const sessions = ACTIVE_CATEGORY === 'All'
-    ? allSessions
-    : allSessions.filter(s => (s.category || 'Other') === ACTIVE_CATEGORY);
+  document.getElementById('sync-note').textContent =
+    formatSyncTime(GAME === 'ACC' ? DATA.lastSyncAcc : DATA.lastSyncLmu);
+
+  const gameSessions = allSessions.filter(s => s.game === GAME);
+
+  if (gameSessions.length === 0) {
+    document.getElementById('category-tabs').innerHTML = '';
+    document.getElementById('session-tabs').innerHTML = '';
+    document.getElementById('board').innerHTML = `
+      <div class="empty">
+        <h2>Waiting on the first ${GAME} sync</h2>
+        <p>Once the sync workflow finds new results, sessions will show up here automatically.<br>
+        Data source: <code>data/results.json</code></p>
+      </div>`;
+    return;
+  }
+
+  // ACC has a PRO/PROAM (Wed/Thu) category split; LMU doesn't use this concept.
+  if (GAME === 'ACC') {
+    const categories = ['All', ...new Set(gameSessions.map(s => s.category || 'Other'))];
+    document.getElementById('category-tabs').innerHTML = categories.map(cat => `
+      <button class="category-tab" data-cat="${cat}" aria-selected="${cat === ACTIVE_CATEGORY}">${cat}</button>
+    `).join('');
+    document.querySelectorAll('.category-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        ACTIVE_CATEGORY = btn.dataset.cat;
+        ACTIVE_ID = null;
+        ACTIVE_CLASS = 'Overall';
+        render();
+      });
+    });
+  } else {
+    document.getElementById('category-tabs').innerHTML = '';
+  }
+
+  const sessions = (GAME === 'ACC' && ACTIVE_CATEGORY !== 'All')
+    ? gameSessions.filter(s => (s.category || 'Other') === ACTIVE_CATEGORY)
+    : gameSessions;
 
   if (sessions.length === 0) {
     document.getElementById('session-tabs').innerHTML = '';
@@ -312,6 +357,15 @@ function render() {
 }
 
 function renderBoard(session) {
+  if (session.game === 'LMU') {
+    renderLmuBoard(session);
+  } else {
+    renderAccBoard(session);
+  }
+}
+
+// ---- ACC: single flat `standings` array, with a combined "Overall" view ----
+function renderAccBoard(session) {
   const isRace = session.sessionType.startsWith('R');
   const classes = ['Overall', ...new Set(session.standings.map(s => s.driverClass))];
 
@@ -380,7 +434,90 @@ function renderBoard(session) {
   document.querySelectorAll('.class-tab').forEach(btn => {
     btn.addEventListener('click', () => {
       ACTIVE_CLASS = btn.dataset.class;
-      renderBoard(session);
+      renderAccBoard(session);
+    });
+  });
+}
+
+// ---- LMU: classes kept fully separate, no combined "Overall" view ----
+function renderLmuBoard(session) {
+  const isRace = session.sessionType === 'R';
+  const classNames = Object.keys(session.standingsByClass || {});
+
+  if (classNames.length === 0) {
+    document.getElementById('board').innerHTML = `<div class="empty"><h2>No results in this session</h2></div>`;
+    return;
+  }
+
+  if (ACTIVE_CLASS === 'Overall' || !classNames.includes(ACTIVE_CLASS)) {
+    ACTIVE_CLASS = classNames[0];
+  }
+
+  const rows = session.standingsByClass[ACTIVE_CLASS] || [];
+  const leaderRef = rows[0]?.referenceTimeMs;
+
+  const maxGapMs = Math.max(1, ...rows.map(r => {
+    if (isRace) return parseRaceGapMs(r.gapDisplay) || 0;
+    if (r.referenceTimeMs == null || leaderRef == null) return 0;
+    return Math.max(0, r.referenceTimeMs - leaderRef);
+  }));
+
+  const rowsHtml = rows.map((s, i) => {
+    let gapDisplay, barPct;
+    if (isRace) {
+      gapDisplay = i === 0 ? '-' : (s.status !== 'FINISHED' ? s.status : (s.gapDisplay || '–'));
+      const gapMs = parseRaceGapMs(s.gapDisplay);
+      barPct = gapMs ? Math.min(100, (gapMs / maxGapMs) * 100) : (i === 0 ? 0 : 100);
+    } else {
+      const gapMs = (s.referenceTimeMs != null && leaderRef != null) ? s.referenceTimeMs - leaderRef : null;
+      gapDisplay = i === 0 ? '-' : (s.status !== 'FINISHED' ? s.status : formatGap(gapMs));
+      barPct = (maxGapMs && gapMs) ? Math.min(100, (gapMs / maxGapMs) * 100) : 0;
+    }
+    const statusFlag = s.status && s.status !== 'FINISHED' ? `<span class="status-flag">${s.status}</span>` : '';
+    return `
+      <tr>
+        <td class="pos">${s.position}</td>
+        <td class="num">#${s.raceNumber ?? '–'}</td>
+        <td class="driver">
+          ${s.driver}${statusFlag}
+          <span class="car">${s.car || ''}</span>
+        </td>
+        <td class="num">${s.laps ?? '–'}</td>
+        <td class="time">${s.bestLap ?? '–'}</td>
+        <td>
+          <div class="gap-cell">
+            <div class="gap-bar-track"><div class="gap-bar-fill" style="width:${barPct}%"></div></div>
+            <span class="gap-value">${gapDisplay}</span>
+          </div>
+        </td>
+      </tr>`;
+  }).join('');
+
+  document.getElementById('board').innerHTML = `
+    <div class="board-head">
+      <h2>${session.sessionName} — ${session.trackName}</h2>
+      <span class="meta">${session.totalDrivers ?? rows.length} driver(s)</span>
+    </div>
+    <div class="class-tabs">
+      ${classNames.map(cls => `<button class="class-tab" data-class="${cls}" aria-selected="${cls === ACTIVE_CLASS}">${cls}</button>`).join('')}
+    </div>
+    <div class="table-scroll">
+    <table>
+      <thead>
+        <tr>
+          <th>Pos</th><th>No.</th><th>Driver</th><th>Laps</th><th>Best lap</th>
+          <th>${isRace ? 'Gap' : 'Gap to P1'}</th>
+        </tr>
+      </thead>
+      <tbody>${rowsHtml}</tbody>
+    </table>
+    </div>
+  `;
+
+  document.querySelectorAll('.class-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      ACTIVE_CLASS = btn.dataset.class;
+      renderLmuBoard(session);
     });
   });
 }
@@ -402,6 +539,15 @@ function parseGapMs(gapStr) {
     return (parseInt(parts[0], 10) * 60 + parseFloat(parts[1])) * 1000;
   }
   return parseFloat(clean) * 1000;
+}
+
+// Parses SimGrid's own race gap text ("+39.800", "+1:38.461") back to ms for
+// the proportional gap bar. Lap-based gaps ("+2 Laps") can't convert to a
+// time, so those just render a full bar to visually flag "laps behind".
+function parseRaceGapMs(gapText) {
+  if (!gapText) return null;
+  if (/lap/i.test(gapText)) return null;
+  return parseGapMs(gapText);
 }
 
 load();

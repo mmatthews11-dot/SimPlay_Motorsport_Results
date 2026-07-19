@@ -1,12 +1,14 @@
 {
-  "name": "acc-gportal-results",
+  "name": "sim-racing-results",
   "version": "1.0.0",
   "type": "module",
   "private": true,
   "scripts": {
-    "sync": "node scripts/sync-from-gportal.mjs"
+    "sync:acc": "node scripts/sync-from-gportal.mjs",
+    "sync:lmu": "node scripts/sync-from-simgrid.mjs"
   },
   "dependencies": {
-    "basic-ftp": "^5.0.5"
+    "basic-ftp": "^5.0.5",
+    "cheerio": "^1.0.0"
   }
 }

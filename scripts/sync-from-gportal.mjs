@@ -3,6 +3,12 @@
 // any results files we haven't seen yet, parses them, and updates
 // data/results.json.
 //
+// This file is SHARED with the LMU/SimGrid sync script — both write to the
+// same data/results.json, each tagging its sessions with a `game` field
+// ("ACC" or "LMU"). This script only ever touches ACC sessions and its own
+// `processedFiles` manifest; it must never delete or overwrite LMU sessions
+// or the LMU sync's `processedRaces` manifest.
+//
 // Required environment variables (set these as GitHub Actions secrets, or in a
 // local .env file if running by hand):
 //   GPORTAL_HOST      - FTP host, e.g. 176.57.174.147
@@ -19,7 +25,7 @@ import { parseAccResults } from "./parse-acc-results.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_FILE = path.join(__dirname, "..", "data", "results.json");
-const TMP_DIR = path.join(__dirname, "..", ".tmp-downloads");
+const TMP_DIR = path.join(__dirname, "..", ".tmp-downloads-acc");
 
 // ACC writes result files as UTF-16LE (with a byte-order-mark), not UTF-8.
 // Reading them as plain UTF-8 text produces garbage / breaks JSON.parse.
@@ -39,7 +45,7 @@ async function loadExistingData() {
     const raw = await fs.readFile(DATA_FILE, "utf-8");
     return JSON.parse(raw);
   } catch {
-    return { sessions: [], processedFiles: [] };
+    return { sessions: [] };
   }
 }
 
@@ -51,6 +57,7 @@ async function main() {
   const remoteResultsPath = requireEnv("GPORTAL_RESULTS_PATH");
 
   const data = await loadExistingData();
+  data.sessions = data.sessions || [];
   const processed = new Set(data.processedFiles || []);
 
   const client = new Client();
@@ -100,10 +107,11 @@ async function main() {
       processed.add(file.name);
     }
 
-    // Newest sessions first for display purposes.
-    data.sessions.sort((a, b) => (a.sourceFile < b.sourceFile ? 1 : -1));
+    // Sort only within display — LMU sessions use a different id scheme, so
+    // this ordering only meaningfully affects how ACC sessions are grouped;
+    // the dashboard filters by game before rendering tabs anyway.
     data.processedFiles = Array.from(processed);
-    data.lastSync = new Date().toISOString();
+    data.lastSyncAcc = new Date().toISOString();
 
     await fs.mkdir(path.dirname(DATA_FILE), { recursive: true });
     await fs.writeFile(DATA_FILE, JSON.stringify(data, null, 2));

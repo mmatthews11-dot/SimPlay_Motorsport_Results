@@ -1,85 +1,72 @@
-# ACC Results Tower
+# Sim Racing Results Tower (ACC + LMU)
 
-Automatically pulls session result files from your G-Portal ACC server and
-displays them on a live-updating webpage — no server of your own required.
+One dashboard, two independent sync pipelines, sharing a single
+`data/results.json`. A top-level ACC/LMU selector on the page switches
+between them.
 
-## How it works
+## How the two pipelines coexist
 
-1. **`scripts/sync-from-gportal.mjs`** connects to your G-Portal server over
-   FTP (G-Portal's panel calls it "SFTP Access" but it's actually plain,
-   unencrypted FTP — no TLS), finds any result `.json` files it hasn't seen
-   before, parses them, and adds them to `data/results.json`.
-2. **A GitHub Actions workflow** (`.github/workflows/sync-results.yml`) runs
-   that script automatically every 15 minutes and commits the updated data.
-3. **`index.html`** is a static page that reads `data/results.json` and
-   renders a timing-tower style dashboard. Hosted for free on GitHub Pages.
+Both write to `data/results.json`, but each only ever touches its own part:
 
-## One-time setup
+| | ACC | LMU |
+|---|---|---|
+| Sync script | `scripts/sync-from-gportal.mjs` | `scripts/sync-from-simgrid.mjs` |
+| Workflow | `.github/workflows/sync-acc-results.yml` | `.github/workflows/sync-lmu-results.yml` |
+| Session tag | `game: "ACC"` | `game: "LMU"` |
+| "Already seen" manifest | `processedFiles` | `processedRaces` |
+| Last sync timestamp | `lastSyncAcc` | `lastSyncLmu` |
+| Source | G-Portal FTP (needs secrets) | Public SimGrid pages (no secrets) |
 
-### 1. Find your G-Portal FTP details
-In the G-Portal web panel for your ACC server, go to **FTP Access** (labelled
-"SFTP" in the panel, but it's plain FTP). You need:
-- Host (an IP address, e.g. `176.57.174.147`)
-- Port (e.g. `30221`)
-- Username
-- Password
-- The results folder path — for most G-Portal ACC servers this is simply
-  `/results`. You can confirm it with an FTP client (e.g. FileZilla, no TLS/
-  encryption option needed) — it's the folder where files named like
-  `250101_190000_FP.json` land after each session.
+Both workflows do a `git pull --rebase` right before pushing, in case the
+other one committed in between — and their schedules are offset (ACC on the
+hour/quarter-hour, LMU 7 minutes after) to make simultaneous commits rarer.
+This isn't bulletproof, but a rebase conflict here is a rare edge case, not a
+data-loss risk — worst case, one workflow's push fails and simply succeeds on
+its next scheduled run 15 minutes later.
 
-### 2. Create a GitHub repository
-Push this whole folder to a new **public** GitHub repository (Pages'
-free tier needs public, unless you have GitHub Pro/Team/Enterprise).
+## Setup
 
-### 3. Add your SFTP details as GitHub secrets
-In the repo: **Settings → Secrets and variables → Actions → New repository
-secret**. Add each of:
-- `GPORTAL_HOST`
-- `GPORTAL_PORT`
-- `GPORTAL_USERNAME`
-- `GPORTAL_PASSWORD`
-- `GPORTAL_RESULTS_PATH`
+### 1. Push this repo, enable GitHub Pages
+Same as before: Settings → Pages → Deploy from branch → `main` / root.
 
-These stay encrypted and are never exposed in the webpage — only the parsed,
-already-public race results end up in `data/results.json`.
+### 2. ACC: add the G-Portal secrets
+Settings → Secrets and variables → Actions → add:
+`GPORTAL_HOST`, `GPORTAL_PORT`, `GPORTAL_USERNAME`, `GPORTAL_PASSWORD`,
+`GPORTAL_RESULTS_PATH`.
 
-### 4. Enable GitHub Pages
-**Settings → Pages → Source → Deploy from a branch → `main` / root.** Your
-dashboard will be live at `https://<your-username>.github.io/<repo-name>/`.
+### 3. LMU: check the championship config
+Open `scripts/sync-from-simgrid.mjs` and confirm `CHAMPIONSHIP_ID` and the
+`CLASSES` list match what you're tracking — class IDs are specific to a
+championship/season and change each new one.
 
-### 5. Run the sync
-It runs automatically every 15 minutes, or trigger it immediately from the
-**Actions** tab → "Sync ACC results from G-Portal" → **Run workflow**.
+### 4. Run both once to test
+Actions tab → run "Sync ACC results from G-Portal" and "Sync LMU results
+from SimGrid" manually, then check your Pages URL — the ACC/LMU toggle at
+the top should show data for each once its sync succeeds.
 
-## Running it locally instead (optional)
-```bash
-npm install
-GPORTAL_HOST=... GPORTAL_PORT=... GPORTAL_USERNAME=... GPORTAL_PASSWORD=... GPORTAL_RESULTS_PATH=... npm run sync
-```
-Then open `index.html` in a browser (or run any static file server) to preview.
-
-## What gets pulled in
-Only **Qualifying** and **Race** result files are downloaded and added to the
-dashboard — Practice (`_FP.json`) files are detected and skipped automatically,
-based on the filename suffix ACC uses (`_FP`, `_Q`/`_Q1`/`_Q2`, `_R`/`_R1`/`_R2`).
-If you ever want practice sessions included too, remove the `QUALI_OR_RACE`
-filter in `scripts/sync-from-gportal.mjs`.
-
-## Notes on the ACC file format
-- G-Portal's FTP access is **plain FTP with no TLS** — the server actively
-  rejects `AUTH SSL`/`AUTH TLS` requests, so don't set `secure: true` if
-  you modify the connection code.
-- ACC writes result files as **UTF-16LE**, not UTF-8 — the sync script
-  handles that decoding automatically.
-- Car model names in `scripts/parse-acc-results.mjs` are a best-effort
-  lookup table (Kunos hasn't published one canonical list). If a car shows
-  up as "Car #NN", add that ID to the `CAR_MODELS` table.
-- Session files are never deleted from `data/results.json`, so the tower
-  keeps a full history — the tabs at the top let you switch between
-  practice/qualifying/race for each event.
-
-## Customizing
-- Change the sync frequency by editing the `cron` line in the workflow file.
-- The whole look of the page lives in the `<style>` block in `index.html` —
-  colors, fonts, and layout are all in one place.
+## Notes
+- LMU results come from scraping public SimGrid pages, not an API — if
+  SimGrid redesigns their results page layout, that sync may break and need
+  updating. ACC's G-Portal pipeline reads structured files, so it's more
+  stable by comparison.
+- Qualifying and Race results pages use genuinely different table layouts
+  (Qualifying has sector-time columns and no laps/votes columns). The parser
+  (`scripts/parse-simgrid-results.mjs`) is written to handle both by finding
+  cells semantically (by class name, by data attribute) rather than by fixed
+  column position, and is told explicitly whether it's parsing a race or
+  qualifying page rather than guessing from the HTML — the leader's row
+  looks identical either way, since neither has a "gap" to show.
+- There's a minor markup quirk in SimGrid's own page: the leader's Time/Gap
+  cell sometimes doesn't close properly, which can nest the next cell's
+  unrelated content inside it. The parser works around this by scoping its
+  gap-text lookup to the specific `small.text-muted` class the real gap tag
+  uses, rather than "any small tag in this cell."
+- Penalty points/points aren't tracked, since this championship doesn't use them.
+- ACC has a combined "Overall" view across classes (Platinum/Gold/Silver/
+  Bronze); LMU does not, since SimGrid doesn't publish one for multi-class
+  races — LMU only lets you view one class at a time.
+- To force a full re-pull for one game without touching the other's data,
+  only clear that game's manifest field (`processedFiles` for ACC,
+  `processedRaces` for LMU) and leave the `sessions` array and the other
+  game's manifest as they are — new data will simply be added alongside what's
+  already there.
