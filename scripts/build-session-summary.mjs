@@ -10,7 +10,8 @@
 
 /**
  * @param {Array<{classId:string, classLabel:string, rows:Array}>} classResults
- * @param {object} meta - { raceId, roundId, roundLabel, sessionType, sessionName, championshipName }
+ * @param {object} meta - { raceId, roundId, roundLabel, sessionType, sessionName,
+ *   championshipName, season, seasonOrder }
  */
 export function buildSessionSummary(classResults, meta) {
   const isRace = meta.sessionType.startsWith("race");
@@ -53,6 +54,8 @@ export function buildSessionSummary(classResults, meta) {
   return {
     id: `${meta.raceId}-${meta.sessionType}`,
     game: "LMU",
+    season: meta.season || null,
+    seasonOrder: meta.seasonOrder ?? 0,
     sourceFile: `${meta.raceId}-${meta.sessionType}`,
     sessionType: isRace ? "R" : "Q",
     sessionName: meta.sessionName,

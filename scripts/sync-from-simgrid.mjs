@@ -1,11 +1,9 @@
-// Discovers new races on a SimGrid championship, fetches each class's results
-// for each session, merges them, and updates data/lmu-results.json.
+// Discovers new races across one or more SimGrid championships/seasons,
+// fetches each class's results for each session, merges them, and updates
+// data/lmu-results.json.
 //
 // This has its OWN dedicated data file, separate from the ACC/G-Portal sync's
-// data/acc-results.json. They used to share one file, but that meant two
-// independently-scheduled workflows writing to the same file could hit git
-// merge conflicts if their runs overlapped (which happened in practice).
-// Keeping them fully separate makes that structurally impossible.
+// data/acc-results.json — see that script's comments for why they're split.
 //
 // No login or API token is needed — this reads the same public pages anyone
 // can view in a browser. Because of that, this is inherently a bit more
@@ -22,24 +20,35 @@ import { buildSessionSummary } from "./build-session-summary.mjs";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_FILE = path.join(__dirname, "..", "data", "lmu-results.json");
 
-// ---- Configuration specific to this championship ----
-// Update these if you point this at a different championship/season, or if
-// SimGrid changes the class IDs for a new season of the same championship
-// (check the "Split" filter dropdown on a results page to find them).
-const CHAMPIONSHIP_ID = "24272";
-const CHAMPIONSHIP_NAME = "LMP2 ELMS/LMGT3 Season 1";
-const CLASSES = [
-  { classId: "113467", classLabel: "LMP2 ELMS" },
-  { classId: "113468", classLabel: "LMGT3" },
+// ---- One entry per championship/season you want tracked ----
+// Add a new entry any time a new season starts — nothing needs to be removed
+// when a season ends, it'll just stop finding new races for it.
+// Class IDs are specific to each championship/season — find them via the
+// "Split" filter dropdown on one of that championship's results pages.
+const CHAMPIONSHIPS = [
+  {
+    championshipId: "24272",
+    seasonLabel: "Season 1",
+    classes: [
+      { classId: "113467", classLabel: "LMP2 ELMS" },
+      { classId: "113468", classLabel: "LMGT3" },
+    ],
+  },
+  {
+    championshipId: "26645",
+    seasonLabel: "Season 2",
+    classes: [
+      { classId: "136108", classLabel: "Hypercar" },
+      { classId: "136109", classLabel: "LMGT3" },
+    ],
+  },
 ];
 const SESSION_TYPES = [
   { sessionType: "qualifying", sessionName: "Qualifying" },
   { sessionType: "race_1", sessionName: "Race 1" },
   { sessionType: "race_2", sessionName: "Race 2" },
 ];
-// ------------------------------------------------------
-
-const BASE_URL = `https://www.thesimgrid.com/championships/${CHAMPIONSHIP_ID}`;
+// --------------------------------------------------------------
 
 async function fetchHtml(url) {
   const controller = new AbortController();
@@ -62,18 +71,27 @@ async function fetchHtml(url) {
 async function loadExistingData() {
   try {
     const raw = await fs.readFile(DATA_FILE, "utf-8");
-    return JSON.parse(raw);
+    const data = JSON.parse(raw);
+    data.sessions = data.sessions || [];
+    // processedRaces is keyed by championshipId so each season's "already
+    // seen" list is independent — a new season starting never affects an
+    // older one's tracking.
+    data.processedRaces = data.processedRaces && typeof data.processedRaces === "object" && !Array.isArray(data.processedRaces)
+      ? data.processedRaces
+      : {}; // handles the old flat-array format from before multi-season support
+    return data;
   } catch {
-    return { sessions: [] };
+    return { sessions: [], processedRaces: {} };
   }
 }
 
-async function fetchSessionForAllClasses(raceId, roundId, sessionType) {
+async function fetchSessionForAllClasses(baseUrl, classes, raceId, roundId, sessionType) {
   const classResults = [];
   let anyRowsFound = false;
 
-  for (const { classId, classLabel } of CLASSES) {
-    const url = `${BASE_URL}/results?race_id=${raceId}&round_id=${roundId}&session_type=${sessionType}&filter_class_id=${classId}&overall=false`;
+  for (const { classId, classLabel } of classes) {
+    const roundParam = roundId ? `&round_id=${roundId}` : "";
+    const url = `${baseUrl}/results?race_id=${raceId}${roundParam}&session_type=${sessionType}&filter_class_id=${classId}&overall=false`;
     let html;
     try {
       html = await fetchHtml(url);
@@ -89,21 +107,20 @@ async function fetchSessionForAllClasses(raceId, roundId, sessionType) {
   return anyRowsFound ? classResults : null;
 }
 
-async function main() {
-  const data = await loadExistingData();
-  data.sessions = data.sessions || [];
-  const processed = new Set(data.processedRaces || []);
+async function syncChampionship(championship, data, seasonOrder) {
+  const { championshipId, seasonLabel, classes } = championship;
+  const baseUrl = `https://www.thesimgrid.com/championships/${championshipId}`;
+  const processed = new Set(data.processedRaces[championshipId] || []);
 
+  console.log(`\n=== ${seasonLabel} (championship ${championshipId}) ===`);
   console.log("Fetching races list...");
-  const racesHtml = await fetchHtml(`${BASE_URL}/races`);
+  const racesHtml = await fetchHtml(`${baseUrl}/races`);
   const allRaces = parseRacesPage(racesHtml);
   const newRaces = allRaces.filter((r) => !processed.has(r.raceId));
 
   if (newRaces.length === 0) {
     console.log("No new races with published results.");
-    data.lastSync = new Date().toISOString();
-    await fs.mkdir(path.dirname(DATA_FILE), { recursive: true });
-    await fs.writeFile(DATA_FILE, JSON.stringify(data, null, 2));
+    data.processedRaces[championshipId] = Array.from(processed);
     return;
   }
 
@@ -112,7 +129,7 @@ async function main() {
   for (const race of newRaces) {
     for (const { sessionType, sessionName } of SESSION_TYPES) {
       console.log(`Fetching ${race.label} — ${sessionName}...`);
-      const classResults = await fetchSessionForAllClasses(race.raceId, race.roundId, sessionType);
+      const classResults = await fetchSessionForAllClasses(baseUrl, classes, race.raceId, race.roundId, sessionType);
       if (!classResults) {
         console.log(`  (no ${sessionName} data — likely doesn't exist for this round)`);
         continue;
@@ -123,19 +140,35 @@ async function main() {
         roundLabel: race.label,
         sessionType,
         sessionName,
-        championshipName: CHAMPIONSHIP_NAME,
+        championshipName: seasonLabel,
+        season: seasonLabel,
+        seasonOrder,
       });
       data.sessions.push(summary);
     }
     processed.add(race.raceId);
   }
 
-  data.processedRaces = Array.from(processed);
-  data.lastSync = new Date().toISOString();
+  data.processedRaces[championshipId] = Array.from(processed);
+}
 
+async function main() {
+  const data = await loadExistingData();
+
+  for (let i = 0; i < CHAMPIONSHIPS.length; i++) {
+    try {
+      await syncChampionship(CHAMPIONSHIPS[i], data, i);
+    } catch (err) {
+      // One championship failing (e.g. a network hiccup) shouldn't stop the
+      // others from syncing.
+      console.error(`Error syncing ${CHAMPIONSHIPS[i].seasonLabel}:`, err.message);
+    }
+  }
+
+  data.lastSync = new Date().toISOString();
   await fs.mkdir(path.dirname(DATA_FILE), { recursive: true });
   await fs.writeFile(DATA_FILE, JSON.stringify(data, null, 2));
-  console.log("Done.");
+  console.log("\nDone.");
 }
 
 main().catch((err) => {

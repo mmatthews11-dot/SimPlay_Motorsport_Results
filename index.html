@@ -298,6 +298,7 @@ let DATA = { sessions: [], accLastSync: null, lmuLastSync: null };
 let GAME = 'ACC';
 let ACTIVE_ID = null;
 let ACTIVE_CATEGORY = 'All';
+let ACTIVE_SEASON = 'All';
 let ACTIVE_CLASS = 'Overall';
 
 async function fetchJson(path) {
@@ -346,6 +347,7 @@ function render() {
       GAME = btn.dataset.game;
       ACTIVE_ID = null;
       ACTIVE_CATEGORY = 'All';
+      ACTIVE_SEASON = 'All';
       ACTIVE_CLASS = 'Overall';
       render();
     });
@@ -368,7 +370,9 @@ function render() {
     return;
   }
 
-  // ACC has a PRO/PROAM (Wed/Thu) category split; LMU doesn't use this concept.
+  // ACC has a PRO/PROAM (Wed/Thu) category split; LMU has a season split
+  // (multiple championships tracked over time). Both reuse the same
+  // #category-tabs element/styling since visually they're the same idea.
   if (GAME === 'ACC') {
     const categories = ['All', ...new Set(gameSessions.map(s => s.category || 'Other'))];
     document.getElementById('category-tabs').innerHTML = categories.map(cat => `
@@ -383,16 +387,30 @@ function render() {
       });
     });
   } else {
-    document.getElementById('category-tabs').innerHTML = '';
+    const seasonOrder = new Map();
+    gameSessions.forEach(s => seasonOrder.set(s.season || 'Other', s.seasonOrder ?? 0));
+    const seasons = ['All', ...[...seasonOrder.entries()].sort((a, b) => a[1] - b[1]).map(([label]) => label)];
+    document.getElementById('category-tabs').innerHTML = seasons.map(season => `
+      <button class="category-tab" data-season="${season}" aria-selected="${season === ACTIVE_SEASON}">${season}</button>
+    `).join('');
+    document.querySelectorAll('.category-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        ACTIVE_SEASON = btn.dataset.season;
+        ACTIVE_ID = null;
+        ACTIVE_CLASS = 'Overall';
+        render();
+      });
+    });
   }
 
-  const sessions = (GAME === 'ACC' && ACTIVE_CATEGORY !== 'All')
-    ? gameSessions.filter(s => (s.category || 'Other') === ACTIVE_CATEGORY)
-    : gameSessions;
+  const sessions = GAME === 'ACC'
+    ? (ACTIVE_CATEGORY !== 'All' ? gameSessions.filter(s => (s.category || 'Other') === ACTIVE_CATEGORY) : gameSessions)
+    : (ACTIVE_SEASON !== 'All' ? gameSessions.filter(s => (s.season || 'Other') === ACTIVE_SEASON) : gameSessions);
 
   if (sessions.length === 0) {
     document.getElementById('session-tabs').innerHTML = '';
-    document.getElementById('board').innerHTML = `<div class="empty"><h2>No ${ACTIVE_CATEGORY} sessions yet</h2></div>`;
+    const activeLabel = GAME === 'ACC' ? ACTIVE_CATEGORY : ACTIVE_SEASON;
+    document.getElementById('board').innerHTML = `<div class="empty"><h2>No ${activeLabel} sessions yet</h2></div>`;
     return;
   }
 
