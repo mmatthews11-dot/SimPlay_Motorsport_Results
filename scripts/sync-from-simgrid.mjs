@@ -73,9 +73,6 @@ async function loadExistingData() {
     const raw = await fs.readFile(DATA_FILE, "utf-8");
     const data = JSON.parse(raw);
     data.sessions = data.sessions || [];
-    // processedRaces is keyed by championshipId so each season's "already
-    // seen" list is independent — a new season starting never affects an
-    // older one's tracking.
     data.processedRaces = data.processedRaces && typeof data.processedRaces === "object" && !Array.isArray(data.processedRaces)
       ? data.processedRaces
       : {}; // handles the old flat-array format from before multi-season support
@@ -127,6 +124,8 @@ async function syncChampionship(championship, data, seasonOrder) {
   console.log(`Found ${newRaces.length} new race(s): ${newRaces.map((r) => r.label).join(", ")}`);
 
   for (const race of newRaces) {
+    let foundAnySessionData = false;
+
     for (const { sessionType, sessionName } of SESSION_TYPES) {
       console.log(`Fetching ${race.label} — ${sessionName}...`);
       const classResults = await fetchSessionForAllClasses(baseUrl, classes, race.raceId, race.roundId, sessionType);
@@ -134,6 +133,7 @@ async function syncChampionship(championship, data, seasonOrder) {
         console.log(`  (no ${sessionName} data — likely doesn't exist for this round)`);
         continue;
       }
+      foundAnySessionData = true;
       const summary = buildSessionSummary(classResults, {
         raceId: race.raceId,
         roundId: race.roundId,
@@ -146,7 +146,18 @@ async function syncChampionship(championship, data, seasonOrder) {
       });
       data.sessions.push(summary);
     }
-    processed.add(race.raceId);
+
+    // Only mark this race as "seen" once we've actually pulled at least one
+    // session's worth of data for it. A round can show as "Ended" on
+    // SimGrid's races page slightly before its results are actually
+    // published — if we gave up and marked it seen anyway, it would be
+    // silently skipped forever, even once results did appear. Leaving it
+    // unmarked means it's simply retried again on the next scheduled run.
+    if (foundAnySessionData) {
+      processed.add(race.raceId);
+    } else {
+      console.log(`  (${race.label} marked "Ended" but no results found yet for any session — will retry next sync)`);
+    }
   }
 
   data.processedRaces[championshipId] = Array.from(processed);
