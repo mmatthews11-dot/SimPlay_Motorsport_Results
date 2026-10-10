@@ -29,6 +29,7 @@ const CHAMPIONSHIPS = [
   {
     championshipId: "24272",
     seasonLabel: "Season 1",
+    refreshLatest: 0, // season is finished, no need to keep re-checking it
     classes: [
       { classId: "113467", classLabel: "LMP2 ELMS" },
       { classId: "113468", classLabel: "LMGT3" },
@@ -37,6 +38,7 @@ const CHAMPIONSHIPS = [
   {
     championshipId: "26645",
     seasonLabel: "Season 2",
+    refreshLatest: 3, // re-check the 3 most recent rounds each sync (results can publish late or be corrected)
     classes: [
       { classId: "136108", classLabel: "Hypercar" },
       { classId: "136109", classLabel: "LMGT3" },
@@ -93,15 +95,27 @@ async function fetchSessionForAllClasses(baseUrl, classes, raceId, roundId, sess
     try {
       html = await fetchHtml(url);
     } catch (err) {
-      console.log(`  (skipping ${classLabel}/${sessionType}: ${err.message})`);
-      continue;
+      // A failed request (timeout, 5xx, etc.) means we can't trust this
+      // session's data to be complete. Previously a failed class was just
+      // skipped, which could save a session with a class silently missing.
+      // Now the whole session is treated as failed and retried next sync.
+      console.log(`  (${classLabel}/${sessionType} failed: ${err.message} — session will be retried)`);
+      return { failed: true };
     }
     const rows = parseSimGridResultsTable(html, { classLabel, isRace: sessionType.startsWith("race") });
     if (rows.length > 0) anyRowsFound = true;
     classResults.push({ classId, classLabel, rows });
   }
 
-  return anyRowsFound ? classResults : null;
+  return anyRowsFound ? { classResults } : null;
+}
+
+// Replaces an existing session with the same id, or adds it if new. This
+// keeps refreshes from creating duplicate tabs.
+function upsertSession(sessions, summary) {
+  const index = sessions.findIndex((s) => s.id === summary.id);
+  if (index >= 0) sessions[index] = summary;
+  else sessions.push(summary);
 }
 
 async function syncChampionship(championship, data, seasonOrder) {
@@ -115,26 +129,38 @@ async function syncChampionship(championship, data, seasonOrder) {
   const allRaces = parseRacesPage(racesHtml);
   const newRaces = allRaces.filter((r) => !processed.has(r.raceId));
 
-  if (newRaces.length === 0) {
+  // Also re-fetch the most recent already-processed rounds. SimGrid can
+  // publish results in stages, and stewards can adjust them afterwards, so a
+  // one-time snapshot can be incomplete or go stale. Sessions are replaced
+  // by id, so this never creates duplicates.
+  const refreshCount = championship.refreshLatest ?? 0;
+  const refreshRaces = refreshCount > 0
+    ? allRaces.filter((r) => processed.has(r.raceId)).slice(-refreshCount)
+    : [];
+  const racesToFetch = [...refreshRaces, ...newRaces];
+
+  if (racesToFetch.length === 0) {
     console.log("No new races with published results.");
     data.processedRaces[championshipId] = Array.from(processed);
     return;
   }
 
-  console.log(`Found ${newRaces.length} new race(s): ${newRaces.map((r) => r.label).join(", ")}`);
+  if (newRaces.length) console.log(`Found ${newRaces.length} new race(s): ${newRaces.map((r) => r.label).join(", ")}`);
+  if (refreshRaces.length) console.log(`Refreshing ${refreshRaces.length} recent race(s): ${refreshRaces.map((r) => r.label).join(", ")}`);
 
-  for (const race of newRaces) {
+  for (const race of racesToFetch) {
     let foundAnySessionData = false;
 
     for (const { sessionType, sessionName } of SESSION_TYPES) {
       console.log(`Fetching ${race.label} — ${sessionName}...`);
-      const classResults = await fetchSessionForAllClasses(baseUrl, classes, race.raceId, race.roundId, sessionType);
-      if (!classResults) {
+      const result = await fetchSessionForAllClasses(baseUrl, classes, race.raceId, race.roundId, sessionType);
+      if (result && result.failed) continue; // keep whatever we already had
+      if (!result) {
         console.log(`  (no ${sessionName} data — likely doesn't exist for this round)`);
         continue;
       }
       foundAnySessionData = true;
-      const summary = buildSessionSummary(classResults, {
+      const summary = buildSessionSummary(result.classResults, {
         raceId: race.raceId,
         roundId: race.roundId,
         roundLabel: race.label,
@@ -144,7 +170,7 @@ async function syncChampionship(championship, data, seasonOrder) {
         season: seasonLabel,
         seasonOrder,
       });
-      data.sessions.push(summary);
+      upsertSession(data.sessions, summary);
     }
 
     // Only mark this race as "seen" once we've actually pulled at least one
