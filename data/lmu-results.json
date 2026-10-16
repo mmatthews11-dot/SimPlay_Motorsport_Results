@@ -9889,10 +9889,10 @@
             "position": 5,
             "classPosition": 5,
             "driverClass": "LMGT3",
-            "raceNumber": "82",
-            "driver": "Mark Bell",
-            "driverProfileUrl": "https://www.thesimgrid.com/drivers/131596-mrbelltron/activities",
-            "car": "Lexus RC F GT3",
+            "raceNumber": "99",
+            "driver": "Mihai Daniel Ciubotariu",
+            "driverProfileUrl": "https://www.thesimgrid.com/drivers/73763-tz3ap4/activities",
+            "car": "Ferrari 296 GT3",
             "laps": null,
             "bestLap": null,
             "bestLapMs": null,
@@ -9924,5 +9924,5 @@
       "249776"
     ]
   },
-  "lastSync": "2026-10-15T22:36:07.622Z"
+  "lastSync": "2026-10-16T00:47:08.354Z"
 }
