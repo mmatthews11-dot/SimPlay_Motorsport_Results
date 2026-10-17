@@ -27,6 +27,26 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_FILE = path.join(__dirname, "..", "data", "acc-results.json");
 const TMP_DIR = path.join(__dirname, "..", ".tmp-downloads-acc");
 
+// Re-pull option. Set this to a date in YYMMDD form (the same prefix ACC uses
+// in its result filenames, e.g. "261001" for 1 Oct 2026) to re-download and
+// re-parse every qualifying/race file from that date onward, replacing the
+// stored sessions IN PLACE. Anything dated before it is left exactly as it is,
+// and a session is only replaced once its file has been downloaded
+// successfully — if a file is no longer on the server, the stored version stays.
+// Use it after changing something that's applied when a file is parsed (driver
+// classes, car names...). It runs once per value (recorded in the data file as
+// `repulledFrom`), so it's safe to leave set; change the date to run it again.
+// Leave as "" for normal operation.
+const REPULL_FROM = "261001";
+
+// Replaces an existing session with the same id, or adds it if it's new, so
+// re-pulling a file can never create a duplicate.
+function upsertSession(sessions, summary) {
+  const index = sessions.findIndex((s) => s.id === summary.id);
+  if (index >= 0) sessions[index] = summary;
+  else sessions.push(summary);
+}
+
 // ACC writes result files as UTF-16LE (with a byte-order-mark), not UTF-8.
 // Reading them as plain UTF-8 text produces garbage / breaks JSON.parse.
 function decodeAccJson(buffer) {
@@ -71,10 +91,17 @@ async function main() {
     // We only care about qualifying and race results.
     const QUALI_OR_RACE = /_((Q|R)\d*)\.json$/i;
 
+    // Files dated REPULL_FROM or later get re-processed even though they're
+    // already in `processed` (qualifying/race files only — practice files are
+    // never turned into sessions, so there's nothing to redo for them).
+    const repullActive = /^\d{6}$/.test(REPULL_FROM) && data.repulledFrom !== REPULL_FROM;
+    const needsRepull = (name) =>
+      repullActive && QUALI_OR_RACE.test(name) && name.slice(0, 6) >= REPULL_FROM;
+
     const remoteFiles = await client.list(remoteResultsPath);
     const allNewFiles = remoteFiles
       .filter((f) => f.isFile && f.name.toLowerCase().endsWith(".json"))
-      .filter((f) => !processed.has(f.name))
+      .filter((f) => !processed.has(f.name) || needsRepull(f.name))
       .sort((a, b) => a.name.localeCompare(b.name));
 
     const skippedPractice = allNewFiles.filter((f) => !QUALI_OR_RACE.test(f.name));
@@ -103,8 +130,21 @@ async function main() {
 
       const raw = JSON.parse(decodeAccJson(await fs.readFile(localPath)));
       const summary = parseAccResults(raw, file.name);
-      data.sessions.push(summary);
+      upsertSession(data.sessions, summary);
       processed.add(file.name);
+    }
+
+    if (repullActive) {
+      // Anything in range that wasn't on the server this time keeps its old
+      // stored version — say so, so it isn't a silent surprise.
+      const refreshed = new Set(newJsonFiles.map((f) => f.name));
+      const kept = data.sessions
+        .filter((x) => x.sourceFile && x.sourceFile.slice(0, 6) >= REPULL_FROM && !refreshed.has(x.sourceFile))
+        .map((x) => x.sourceFile);
+      if (kept.length) {
+        console.log(`Re-pull from ${REPULL_FROM}: ${kept.length} stored session(s) had no file on the server, left as they were: ${kept.join(", ")}`);
+      }
+      data.repulledFrom = REPULL_FROM;
     }
 
     // Sort only within display — LMU sessions use a different id scheme, so
@@ -115,7 +155,7 @@ async function main() {
 
     await fs.mkdir(path.dirname(DATA_FILE), { recursive: true });
     await fs.writeFile(DATA_FILE, JSON.stringify(data, null, 2));
-    console.log(`Added ${newJsonFiles.length} new session(s).`);
+    console.log(`Added or updated ${newJsonFiles.length} session(s).`);
   } finally {
     client.close();
     await fs.rm(TMP_DIR, { recursive: true, force: true });
