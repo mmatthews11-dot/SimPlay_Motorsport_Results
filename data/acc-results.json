@@ -24217,8 +24217,8 @@
         },
         {
           "position": 36,
-          "classPosition": 1,
-          "driverClass": "Unclassified",
+          "classPosition": 29,
+          "driverClass": "Silver",
           "raceNumber": 164,
           "driver": "Darren Bell\nRoad Runner Motors",
           "allDrivers": [
@@ -24293,7 +24293,7 @@
         },
         {
           "position": 40,
-          "classPosition": 2,
+          "classPosition": 1,
           "driverClass": "Unclassified",
           "raceNumber": 9,
           "driver": "Patrick Leger",
@@ -24312,7 +24312,7 @@
         },
         {
           "position": 41,
-          "classPosition": 3,
+          "classPosition": 2,
           "driverClass": "Unclassified",
           "raceNumber": 55,
           "driver": "Mathew Duffin",
@@ -24786,8 +24786,8 @@
         },
         {
           "position": 24,
-          "classPosition": 1,
-          "driverClass": "Unclassified",
+          "classPosition": 19,
+          "driverClass": "Silver",
           "raceNumber": 164,
           "driver": "Darren Bell\nRoad Runner Motors",
           "allDrivers": [
@@ -24805,7 +24805,7 @@
         },
         {
           "position": 25,
-          "classPosition": 19,
+          "classPosition": 20,
           "driverClass": "Silver",
           "raceNumber": 12,
           "driver": "Nikola  Petrovic\nACC Maniacs",
@@ -24862,7 +24862,7 @@
         },
         {
           "position": 28,
-          "classPosition": 20,
+          "classPosition": 21,
           "driverClass": "Silver",
           "raceNumber": 21,
           "driver": "Neil Broom\nTeam GBR",
@@ -24881,7 +24881,7 @@
         },
         {
           "position": 29,
-          "classPosition": 21,
+          "classPosition": 22,
           "driverClass": "Silver",
           "raceNumber": 347,
           "driver": "Nikola Dosen\nACC Maniacs",
@@ -24957,7 +24957,7 @@
         },
         {
           "position": 33,
-          "classPosition": 22,
+          "classPosition": 23,
           "driverClass": "Silver",
           "raceNumber": 3,
           "driver": "Brian Craig\nTeam Merlot",
@@ -24976,7 +24976,7 @@
         },
         {
           "position": 34,
-          "classPosition": 23,
+          "classPosition": 24,
           "driverClass": "Silver",
           "raceNumber": 663,
           "driver": "Michael Johnson\nB&B Factory",
@@ -24995,7 +24995,7 @@
         },
         {
           "position": 35,
-          "classPosition": 24,
+          "classPosition": 25,
           "driverClass": "Silver",
           "raceNumber": 74,
           "driver": "P Dronelander\nIndependent",
@@ -25014,7 +25014,7 @@
         },
         {
           "position": 36,
-          "classPosition": 25,
+          "classPosition": 26,
           "driverClass": "Silver",
           "raceNumber": 18,
           "driver": "Diego Florez\nTeam RRM",
@@ -25033,7 +25033,7 @@
         },
         {
           "position": 37,
-          "classPosition": 26,
+          "classPosition": 27,
           "driverClass": "Silver",
           "raceNumber": 56,
           "driver": "John  Simko\nIndependent",
@@ -25052,7 +25052,7 @@
         },
         {
           "position": 38,
-          "classPosition": 27,
+          "classPosition": 28,
           "driverClass": "Silver",
           "raceNumber": 166,
           "driver": "Steve Coates\nKSR",
@@ -25071,7 +25071,7 @@
         },
         {
           "position": 39,
-          "classPosition": 28,
+          "classPosition": 29,
           "driverClass": "Silver",
           "raceNumber": 88,
           "driver": "Ben Phelan\nSimPlay Racing",
@@ -25090,7 +25090,7 @@
         },
         {
           "position": 40,
-          "classPosition": 2,
+          "classPosition": 1,
           "driverClass": "Unclassified",
           "raceNumber": 9,
           "driver": "Patrick Leger",
@@ -25109,7 +25109,7 @@
         },
         {
           "position": 41,
-          "classPosition": 3,
+          "classPosition": 2,
           "driverClass": "Unclassified",
           "raceNumber": 55,
           "driver": "Mathew Duffin",
@@ -25678,8 +25678,8 @@
         },
         {
           "position": 29,
-          "classPosition": 1,
-          "driverClass": "Silver",
+          "classPosition": 14,
+          "driverClass": "Gold",
           "raceNumber": 381,
           "driver": "Dejan Vasic\nBSH Spinners",
           "allDrivers": [
@@ -25697,7 +25697,7 @@
         },
         {
           "position": 30,
-          "classPosition": 14,
+          "classPosition": 15,
           "driverClass": "Gold",
           "raceNumber": 48,
           "driver": "Ste Gillies\nSleepyLizard Racing",
@@ -25716,7 +25716,7 @@
         },
         {
           "position": 31,
-          "classPosition": 15,
+          "classPosition": 16,
           "driverClass": "Gold",
           "raceNumber": 721,
           "driver": "Adam Prestage\nBlaze Motorsport",
@@ -26209,8 +26209,8 @@
         },
         {
           "position": 24,
-          "classPosition": 1,
-          "driverClass": "Silver",
+          "classPosition": 11,
+          "driverClass": "Gold",
           "raceNumber": 381,
           "driver": "Dejan Vasic\nBSH Spinners",
           "allDrivers": [
@@ -26228,7 +26228,7 @@
         },
         {
           "position": 25,
-          "classPosition": 11,
+          "classPosition": 12,
           "driverClass": "Gold",
           "raceNumber": 721,
           "driver": "Adam Prestage\nBlaze Motorsport",
@@ -26247,7 +26247,7 @@
         },
         {
           "position": 26,
-          "classPosition": 12,
+          "classPosition": 13,
           "driverClass": "Gold",
           "raceNumber": 566,
           "driver": "Benedek Varga\nSimPlay Racing",
@@ -26266,7 +26266,7 @@
         },
         {
           "position": 27,
-          "classPosition": 13,
+          "classPosition": 14,
           "driverClass": "Gold",
           "raceNumber": 32,
           "driver": "Mirko Ricchi\nRicchi's Course Team",
@@ -26285,7 +26285,7 @@
         },
         {
           "position": 28,
-          "classPosition": 14,
+          "classPosition": 15,
           "driverClass": "Gold",
           "raceNumber": 107,
           "driver": "Przemek Wolski\nGreasy Banditz Racing",
@@ -26342,7 +26342,7 @@
         },
         {
           "position": 31,
-          "classPosition": 15,
+          "classPosition": 16,
           "driverClass": "Gold",
           "raceNumber": 28,
           "driver": "Andrea Messineo\nGalaxy Racing Team",
@@ -28846,8 +28846,8 @@
         },
         {
           "position": 16,
-          "classPosition": 1,
-          "driverClass": "Silver",
+          "classPosition": 7,
+          "driverClass": "Gold",
           "raceNumber": 381,
           "driver": "Dejan Vasic\nBSH Spinners",
           "allDrivers": [
@@ -28865,7 +28865,7 @@
         },
         {
           "position": 17,
-          "classPosition": 7,
+          "classPosition": 8,
           "driverClass": "Gold",
           "raceNumber": 773,
           "driver": "Alessio  Piras\nRicchi's Course 2",
@@ -28884,7 +28884,7 @@
         },
         {
           "position": 18,
-          "classPosition": 8,
+          "classPosition": 9,
           "driverClass": "Gold",
           "raceNumber": 48,
           "driver": "Ste Gillies\nSleepyLizard Racing",
@@ -28903,7 +28903,7 @@
         },
         {
           "position": 19,
-          "classPosition": 9,
+          "classPosition": 10,
           "driverClass": "Gold",
           "raceNumber": 94,
           "driver": "Sam Williams\nTeam SPR",
@@ -28922,7 +28922,7 @@
         },
         {
           "position": 20,
-          "classPosition": 10,
+          "classPosition": 11,
           "driverClass": "Gold",
           "raceNumber": 57,
           "driver": "Lorenzo Mannavola\nGalaxy Racing Team",
@@ -28941,7 +28941,7 @@
         },
         {
           "position": 21,
-          "classPosition": 11,
+          "classPosition": 12,
           "driverClass": "Gold",
           "raceNumber": 199,
           "driver": "Chris De kort\nBlaze Motorsport",
@@ -28960,7 +28960,7 @@
         },
         {
           "position": 22,
-          "classPosition": 12,
+          "classPosition": 13,
           "driverClass": "Gold",
           "raceNumber": 721,
           "driver": "Adam Prestage\nBlaze Motorsport",
@@ -28979,7 +28979,7 @@
         },
         {
           "position": 23,
-          "classPosition": 13,
+          "classPosition": 14,
           "driverClass": "Gold",
           "raceNumber": 107,
           "driver": "Przemek Wolski\nGreasy Banditz Racing",
@@ -28998,7 +28998,7 @@
         },
         {
           "position": 24,
-          "classPosition": 14,
+          "classPosition": 15,
           "driverClass": "Gold",
           "raceNumber": 28,
           "driver": "Andrea Messineo\nGalaxy Racing Team",
@@ -29093,7 +29093,7 @@
         },
         {
           "position": 29,
-          "classPosition": 15,
+          "classPosition": 16,
           "driverClass": "Gold",
           "raceNumber": 666,
           "driver": "Sebastian Naidenov\nIndependent",
@@ -29112,7 +29112,7 @@
         },
         {
           "position": 30,
-          "classPosition": 16,
+          "classPosition": 17,
           "driverClass": "Gold",
           "raceNumber": 34,
           "driver": "Adam Holczer\nIndependent",
@@ -29605,8 +29605,8 @@
         },
         {
           "position": 23,
-          "classPosition": 1,
-          "driverClass": "Silver",
+          "classPosition": 12,
+          "driverClass": "Gold",
           "raceNumber": 381,
           "driver": "Dejan Vasic\nBSH Spinners",
           "allDrivers": [
@@ -29624,7 +29624,7 @@
         },
         {
           "position": 24,
-          "classPosition": 12,
+          "classPosition": 13,
           "driverClass": "Gold",
           "raceNumber": 34,
           "driver": "Adam Holczer\nIndependent",
@@ -29662,7 +29662,7 @@
         },
         {
           "position": 26,
-          "classPosition": 13,
+          "classPosition": 14,
           "driverClass": "Gold",
           "raceNumber": 666,
           "driver": "Sebastian Naidenov\nIndependent",
@@ -29681,7 +29681,7 @@
         },
         {
           "position": 27,
-          "classPosition": 14,
+          "classPosition": 15,
           "driverClass": "Gold",
           "raceNumber": 57,
           "driver": "Lorenzo Mannavola\nGalaxy Racing Team",
@@ -29700,7 +29700,7 @@
         },
         {
           "position": 28,
-          "classPosition": 15,
+          "classPosition": 16,
           "driverClass": "Gold",
           "raceNumber": 496,
           "driver": "Max Herendic\nBSH Spinners",
@@ -29719,7 +29719,7 @@
         },
         {
           "position": 29,
-          "classPosition": 16,
+          "classPosition": 17,
           "driverClass": "Gold",
           "raceNumber": 773,
           "driver": "Alessio  Piras\nRicchi's Course 2",
@@ -30174,8 +30174,8 @@
         },
         {
           "position": 19,
-          "classPosition": 1,
-          "driverClass": "Silver",
+          "classPosition": 7,
+          "driverClass": "Gold",
           "raceNumber": 381,
           "driver": "Dejan Vasic\nBSH Spinners",
           "allDrivers": [
@@ -30193,7 +30193,7 @@
         },
         {
           "position": 20,
-          "classPosition": 7,
+          "classPosition": 8,
           "driverClass": "Gold",
           "raceNumber": 199,
           "driver": "Chris De kort\nBlaze Motorsport",
@@ -30212,7 +30212,7 @@
         },
         {
           "position": 21,
-          "classPosition": 8,
+          "classPosition": 9,
           "driverClass": "Gold",
           "raceNumber": 107,
           "driver": "Przemek Wolski\nGreasy Banditz Racing",
@@ -30231,7 +30231,7 @@
         },
         {
           "position": 22,
-          "classPosition": 9,
+          "classPosition": 10,
           "driverClass": "Gold",
           "raceNumber": 32,
           "driver": "Mirko Ricchi\nRicchi's Course Team",
@@ -30250,7 +30250,7 @@
         },
         {
           "position": 23,
-          "classPosition": 10,
+          "classPosition": 11,
           "driverClass": "Gold",
           "raceNumber": 773,
           "driver": "Alessio  Piras\nRicchi's Course 2",
@@ -30269,7 +30269,7 @@
         },
         {
           "position": 24,
-          "classPosition": 11,
+          "classPosition": 12,
           "driverClass": "Gold",
           "raceNumber": 57,
           "driver": "Lorenzo Mannavola\nGalaxy Racing Team",
@@ -30307,7 +30307,7 @@
         },
         {
           "position": 26,
-          "classPosition": 12,
+          "classPosition": 13,
           "driverClass": "Gold",
           "raceNumber": 721,
           "driver": "Adam Prestage\nBlaze Motorsport",
@@ -30326,7 +30326,7 @@
         },
         {
           "position": 27,
-          "classPosition": 13,
+          "classPosition": 14,
           "driverClass": "Gold",
           "raceNumber": 28,
           "driver": "Andrea Messineo\nGalaxy Racing Team",
@@ -30345,7 +30345,7 @@
         },
         {
           "position": 28,
-          "classPosition": 14,
+          "classPosition": 15,
           "driverClass": "Gold",
           "raceNumber": 34,
           "driver": "Adam Holczer\nIndependent",
@@ -30383,7 +30383,7 @@
         },
         {
           "position": 30,
-          "classPosition": 15,
+          "classPosition": 16,
           "driverClass": "Gold",
           "raceNumber": 666,
           "driver": "Sebastian Naidenov\nIndependent",
@@ -30402,7 +30402,7 @@
         },
         {
           "position": 31,
-          "classPosition": 16,
+          "classPosition": 17,
           "driverClass": "Gold",
           "raceNumber": 496,
           "driver": "Max Herendic\nBSH Spinners",
@@ -31703,6 +31703,6 @@
     "261017_080316_FP.json",
     "261017_121446_FP.json"
   ],
-  "lastSync": "2026-10-17T10:51:22.013Z",
-  "repulledFrom": "261001"
+  "lastSync": "2026-10-17T10:59:07.280Z",
+  "repulledFrom": "261000"
 }
