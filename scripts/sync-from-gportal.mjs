@@ -37,7 +37,7 @@ const TMP_DIR = path.join(__dirname, "..", ".tmp-downloads-acc");
 // classes, car names...). It runs once per value (recorded in the data file as
 // `repulledFrom`), so it's safe to leave set; change the date to run it again.
 // Leave as "" for normal operation.
-const REPULL_FROM = "261001";
+const REPULL_FROM = "261000";
 
 // Replaces an existing session with the same id, or adds it if it's new, so
 // re-pulling a file can never create a duplicate.
