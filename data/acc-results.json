@@ -36130,6 +36130,575 @@
           "hasMandatoryPitstopIssue": false
         }
       ]
+    },
+    {
+      "id": "261029_231517_R2",
+      "game": "ACC",
+      "sourceFile": "261029_231517_R2.json",
+      "category": "PRO",
+      "sessionDate": "29 Oct",
+      "sessionType": "R2",
+      "sessionName": "Race 2",
+      "trackName": "hungaroring",
+      "serverName": "SimPlay Motorsport sponsored by Designed Manchester",
+      "raceWeekendIndex": 0,
+      "isWetSession": false,
+      "fastestLapDriver": "Melvin Milasten\nXCLusive Esports",
+      "fastestLapTime": "1:42.625",
+      "penaltyCount": 12,
+      "standings": [
+        {
+          "position": 1,
+          "classPosition": 1,
+          "driverClass": "Platinum",
+          "raceNumber": 268,
+          "driver": "Melvin Milasten\nXCLusive Esports",
+          "allDrivers": [
+            "Melvin Milasten\nXCLusive Esports"
+          ],
+          "car": "McLaren 720S GT3 Evo 2023 (GT3)",
+          "teamName": null,
+          "laps": 35,
+          "bestLap": "1:42.625",
+          "bestLapMs": 102625,
+          "lastLap": "1:44.067",
+          "referenceTimeMs": 3677560,
+          "gap": "-",
+          "hasMandatoryPitstopIssue": false
+        },
+        {
+          "position": 2,
+          "classPosition": 2,
+          "driverClass": "Platinum",
+          "raceNumber": 82,
+          "driver": "Pietro Micheletti\nRicchi's Course 2",
+          "allDrivers": [
+            "Pietro Micheletti\nRicchi's Course 2"
+          ],
+          "car": "Mercedes-AMG GT3 2020 (GT3)",
+          "teamName": null,
+          "laps": 35,
+          "bestLap": "1:42.927",
+          "bestLapMs": 102927,
+          "lastLap": "1:44.205",
+          "referenceTimeMs": 3693627,
+          "gap": "+16.067",
+          "hasMandatoryPitstopIssue": false
+        },
+        {
+          "position": 3,
+          "classPosition": 3,
+          "driverClass": "Platinum",
+          "raceNumber": 111,
+          "driver": "Tad Marinic\nBSH OZ Motorsport",
+          "allDrivers": [
+            "Tad Marinic\nBSH OZ Motorsport"
+          ],
+          "car": "BMW M4 GT3 (GT3)",
+          "teamName": null,
+          "laps": 35,
+          "bestLap": "1:42.815",
+          "bestLapMs": 102815,
+          "lastLap": "1:43.850",
+          "referenceTimeMs": 3695033,
+          "gap": "+17.473",
+          "hasMandatoryPitstopIssue": false
+        },
+        {
+          "position": 4,
+          "classPosition": 4,
+          "driverClass": "Platinum",
+          "raceNumber": 9,
+          "driver": "Patrick Leger\nSimPlay Racing",
+          "allDrivers": [
+            "Patrick Leger\nSimPlay Racing"
+          ],
+          "car": "Ford Mustang GT3 (GT3)",
+          "teamName": null,
+          "laps": 35,
+          "bestLap": "1:43.270",
+          "bestLapMs": 103270,
+          "lastLap": "1:44.302",
+          "referenceTimeMs": 3697204,
+          "gap": "+19.644",
+          "hasMandatoryPitstopIssue": false
+        },
+        {
+          "position": 5,
+          "classPosition": 5,
+          "driverClass": "Platinum",
+          "raceNumber": 100,
+          "driver": "Toni Sokolov\nBalkan Esports",
+          "allDrivers": [
+            "Toni Sokolov\nBalkan Esports"
+          ],
+          "car": "Ferrari 296 GT3 (GT3)",
+          "teamName": null,
+          "laps": 35,
+          "bestLap": "1:43.430",
+          "bestLapMs": 103430,
+          "lastLap": "1:44.210",
+          "referenceTimeMs": 3709768,
+          "gap": "+32.208",
+          "hasMandatoryPitstopIssue": false
+        },
+        {
+          "position": 6,
+          "classPosition": 1,
+          "driverClass": "Gold",
+          "raceNumber": 7,
+          "driver": "Thomas Cardno\nTeam SPR",
+          "allDrivers": [
+            "Thomas Cardno\nTeam SPR"
+          ],
+          "car": "BMW M4 GT3 (GT3)",
+          "teamName": null,
+          "laps": 35,
+          "bestLap": "1:43.822",
+          "bestLapMs": 103822,
+          "lastLap": "1:44.662",
+          "referenceTimeMs": 3722828,
+          "gap": "+45.268",
+          "hasMandatoryPitstopIssue": false
+        },
+        {
+          "position": 7,
+          "classPosition": 2,
+          "driverClass": "Gold",
+          "raceNumber": 57,
+          "driver": "Lorenzo Mannavola\nGalaxy Racing Team",
+          "allDrivers": [
+            "Lorenzo Mannavola\nGalaxy Racing Team"
+          ],
+          "car": "BMW M4 GT3 (GT3)",
+          "teamName": null,
+          "laps": 35,
+          "bestLap": "1:43.562",
+          "bestLapMs": 103562,
+          "lastLap": "1:44.715",
+          "referenceTimeMs": 3723222,
+          "gap": "+45.662",
+          "hasMandatoryPitstopIssue": false
+        },
+        {
+          "position": 8,
+          "classPosition": 6,
+          "driverClass": "Platinum",
+          "raceNumber": 64,
+          "driver": "Ian McGowan\nThe Casuals",
+          "allDrivers": [
+            "Ian McGowan\nThe Casuals"
+          ],
+          "car": "Ferrari 296 GT3 (GT3)",
+          "teamName": null,
+          "laps": 35,
+          "bestLap": "1:43.362",
+          "bestLapMs": 103362,
+          "lastLap": "1:45.450",
+          "referenceTimeMs": 3727135,
+          "gap": "+49.575",
+          "hasMandatoryPitstopIssue": false
+        },
+        {
+          "position": 9,
+          "classPosition": 3,
+          "driverClass": "Gold",
+          "raceNumber": 496,
+          "driver": "Max Herendic\nBSH Spinners",
+          "allDrivers": [
+            "Max Herendic\nBSH Spinners"
+          ],
+          "car": "BMW M4 GT3 (GT3)",
+          "teamName": null,
+          "laps": 35,
+          "bestLap": "1:43.697",
+          "bestLapMs": 103697,
+          "lastLap": "1:45.122",
+          "referenceTimeMs": 3729658,
+          "gap": "+52.098",
+          "hasMandatoryPitstopIssue": false
+        },
+        {
+          "position": 10,
+          "classPosition": 4,
+          "driverClass": "Gold",
+          "raceNumber": 5,
+          "driver": "Mateusz Migga\nMomentum Banditz",
+          "allDrivers": [
+            "Mateusz Migga\nMomentum Banditz"
+          ],
+          "car": "Mercedes-AMG GT3 2020 (GT3)",
+          "teamName": null,
+          "laps": 35,
+          "bestLap": "1:43.930",
+          "bestLapMs": 103930,
+          "lastLap": "1:45.035",
+          "referenceTimeMs": 3742643,
+          "gap": "+1:05.083",
+          "hasMandatoryPitstopIssue": false
+        },
+        {
+          "position": 11,
+          "classPosition": 5,
+          "driverClass": "Gold",
+          "raceNumber": 31,
+          "driver": "Damian Hibbs\nGreasy Banditz Racing",
+          "allDrivers": [
+            "Damian Hibbs\nGreasy Banditz Racing"
+          ],
+          "car": "McLaren 720S GT3 Evo 2023 (GT3)",
+          "teamName": null,
+          "laps": 35,
+          "bestLap": "1:44.287",
+          "bestLapMs": 104287,
+          "lastLap": "1:45.090",
+          "referenceTimeMs": 3743198,
+          "gap": "+1:05.638",
+          "hasMandatoryPitstopIssue": false
+        },
+        {
+          "position": 12,
+          "classPosition": 7,
+          "driverClass": "Platinum",
+          "raceNumber": 93,
+          "driver": "Ricchi Michele\nRicchi's Course Team",
+          "allDrivers": [
+            "Ricchi Michele\nRicchi's Course Team"
+          ],
+          "car": "Lamborghini Huracan Evo2 (GT3)",
+          "teamName": null,
+          "laps": 35,
+          "bestLap": "1:44.045",
+          "bestLapMs": 104045,
+          "lastLap": "1:48.950",
+          "referenceTimeMs": 3757354,
+          "gap": "+1:19.794",
+          "hasMandatoryPitstopIssue": false
+        },
+        {
+          "position": 13,
+          "classPosition": 6,
+          "driverClass": "Gold",
+          "raceNumber": 117,
+          "driver": "Robert Smith\nIndependent",
+          "allDrivers": [
+            "Robert Smith\nIndependent"
+          ],
+          "car": "Ford Mustang GT3 (GT3)",
+          "teamName": null,
+          "laps": 35,
+          "bestLap": "1:44.000",
+          "bestLapMs": 104000,
+          "lastLap": "1:45.422",
+          "referenceTimeMs": 3761929,
+          "gap": "+1:24.369",
+          "hasMandatoryPitstopIssue": false
+        },
+        {
+          "position": 14,
+          "classPosition": 8,
+          "driverClass": "Platinum",
+          "raceNumber": 73,
+          "driver": "Miroslav Alexandrov\nMomentum Banditz",
+          "allDrivers": [
+            "Miroslav Alexandrov\nMomentum Banditz"
+          ],
+          "car": "Ferrari 296 GT3 (GT3)",
+          "teamName": null,
+          "laps": 35,
+          "bestLap": "1:43.125",
+          "bestLapMs": 103125,
+          "lastLap": "2:00.112",
+          "referenceTimeMs": 3769243,
+          "gap": "+1:31.683",
+          "hasMandatoryPitstopIssue": false
+        },
+        {
+          "position": 15,
+          "classPosition": 9,
+          "driverClass": "Platinum",
+          "raceNumber": 302,
+          "driver": "A Skunky\nThe Casuals",
+          "allDrivers": [
+            "A Skunky\nThe Casuals"
+          ],
+          "car": "Ferrari 296 GT3 (GT3)",
+          "teamName": null,
+          "laps": 35,
+          "bestLap": "1:43.422",
+          "bestLapMs": 103422,
+          "lastLap": "1:45.120",
+          "referenceTimeMs": 3772208,
+          "gap": "+1:34.648",
+          "hasMandatoryPitstopIssue": false
+        },
+        {
+          "position": 16,
+          "classPosition": 7,
+          "driverClass": "Gold",
+          "raceNumber": 94,
+          "driver": "Sam Williams\nTeam SPR",
+          "allDrivers": [
+            "Sam Williams\nTeam SPR"
+          ],
+          "car": "BMW M4 GT3 (GT3)",
+          "teamName": null,
+          "laps": 35,
+          "bestLap": "1:44.067",
+          "bestLapMs": 104067,
+          "lastLap": "1:45.770",
+          "referenceTimeMs": 3773762,
+          "gap": "+1:36.202",
+          "hasMandatoryPitstopIssue": false
+        },
+        {
+          "position": 17,
+          "classPosition": 10,
+          "driverClass": "Platinum",
+          "raceNumber": 451,
+          "driver": "Jack McKenzie\nSleepyLizard Racing",
+          "allDrivers": [
+            "Jack McKenzie\nSleepyLizard Racing"
+          ],
+          "car": "Nissan GT-R Nismo GT3 2018 (GT3)",
+          "teamName": null,
+          "laps": 35,
+          "bestLap": "1:44.187",
+          "bestLapMs": 104187,
+          "lastLap": "1:45.710",
+          "referenceTimeMs": 3773912,
+          "gap": "+1:36.352",
+          "hasMandatoryPitstopIssue": false
+        },
+        {
+          "position": 18,
+          "classPosition": 8,
+          "driverClass": "Gold",
+          "raceNumber": 199,
+          "driver": "Chris De kort\nBlaze Motorsport",
+          "allDrivers": [
+            "Chris De kort\nBlaze Motorsport"
+          ],
+          "car": "Ferrari 296 GT3 (GT3)",
+          "teamName": null,
+          "laps": 35,
+          "bestLap": "1:44.692",
+          "bestLapMs": 104692,
+          "lastLap": "1:47.150",
+          "referenceTimeMs": 3778748,
+          "gap": "+1:41.188",
+          "hasMandatoryPitstopIssue": false
+        },
+        {
+          "position": 19,
+          "classPosition": 9,
+          "driverClass": "Gold",
+          "raceNumber": 566,
+          "driver": "Benedek Varga\nSimPlay Racing",
+          "allDrivers": [
+            "Benedek Varga\nSimPlay Racing"
+          ],
+          "car": "Ferrari 296 GT3 (GT3)",
+          "teamName": null,
+          "laps": 34,
+          "bestLap": "1:44.442",
+          "bestLapMs": 104442,
+          "lastLap": "1:46.852",
+          "referenceTimeMs": 3682584,
+          "gap": "+5.024",
+          "hasMandatoryPitstopIssue": false
+        },
+        {
+          "position": 20,
+          "classPosition": 10,
+          "driverClass": "Gold",
+          "raceNumber": 32,
+          "driver": "Mirko Ricchi\nRicchi's Course Team",
+          "allDrivers": [
+            "Mirko Ricchi\nRicchi's Course Team"
+          ],
+          "car": "Mercedes-AMG GT3 2020 (GT3)",
+          "teamName": null,
+          "laps": 34,
+          "bestLap": "1:44.499",
+          "bestLapMs": 104499,
+          "lastLap": "2:04.455",
+          "referenceTimeMs": 3685756,
+          "gap": "+8.196",
+          "hasMandatoryPitstopIssue": false
+        },
+        {
+          "position": 21,
+          "classPosition": 11,
+          "driverClass": "Gold",
+          "raceNumber": 107,
+          "driver": "Przemek Wolski\nGreasy Banditz Racing",
+          "allDrivers": [
+            "Przemek Wolski\nGreasy Banditz Racing"
+          ],
+          "car": "BMW M4 GT3 (GT3)",
+          "teamName": null,
+          "laps": 34,
+          "bestLap": "1:44.387",
+          "bestLapMs": 104387,
+          "lastLap": "1:44.387",
+          "referenceTimeMs": 3689031,
+          "gap": "+11.471",
+          "hasMandatoryPitstopIssue": false
+        },
+        {
+          "position": 22,
+          "classPosition": 12,
+          "driverClass": "Gold",
+          "raceNumber": 28,
+          "driver": "Andrea Messineo\nGalaxy Racing Team",
+          "allDrivers": [
+            "Andrea Messineo\nGalaxy Racing Team"
+          ],
+          "car": "McLaren 720S GT3 Evo 2023 (GT3)",
+          "teamName": null,
+          "laps": 34,
+          "bestLap": "1:44.427",
+          "bestLapMs": 104427,
+          "lastLap": "1:56.317",
+          "referenceTimeMs": 3704227,
+          "gap": "+26.667",
+          "hasMandatoryPitstopIssue": false
+        },
+        {
+          "position": 23,
+          "classPosition": 13,
+          "driverClass": "Gold",
+          "raceNumber": 381,
+          "driver": "Dejan Vasic\nBSH Spinners",
+          "allDrivers": [
+            "Dejan Vasic\nBSH Spinners"
+          ],
+          "car": "Lexus RC F GT3 (GT3)",
+          "teamName": null,
+          "laps": 34,
+          "bestLap": "1:44.712",
+          "bestLapMs": 104712,
+          "lastLap": "1:46.110",
+          "referenceTimeMs": 3707935,
+          "gap": "+30.375",
+          "hasMandatoryPitstopIssue": false
+        },
+        {
+          "position": 24,
+          "classPosition": 14,
+          "driverClass": "Gold",
+          "raceNumber": 773,
+          "driver": "Alessio  Piras\nRicchi's Course 2",
+          "allDrivers": [
+            "Alessio  Piras\nRicchi's Course 2"
+          ],
+          "car": "Mercedes-AMG GT3 2020 (GT3)",
+          "teamName": null,
+          "laps": 32,
+          "bestLap": "1:43.832",
+          "bestLapMs": 103832,
+          "lastLap": "2:10.312",
+          "referenceTimeMs": 3489811,
+          "gap": "-",
+          "hasMandatoryPitstopIssue": false
+        },
+        {
+          "position": 25,
+          "classPosition": 11,
+          "driverClass": "Platinum",
+          "raceNumber": 54,
+          "driver": "Carlos Diesch\nIndependent",
+          "allDrivers": [
+            "Carlos Diesch\nIndependent"
+          ],
+          "car": "Ferrari 296 GT3 (GT3)",
+          "teamName": null,
+          "laps": 3,
+          "bestLap": "1:43.777",
+          "bestLapMs": 103777,
+          "lastLap": "1:43.777",
+          "referenceTimeMs": 317887,
+          "gap": "-",
+          "hasMandatoryPitstopIssue": true
+        },
+        {
+          "position": 26,
+          "classPosition": 12,
+          "driverClass": "Platinum",
+          "raceNumber": 142,
+          "driver": "Maik Stokman\nSlingshot 2.0",
+          "allDrivers": [
+            "Maik Stokman\nSlingshot 2.0"
+          ],
+          "car": "BMW M4 GT3 (GT3)",
+          "teamName": null,
+          "laps": 1,
+          "bestLap": "35791:23.647",
+          "bestLapMs": 2147483647,
+          "lastLap": "2:02.547",
+          "referenceTimeMs": 124844,
+          "gap": "-",
+          "hasMandatoryPitstopIssue": false
+        },
+        {
+          "position": 27,
+          "classPosition": 13,
+          "driverClass": "Platinum",
+          "raceNumber": 2,
+          "driver": "Mr Overtaker\nBalkan SimHub",
+          "allDrivers": [
+            "Mr Overtaker\nBalkan SimHub"
+          ],
+          "car": "Ford Mustang GT3 (GT3)",
+          "teamName": null,
+          "laps": 0,
+          "bestLap": "35791:23.647",
+          "bestLapMs": 2147483647,
+          "lastLap": "35791:23.647",
+          "referenceTimeMs": 42561,
+          "gap": "-",
+          "hasMandatoryPitstopIssue": true
+        },
+        {
+          "position": 28,
+          "classPosition": 1,
+          "driverClass": "Unclassified",
+          "raceNumber": 55,
+          "driver": "Mathew Duffin",
+          "allDrivers": [
+            "Mathew Duffin\nCommentator"
+          ],
+          "car": "Porsche 992 GT3 Cup (GT3)",
+          "teamName": null,
+          "laps": 0,
+          "bestLap": "35791:23.647",
+          "bestLapMs": 2147483647,
+          "lastLap": "35791:23.647",
+          "referenceTimeMs": 2147483647,
+          "gap": "+35730:06.087",
+          "hasMandatoryPitstopIssue": true
+        },
+        {
+          "position": 29,
+          "classPosition": 15,
+          "driverClass": "Gold",
+          "raceNumber": 48,
+          "driver": "Ste Gillies\nSleepyLizard Racing",
+          "allDrivers": [
+            "Ste Gillies\nSleepyLizard Racing"
+          ],
+          "car": "Honda NSX Evo GT3 (GT3)",
+          "teamName": null,
+          "laps": 0,
+          "bestLap": "35791:23.647",
+          "bestLapMs": 2147483647,
+          "lastLap": "35791:23.647",
+          "referenceTimeMs": 2147483647,
+          "gap": "+35730:06.087",
+          "hasMandatoryPitstopIssue": true
+        }
+      ]
     }
   ],
   "processedFiles": [
@@ -37540,8 +38109,11 @@
     "261029_211159_FP.json",
     "261029_214520_FP2.json",
     "261029_213412_R.json",
-    "261029_220641_Q.json"
+    "261029_220641_Q.json",
+    "261029_231854_FP.json",
+    "261030_014103_FP.json",
+    "261029_231517_R2.json"
   ],
-  "lastSync": "2026-10-29T22:14:00.205Z",
+  "lastSync": "2026-10-30T01:58:00.753Z",
   "repulledFrom": "261000"
 }
