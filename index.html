@@ -200,6 +200,25 @@
     color:#fff;
   }
 
+  .view-tabs{display:flex;gap:1.4rem;padding:.9rem 1.2rem 0;border-bottom:1px solid var(--line);}
+  .view-tab{
+    background:none;
+    border:none;
+    border-bottom:2px solid transparent;
+    color:var(--text-dim);
+    font-family:'Oswald',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    font-size:.8rem;
+    font-weight:600;
+    padding:.2rem 0 .6rem;
+    cursor:pointer;
+  }
+  .view-tab[aria-selected="true"]{color:#fff;border-bottom-color:var(--amber);}
+  td.nw{white-space:nowrap;}
+  .up{color:var(--green);}
+  .down{color:var(--red);}
+
   table{width:100%;border-collapse:collapse;}
   .table-scroll{
     overflow-x:auto;
@@ -290,7 +309,7 @@
 </main>
 
 <footer>
-  ACC results pulled from the G-Portal server folder · LMU results pulled from public SimGrid pages.
+  ACC results pulled from the G-Portal server folder · LMU results from SimGrid pages and uploaded server result files.
 </footer>
 
 <script>
@@ -300,6 +319,7 @@ let ACTIVE_ID = null;
 let ACTIVE_CATEGORY = 'All';
 let ACTIVE_SEASON = 'All';
 let ACTIVE_CLASS = 'Overall';
+let ACTIVE_VIEW = 'results';
 
 async function fetchJson(path) {
   try {
@@ -312,20 +332,34 @@ async function fetchJson(path) {
 }
 
 async function load() {
-  const [accData, lmuData] = await Promise.all([
+  const [accData, lmuData, importData] = await Promise.all([
     fetchJson('data/acc-results.json'),
     fetchJson('data/lmu-results.json'),
+    fetchJson('data/lmu-imports.json'),
   ]);
 
-  const sessions = [
-    ...((accData && accData.sessions) || []),
-    ...((lmuData && lmuData.sessions) || []),
-  ];
+  // LMU results can come from two places: SimGrid pages (data/lmu-results.json)
+  // and uploaded game result files (data/lmu-imports.json). Where a season has
+  // uploaded files, those are used for that whole season, because the SimGrid
+  // pages only show logged-out visitors the top 5 of each class.
+  const imported = (importData && importData.sessions) || [];
+  const importedSeasons = new Set(imported.map(x => x.season));
+  const scraped = ((lmuData && lmuData.sessions) || []).filter(x => !importedSeasons.has(x.season));
+
+  // Newest first: latest season, then latest session within it.
+  const lmuSessions = [...scraped, ...imported]
+    .map((x, i) => ({ x, i }))
+    .sort((a, b) =>
+      (b.x.seasonOrder ?? 0) - (a.x.seasonOrder ?? 0) ||
+      (a.x.startTime && b.x.startTime ? b.x.startTime.localeCompare(a.x.startTime) : b.i - a.i))
+    .map(e => e.x);
+
+  const lastLmu = [lmuData?.lastSync, importData?.lastSync].filter(Boolean).sort().pop() ?? null;
 
   DATA = {
-    sessions,
+    sessions: [...((accData && accData.sessions) || []), ...lmuSessions],
     accLastSync: accData?.lastSync ?? null,
-    lmuLastSync: lmuData?.lastSync ?? null,
+    lmuLastSync: lastLmu,
   };
   render();
 }
@@ -521,6 +555,119 @@ function renderAccBoard(session) {
 }
 
 // ---- LMU: classes kept fully separate, no combined "Overall" view ----
+function esc(v) {
+  return String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+function fmtLap(ms) {
+  if (ms == null) return '–';
+  const m = Math.floor(ms / 60000);
+  const sec = Math.floor((ms % 60000) / 1000);
+  return `${m}:${String(sec).padStart(2, '0')}.${String(Math.round(ms % 1000)).padStart(3, '0')}`;
+}
+const fmtSector = ms => (ms == null ? '–' : (ms / 1000).toFixed(3));
+const fmtDelta = ms => (ms == null ? '–' : ms === 0 ? '-' : `+${(ms / 1000).toFixed(3)}`);
+
+const VIEW_LABELS = { results: 'Results', pace: 'Race pace', sectors: 'Sectors' };
+
+function driverCell(s) {
+  const flag = s.status && s.status !== 'FINISHED'
+    ? `<span class="status-flag"${s.statusNote ? ` title="${esc(s.statusNote)}"` : ''}>${esc(s.status)}</span>` : '';
+  return `<td class="driver">${esc(s.driver)}${flag}<span class="car">${esc(s.car || '')}</span></td>`;
+}
+
+// The standard results table (same as before).
+function lmuResultsView(rows, isRace) {
+  const leaderRef = rows[0]?.referenceTimeMs;
+  const fastestMs = Math.min(...rows.map(r => r.bestLapMs ?? Infinity));
+  const maxGapMs = Math.max(1, ...rows.map(r => {
+    if (isRace) return parseRaceGapMs(r.gapDisplay) || 0;
+    if (r.referenceTimeMs == null || leaderRef == null) return 0;
+    return Math.max(0, r.referenceTimeMs - leaderRef);
+  }));
+
+  const body = rows.map((s, i) => {
+    let gapDisplay, barPct;
+    if (isRace) {
+      gapDisplay = i === 0 ? '-' : (s.status !== 'FINISHED' ? s.status : (s.gapDisplay || '–'));
+      const gapMs = parseRaceGapMs(s.gapDisplay);
+      barPct = gapMs ? Math.min(100, (gapMs / maxGapMs) * 100) : (i === 0 ? 0 : 100);
+    } else {
+      const gapMs = (s.referenceTimeMs != null && leaderRef != null) ? s.referenceTimeMs - leaderRef : null;
+      gapDisplay = i === 0 ? '-' : (s.status !== 'FINISHED' ? s.status : formatGap(gapMs));
+      barPct = (maxGapMs && gapMs) ? Math.min(100, (gapMs / maxGapMs) * 100) : 0;
+    }
+    const isFastest = s.bestLapMs != null && s.bestLapMs === fastestMs;
+    return `
+      <tr>
+        <td class="pos">${s.position}</td>
+        <td class="num">#${esc(s.raceNumber ?? '–')}</td>
+        ${driverCell(s)}
+        <td class="num">${s.laps ?? '–'}</td>
+        <td class="time ${isFastest ? 'best' : ''}">${s.bestLap ?? '–'}</td>
+        <td>
+          <div class="gap-cell">
+            <div class="gap-bar-track"><div class="gap-bar-fill" style="width:${barPct}%"></div></div>
+            <span class="gap-value">${gapDisplay}</span>
+          </div>
+        </td>
+      </tr>`;
+  }).join('');
+
+  return {
+    head: `<th>Pos</th><th>No.</th><th>Driver</th><th>Laps</th><th>Best lap</th><th>${isRace ? 'Gap' : 'Gap to P1'}</th>`,
+    body,
+  };
+}
+
+// Race pace: average of clean laps (no lap 1, pit laps, out-laps or laps >107% of the driver's median).
+function lmuPaceView(rows) {
+  const bestPace = Math.min(...rows.map(r => r.avgPaceMs ?? Infinity));
+  const body = rows.map(s => {
+    const g = s.positionsGained;
+    const moved = g == null ? '–' : g > 0 ? `<span class="up">▲${g}</span>` : g < 0 ? `<span class="down">▼${-g}</span>` : '–';
+    return `
+      <tr>
+        <td class="pos">${s.position}</td>
+        <td class="num">#${esc(s.raceNumber ?? '–')}</td>
+        ${driverCell(s)}
+        <td class="time ${s.avgPaceMs != null && s.avgPaceMs === bestPace ? 'best' : ''}">${fmtLap(s.avgPaceMs)}</td>
+        <td class="num nw">${fmtDelta(s.paceGapMs)}</td>
+        <td class="num nw">${s.consistencyMs != null ? '±' + (s.consistencyMs / 1000).toFixed(2) + 's' : '–'}</td>
+        <td class="num">${s.pitstops ?? '–'}</td>
+        <td class="num nw">${esc(s.tyres || '–')}</td>
+        <td class="num nw">${s.topSpeed != null ? Math.round(s.topSpeed) + ' km/h' : '–'}</td>
+        <td class="num">${s.gridPosition ?? '–'}</td>
+        <td class="num">${moved}</td>
+      </tr>`;
+  }).join('');
+  return {
+    head: '<th>Pos</th><th>No.</th><th>Driver</th><th>Avg pace</th><th>Gap to best</th><th>Consistency</th><th>Pits</th><th>Tyres</th><th>Top speed</th><th>Start</th><th>+/-</th>',
+    body,
+  };
+}
+
+// Best sector times and the "ideal lap" (best S1 + best S2 + best S3).
+function lmuSectorsView(rows) {
+  const minOf = k => Math.min(...rows.map(r => r[k] ?? Infinity));
+  const best = { s1: minOf('bestS1Ms'), s2: minOf('bestS2Ms'), s3: minOf('bestS3Ms'), ideal: minOf('idealLapMs'), lap: minOf('bestLapMs') };
+  const cell = (v, b, fmt) => `<td class="time ${v != null && v === b ? 'best' : ''}">${fmt(v)}</td>`;
+  const body = rows.map(s => `
+      <tr>
+        <td class="pos">${s.position}</td>
+        <td class="num">#${esc(s.raceNumber ?? '–')}</td>
+        ${driverCell(s)}
+        ${cell(s.bestS1Ms, best.s1, fmtSector)}
+        ${cell(s.bestS2Ms, best.s2, fmtSector)}
+        ${cell(s.bestS3Ms, best.s3, fmtSector)}
+        ${cell(s.idealLapMs, best.ideal, fmtLap)}
+        ${cell(s.bestLapMs, best.lap, fmtLap)}
+      </tr>`).join('');
+  return {
+    head: '<th>Pos</th><th>No.</th><th>Driver</th><th>Best S1</th><th>Best S2</th><th>Best S3</th><th>Ideal lap</th><th>Best lap</th>',
+    body,
+  };
+}
+
 function renderLmuBoard(session) {
   const isRace = session.sessionType === 'R';
   const classNames = Object.keys(session.standingsByClass || {});
@@ -534,65 +681,34 @@ function renderLmuBoard(session) {
     ACTIVE_CLASS = classNames[0];
   }
 
+  // Sessions built from the game's result files carry lap-by-lap data, so they
+  // get extra views. Sessions from SimGrid pages only have the results table.
+  const views = session.source !== 'xml' ? ['results'] : isRace ? ['results', 'pace', 'sectors'] : ['results', 'sectors'];
+  if (!views.includes(ACTIVE_VIEW)) ACTIVE_VIEW = 'results';
+
   const rows = session.standingsByClass[ACTIVE_CLASS] || [];
-  const leaderRef = rows[0]?.referenceTimeMs;
-  const fastestMs = Math.min(...rows.map(r => r.bestLapMs ?? Infinity));
+  const table = ACTIVE_VIEW === 'pace' ? lmuPaceView(rows)
+    : ACTIVE_VIEW === 'sectors' ? lmuSectorsView(rows)
+    : lmuResultsView(rows, isRace);
 
-  const maxGapMs = Math.max(1, ...rows.map(r => {
-    if (isRace) return parseRaceGapMs(r.gapDisplay) || 0;
-    if (r.referenceTimeMs == null || leaderRef == null) return 0;
-    return Math.max(0, r.referenceTimeMs - leaderRef);
-  }));
-
-  const rowsHtml = rows.map((s, i) => {
-    let gapDisplay, barPct;
-    if (isRace) {
-      gapDisplay = i === 0 ? '-' : (s.status !== 'FINISHED' ? s.status : (s.gapDisplay || '–'));
-      const gapMs = parseRaceGapMs(s.gapDisplay);
-      barPct = gapMs ? Math.min(100, (gapMs / maxGapMs) * 100) : (i === 0 ? 0 : 100);
-    } else {
-      const gapMs = (s.referenceTimeMs != null && leaderRef != null) ? s.referenceTimeMs - leaderRef : null;
-      gapDisplay = i === 0 ? '-' : (s.status !== 'FINISHED' ? s.status : formatGap(gapMs));
-      barPct = (maxGapMs && gapMs) ? Math.min(100, (gapMs / maxGapMs) * 100) : 0;
-    }
-    const isFastest = s.bestLapMs != null && s.bestLapMs === fastestMs;
-    const statusFlag = s.status && s.status !== 'FINISHED' ? `<span class="status-flag">${s.status}</span>` : '';
-    return `
-      <tr>
-        <td class="pos">${s.position}</td>
-        <td class="num">#${s.raceNumber ?? '–'}</td>
-        <td class="driver">
-          ${s.driver}${statusFlag}
-          <span class="car">${s.car || ''}</span>
-        </td>
-        <td class="num">${s.laps ?? '–'}</td>
-        <td class="time ${isFastest ? 'best' : ''}">${s.bestLap ?? '–'}</td>
-        <td>
-          <div class="gap-cell">
-            <div class="gap-bar-track"><div class="gap-bar-fill" style="width:${barPct}%"></div></div>
-            <span class="gap-value">${gapDisplay}</span>
-          </div>
-        </td>
-      </tr>`;
-  }).join('');
+  const viewTabs = views.length > 1
+    ? `<div class="view-tabs">${views.map(v => `<button class="view-tab" data-view="${v}" aria-selected="${v === ACTIVE_VIEW}">${VIEW_LABELS[v]}</button>`).join('')}</div>`
+    : '';
+  const duration = isRace && session.raceMinutes ? `${session.raceMinutes} min · ` : '';
 
   document.getElementById('board').innerHTML = `
     <div class="board-head">
-      <h2>${session.sessionName} — ${session.trackName}</h2>
-      <span class="meta">${session.totalDrivers ?? rows.length} driver(s)</span>
+      <h2>${esc(session.sessionName)} — ${esc(session.trackName)}</h2>
+      <span class="meta">${duration}${session.totalDrivers ?? rows.length} driver(s)</span>
     </div>
     <div class="class-tabs">
-      ${classNames.map(cls => `<button class="class-tab" data-class="${cls}" aria-selected="${cls === ACTIVE_CLASS}">${cls}</button>`).join('')}
+      ${classNames.map(cls => `<button class="class-tab" data-class="${esc(cls)}" aria-selected="${cls === ACTIVE_CLASS}">${esc(cls)}</button>`).join('')}
     </div>
+    ${viewTabs}
     <div class="table-scroll">
     <table>
-      <thead>
-        <tr>
-          <th>Pos</th><th>No.</th><th>Driver</th><th>Laps</th><th>Best lap</th>
-          <th>${isRace ? 'Gap' : 'Gap to P1'}</th>
-        </tr>
-      </thead>
-      <tbody>${rowsHtml}</tbody>
+      <thead><tr>${table.head}</tr></thead>
+      <tbody>${table.body}</tbody>
     </table>
     </div>
   `;
@@ -600,6 +716,12 @@ function renderLmuBoard(session) {
   document.querySelectorAll('.class-tab').forEach(btn => {
     btn.addEventListener('click', () => {
       ACTIVE_CLASS = btn.dataset.class;
+      renderLmuBoard(session);
+    });
+  });
+  document.querySelectorAll('.view-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      ACTIVE_VIEW = btn.dataset.view;
       renderLmuBoard(session);
     });
   });

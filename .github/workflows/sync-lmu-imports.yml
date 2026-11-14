@@ -1,0 +1,39 @@
+name: Build LMU results from uploaded files
+
+# Runs whenever files in lmu-imports/ change (i.e. when you upload a result
+# file), and can also be run by hand from the Actions tab.
+on:
+  push:
+    paths:
+      - "lmu-imports/**"
+      - "scripts/parse-lmu-xml.mjs"
+      - "scripts/sync-lmu-imports.mjs"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+# If two uploads land close together, run them one after the other.
+concurrency:
+  group: lmu-imports
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Build data from the uploaded XML files
+        run: node scripts/sync-lmu-imports.mjs
+      - name: Commit updated data
+        run: |
+          git config user.name "lmu-imports-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/lmu-imports.json
+          git diff --staged --quiet && echo "Nothing to commit" && exit 0
+          git commit -m "Update LMU results from uploaded files [automated]"
+          git pull --rebase origin main
+          git push

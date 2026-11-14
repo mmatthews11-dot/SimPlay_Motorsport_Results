@@ -38,6 +38,10 @@ const CHAMPIONSHIPS = [
   {
     championshipId: "26645",
     seasonLabel: "Season 2",
+    // Season 2 is now built from the game's own result files (see lmu-imports/),
+    // because SimGrid only shows logged-out visitors the top 5 of each class.
+    // Switch this back to true to resume reading SimGrid's pages for it.
+    enabled: false,
     refreshLatest: 3, // re-check the 3 most recent rounds each sync (results can publish late or be corrected)
     classes: [
       { classId: "136108", classLabel: "Hypercar" },
@@ -45,6 +49,9 @@ const CHAMPIONSHIPS = [
     ],
   },
 ];
+// What SimGrid shows logged-out visitors in place of the full table.
+const LOGIN_WALL = /log in to see the full results/i;
+const LIMITED_VIEW_ROWS = 5;
 const SESSION_TYPES = [
   { sessionType: "qualifying", sessionName: "Qualifying" },
   { sessionType: "race_1", sessionName: "Race 1" },
@@ -103,6 +110,17 @@ async function fetchSessionForAllClasses(baseUrl, classes, raceId, roundId, sess
       return { failed: true };
     }
     const rows = parseSimGridResultsTable(html, { classLabel, isRace: sessionType.startsWith("race") });
+
+    // SimGrid only shows the top 5 positions to logged-out visitors (and a
+    // "Log in to see the full results" prompt under the table). This scraper
+    // is logged out, so for most sessions it only ever sees those 5 rows.
+    // Saving that as if it were the whole result is misleading — and a
+    // refresh would overwrite good data with it — so treat it as unusable.
+    if (LOGIN_WALL.test(html) && rows.length >= LIMITED_VIEW_ROWS) {
+      console.log(`  (${classLabel}/${sessionType}: SimGrid is only showing the top ${rows.length} to logged-out visitors — not saving partial results)`);
+      return { limited: true };
+    }
+
     if (rows.length > 0) anyRowsFound = true;
     classResults.push({ classId, classLabel, rows });
   }
@@ -120,6 +138,10 @@ function upsertSession(sessions, summary) {
 
 async function syncChampionship(championship, data, seasonOrder) {
   const { championshipId, seasonLabel, classes } = championship;
+  if (championship.enabled === false) {
+    console.log(`\n=== ${seasonLabel}: skipped (turned off in the config) ===`);
+    return;
+  }
   const baseUrl = `https://www.thesimgrid.com/championships/${championshipId}`;
   const processed = new Set(data.processedRaces[championshipId] || []);
 
@@ -150,11 +172,16 @@ async function syncChampionship(championship, data, seasonOrder) {
 
   for (const race of racesToFetch) {
     let foundAnySessionData = false;
+    let limitedHit = false;
 
     for (const { sessionType, sessionName } of SESSION_TYPES) {
       console.log(`Fetching ${race.label} — ${sessionName}...`);
       const result = await fetchSessionForAllClasses(baseUrl, classes, race.raceId, race.roundId, sessionType);
       if (result && result.failed) continue; // keep whatever we already had
+      if (result && result.limited) {
+        limitedHit = true;
+        break; // every other session for this race will be limited too
+      }
       if (!result) {
         console.log(`  (no ${sessionName} data — likely doesn't exist for this round)`);
         continue;
@@ -181,6 +208,8 @@ async function syncChampionship(championship, data, seasonOrder) {
     // unmarked means it's simply retried again on the next scheduled run.
     if (foundAnySessionData) {
       processed.add(race.raceId);
+    } else if (limitedHit) {
+      console.log(`  (${race.label}: only the limited logged-out view is available, so nothing was saved)`);
     } else {
       console.log(`  (${race.label} marked "Ended" but no results found yet for any session — will retry next sync)`);
     }
