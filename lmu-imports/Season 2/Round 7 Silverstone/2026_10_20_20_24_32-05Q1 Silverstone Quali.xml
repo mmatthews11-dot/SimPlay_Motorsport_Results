@@ -1,0 +1,1657 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE rF [
+<!ENTITY rFEnt "rFactor Entity">
+]>
+<rFactorXML version="1.0">
+<RaceResults>
+<Setting>Multiplayer</Setting>
+<ServerName></ServerName>
+<ClientFuelVisible>2</ClientFuelVisible>
+<PlayerFile>Settings</PlayerFile>
+<DateTime>1792519951</DateTime>
+<TimeString>2026/10/20 19:12:31</TimeString>
+<TrackVenue>Silverstone Circuit</TrackVenue>
+<TrackCourse>Silverstone Grand Prix Circuit - WEC</TrackCourse>
+<TrackEvent>6 Hours of Silverstone</TrackEvent>
+<TrackData>C:\Program Files (x86)\Steam\steamapps\common\Le Mans Ultimate\Installed\Locations\Silverstone_2025\1.13\layoutWEC.mas</TrackData>
+<TrackLength>5869.2</TrackLength>
+<GameVersion>1.4200</GameVersion>
+<Dedicated>0</Dedicated>
+<ConnectionType upload="1000" download="8000">ADSL2+ 16M</ConnectionType>
+<RaceLaps>0</RaceLaps>
+<RaceTime>100</RaceTime>
+<MechFailRate>0</MechFailRate>
+<DamageMult>100</DamageMult>
+<FuelMult>1</FuelMult>
+<TireMult>1</TireMult>
+<VehiclesAllowed>BMW_M4_LMGT3,</VehiclesAllowed>
+<ParcFerme>3</ParcFerme>
+<FixedSetups>0</FixedSetups>
+<FreeSettings>0</FreeSettings>
+<FixedUpgrades>0</FixedUpgrades>
+<TireWarmers>0</TireWarmers>
+<Qualify>
+<DateTime>1792523543</DateTime>
+<TimeString>2026/10/20 20:12:23</TimeString>
+<Laps>2147483647</Laps>
+<Minutes>10</Minutes>
+<Stream>
+<TrackLimits Driver="Mattias Claes" ID="14" Lap="0" WarningPoints="0.5" CurrentPoints="0.5" Resolution="5" et="48.8">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Mattias Claes" ID="14" Lap="0" WarningPoints="0.5" CurrentPoints="0.5" Resolution="5" et="48.8">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Mattias Claes" ID="14" Lap="0" WarningPoints="0.5" CurrentPoints="0.5" Resolution="5" et="49.9">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Mattias Claes" ID="14" Lap="0" WarningPoints="0.5" CurrentPoints="0.5" Resolution="5" et="49.9">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="John Wainwright" ID="15" Lap="0" WarningPoints="2" CurrentPoints="2" Resolution="5" et="52.1">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="John Wainwright" ID="15" Lap="0" WarningPoints="2" CurrentPoints="2" Resolution="5" et="52.1">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="John Wainwright" ID="15" Lap="0" WarningPoints="2" CurrentPoints="2" Resolution="5" et="53.3">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="John Wainwright" ID="15" Lap="0" WarningPoints="2" CurrentPoints="2" Resolution="5" et="53.3">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Jamahl Clouden" ID="7" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="54.5">No Further Action</TrackLimits>
+<TrackLimits Driver="Jamahl Clouden" ID="7" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="54.5">No Further Action</TrackLimits>
+<TrackLimits Driver="Jamahl Clouden" ID="7" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="55.6">No Further Action</TrackLimits>
+<TrackLimits Driver="Jamahl Clouden" ID="7" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="55.6">No Further Action</TrackLimits>
+<TrackLimits Driver="Roydon Stapley" ID="24" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="61.7">No Further Action</TrackLimits>
+<TrackLimits Driver="Roydon Stapley" ID="24" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="61.7">No Further Action</TrackLimits>
+<TrackLimits Driver="Riccardo Gabetti" ID="17" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="62.5">No Further Action</TrackLimits>
+<TrackLimits Driver="Riccardo Gabetti" ID="17" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="62.5">No Further Action</TrackLimits>
+<TrackLimits Driver="Roydon Stapley" ID="24" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="62.9">No Further Action</TrackLimits>
+<TrackLimits Driver="Roydon Stapley" ID="24" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="62.9">No Further Action</TrackLimits>
+<TrackLimits Driver="Riccardo Gabetti" ID="17" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="63.7">No Further Action</TrackLimits>
+<TrackLimits Driver="Riccardo Gabetti" ID="17" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="63.7">No Further Action</TrackLimits>
+<Score et="64.3">Michael Harris#8907(26) lap=0 point=1 t=-1.000 et=64.203</Score>
+<Score et="64.3">Michael Harris#8907(26) lap=0 point=2 t=-1.000 et=64.203</Score>
+<Score et="64.3">Michael Harris#8907(26) lap=1 point=0 t=-1.000 et=64.203</Score>
+<TrackLimits Driver="Roydon Stapley" ID="24" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="68.7">No Further Action</TrackLimits>
+<TrackLimits Driver="Roydon Stapley" ID="24" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="68.7">No Further Action</TrackLimits>
+<Score et="69.3">Riccardo Gabetti(17) lap=0 point=1 t=-1.000 et=69.200</Score>
+<Score et="69.3">Sebastian Vorhauer(9) lap=0 point=1 t=-1.000 et=69.240</Score>
+<Score et="69.5">Gray Langley(4) lap=0 point=1 t=-1.000 et=69.380</Score>
+<Score et="69.5">Benjamin Rook(0) lap=0 point=1 t=-1.000 et=69.500</Score>
+<TrackLimits Driver="Roydon Stapley" ID="24" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="69.9">No Further Action</TrackLimits>
+<TrackLimits Driver="Roydon Stapley" ID="24" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="69.9">No Further Action</TrackLimits>
+<Score et="70.1">Jamahl Clouden(7) lap=0 point=1 t=-1.000 et=70.100</Score>
+<Score et="70.4">Rick Aalders(19) lap=0 point=1 t=-1.000 et=70.400</Score>
+<Incident et="70.6">Wellington Jimenez(10) reported contact (2051.07) with Immovable</Incident>
+<Score et="70.8">Morgan Kalseth(13) lap=0 point=1 t=-1.000 et=70.780</Score>
+<Score et="71.5">Tony Garona(23) lap=0 point=1 t=-1.000 et=71.480</Score>
+<Score et="73.6">Davide Masi(2) lap=0 point=1 t=-1.000 et=73.520</Score>
+<Incident et="75.1">Wellington Jimenez(10) reported contact (18.84) with Sign</Incident>
+<Score et="75.7">John Wainwright(15) lap=0 point=1 t=-1.000 et=75.660</Score>
+<Score et="75.8">Mattias Claes(14) lap=0 point=1 t=-1.000 et=75.720</Score>
+<Score et="76.9">Roydon Stapley(24) lap=0 point=1 t=-1.000 et=76.880</Score>
+<TrackLimits Driver="Wellington Jimenez" ID="10" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="80.3">No Further Action</TrackLimits>
+<TrackLimits Driver="Wellington Jimenez" ID="10" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="80.3">No Further Action</TrackLimits>
+<TrackLimits Driver="Wellington Jimenez" ID="10" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="81.5">No Further Action</TrackLimits>
+<TrackLimits Driver="Wellington Jimenez" ID="10" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="81.5">No Further Action</TrackLimits>
+<Score et="83.9">Mihai Daniel Ciubotariu(28) lap=0 point=1 t=-1.000 et=83.840</Score>
+<Score et="84.4">Vince Schaefers(5) lap=0 point=1 t=-1.000 et=84.320</Score>
+<TrackLimits Driver="Jamahl Clouden" ID="7" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="84.5">No Further Action</TrackLimits>
+<TrackLimits Driver="Jamahl Clouden" ID="7" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="84.5">No Further Action</TrackLimits>
+<Score et="85.5">Wellington Jimenez(10) lap=0 point=1 t=-1.000 et=85.420</Score>
+<TrackLimits Driver="Jamahl Clouden" ID="7" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="85.7">No Further Action</TrackLimits>
+<TrackLimits Driver="Jamahl Clouden" ID="7" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="85.7">No Further Action</TrackLimits>
+<TrackLimits Driver="Wellington Jimenez" ID="10" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="86.3">No Further Action</TrackLimits>
+<TrackLimits Driver="Wellington Jimenez" ID="10" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="86.3">No Further Action</TrackLimits>
+<Score et="87.4">Ilkay Erkilincoglu(16) lap=0 point=1 t=-1.000 et=87.300</Score>
+<TrackLimits Driver="Wellington Jimenez" ID="10" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="87.5">No Further Action</TrackLimits>
+<TrackLimits Driver="Wellington Jimenez" ID="10" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="87.5">No Further Action</TrackLimits>
+<TrackLimits Driver="John Wainwright" ID="15" Lap="0" WarningPoints="0" CurrentPoints="2" Resolution="7" et="88.2">No Further Action</TrackLimits>
+<TrackLimits Driver="John Wainwright" ID="15" Lap="0" WarningPoints="0" CurrentPoints="2" Resolution="7" et="88.2">No Further Action</TrackLimits>
+<TrackLimits Driver="John Wainwright" ID="15" Lap="0" WarningPoints="0" CurrentPoints="2" Resolution="7" et="89.4">No Further Action</TrackLimits>
+<TrackLimits Driver="John Wainwright" ID="15" Lap="0" WarningPoints="0" CurrentPoints="2" Resolution="7" et="89.4">No Further Action</TrackLimits>
+<Score et="91.0">Roberto Cristofanilli(1) lap=0 point=1 t=-1.000 et=90.920</Score>
+<Score et="92.0">Mark Bell(11) lap=0 point=1 t=-1.000 et=91.920</Score>
+<Score et="93.5">Dan Davis#8264(18) lap=0 point=1 t=-1.000 et=93.460</Score>
+<Score et="95.0">Matthew J Wright(6) lap=0 point=1 t=-1.000 et=94.940</Score>
+<TrackLimits Driver="Roberto Cristofanilli" ID="1" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="97.8">No Further Action</TrackLimits>
+<TrackLimits Driver="Roberto Cristofanilli" ID="1" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="97.8">No Further Action</TrackLimits>
+<Score et="98.0">Mike Hunt#4317(21) lap=0 point=1 t=-1.000 et=97.920</Score>
+<TrackLimits Driver="Roberto Cristofanilli" ID="1" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="98.9">No Further Action</TrackLimits>
+<TrackLimits Driver="Roberto Cristofanilli" ID="1" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="98.9">No Further Action</TrackLimits>
+<TrackLimits Driver="Sebastian Vorhauer" ID="9" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="100.1">No Further Action</TrackLimits>
+<TrackLimits Driver="Sebastian Vorhauer" ID="9" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="100.1">No Further Action</TrackLimits>
+<TrackLimits Driver="Sebastian Vorhauer" ID="9" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="101.3">No Further Action</TrackLimits>
+<TrackLimits Driver="Sebastian Vorhauer" ID="9" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="101.3">No Further Action</TrackLimits>
+<TrackLimits Driver="Dan Davis#8264" ID="18" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="101.7">No Further Action</TrackLimits>
+<TrackLimits Driver="Dan Davis#8264" ID="18" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="101.7">No Further Action</TrackLimits>
+<TrackLimits Driver="Gray Langley" ID="4" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="102.5">No Further Action</TrackLimits>
+<TrackLimits Driver="Gray Langley" ID="4" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="102.5">No Further Action</TrackLimits>
+<TrackLimits Driver="Dan Davis#8264" ID="18" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="102.8">No Further Action</TrackLimits>
+<TrackLimits Driver="Dan Davis#8264" ID="18" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="102.8">No Further Action</TrackLimits>
+<TrackLimits Driver="Gray Langley" ID="4" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="103.7">No Further Action</TrackLimits>
+<TrackLimits Driver="Gray Langley" ID="4" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="103.7">No Further Action</TrackLimits>
+<TrackLimits Driver="Jamahl Clouden" ID="7" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="109.0">No Further Action</TrackLimits>
+<TrackLimits Driver="Jamahl Clouden" ID="7" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="109.0">No Further Action</TrackLimits>
+<TrackLimits Driver="Mattias Claes" ID="14" Lap="0" WarningPoints="0" CurrentPoints="0.5" Resolution="7" et="110.0">No Further Action</TrackLimits>
+<TrackLimits Driver="Mattias Claes" ID="14" Lap="0" WarningPoints="0" CurrentPoints="0.5" Resolution="7" et="110.0">No Further Action</TrackLimits>
+<TrackLimits Driver="Jamahl Clouden" ID="7" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="110.1">No Further Action</TrackLimits>
+<TrackLimits Driver="Jamahl Clouden" ID="7" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="110.1">No Further Action</TrackLimits>
+<TrackLimits Driver="Michael Harris#8907" ID="26" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="110.4">No Further Action</TrackLimits>
+<TrackLimits Driver="Michael Harris#8907" ID="26" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="110.4">No Further Action</TrackLimits>
+<TrackLimits Driver="Mattias Claes" ID="14" Lap="0" WarningPoints="0" CurrentPoints="0.5" Resolution="7" et="111.2">No Further Action</TrackLimits>
+<TrackLimits Driver="Mattias Claes" ID="14" Lap="0" WarningPoints="0" CurrentPoints="0.5" Resolution="7" et="111.2">No Further Action</TrackLimits>
+<TrackLimits Driver="Michael Harris#8907" ID="26" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="111.6">No Further Action</TrackLimits>
+<TrackLimits Driver="Michael Harris#8907" ID="26" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="111.6">No Further Action</TrackLimits>
+<Score et="116.0">Ryan Lewis Fox(3) lap=0 point=1 t=-1.000 et=115.980</Score>
+<TrackLimits Driver="Eoin Skene" ID="20" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="116.3">No Further Action</TrackLimits>
+<TrackLimits Driver="Eoin Skene" ID="20" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="116.3">No Further Action</TrackLimits>
+<Score et="116.8">Riccardo Gabetti(17) lap=0 point=2 t=-1.000 et=116.760</Score>
+<Score et="117.4">Sebastian Vorhauer(9) lap=0 point=2 t=-1.000 et=117.280</Score>
+<TrackLimits Driver="Eoin Skene" ID="20" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="117.5">No Further Action</TrackLimits>
+<TrackLimits Driver="Eoin Skene" ID="20" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="117.5">No Further Action</TrackLimits>
+<Score et="117.5">Michael Harris#8907(26) lap=1 point=1 t=-1.000 et=117.420</Score>
+<TrackLimits Driver="John Wainwright" ID="15" Lap="0" WarningPoints="0.25" CurrentPoints="2.25" Resolution="5" et="117.9">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="John Wainwright" ID="15" Lap="0" WarningPoints="0.25" CurrentPoints="2.25" Resolution="5" et="117.9">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="John Wainwright" ID="15" Lap="0" WarningPoints="0.25" CurrentPoints="2.25" Resolution="5" et="119.1">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="John Wainwright" ID="15" Lap="0" WarningPoints="0.25" CurrentPoints="2.25" Resolution="5" et="119.1">Invalid Lap Cut Track</TrackLimits>
+<Score et="122.5">Gray Langley(4) lap=0 point=2 t=-1.000 et=122.260</Score>
+<Score et="122.6">Benjamin Rook(0) lap=0 point=2 t=-1.000 et=122.540</Score>
+<Score et="122.6">James Wright(22) lap=0 point=1 t=-1.000 et=122.560</Score>
+<Score et="123.2">Davide Masi(2) lap=0 point=2 t=-1.000 et=123.160</Score>
+<Score et="123.6">Morgan Kalseth(13) lap=0 point=2 t=-1.000 et=123.580</Score>
+<Score et="124.1">Rick Aalders(19) lap=0 point=2 t=-1.000 et=124.020</Score>
+<Score et="124.8">Tony Garona(23) lap=0 point=2 t=-1.000 et=124.700</Score>
+<TrackLimits Driver="Eoin Skene" ID="20" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="127.1">No Further Action</TrackLimits>
+<TrackLimits Driver="Eoin Skene" ID="20" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="127.1">No Further Action</TrackLimits>
+<TrackLimits Driver="Eoin Skene" ID="20" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="128.3">No Further Action</TrackLimits>
+<TrackLimits Driver="Eoin Skene" ID="20" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="128.3">No Further Action</TrackLimits>
+<Score et="128.4">Jamahl Clouden(7) lap=0 point=2 t=-1.000 et=128.240</Score>
+<Score et="129.8">Mattias Claes(14) lap=0 point=2 t=-1.000 et=129.660</Score>
+<Score et="130.4">Gareth Anderson(8) lap=0 point=1 t=-1.000 et=130.320</Score>
+<Score et="131.0">Roydon Stapley(24) lap=0 point=2 t=-1.000 et=130.900</Score>
+<TrackLimits Driver="Ryan Lewis Fox" ID="3" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="133.0">No Further Action</TrackLimits>
+<TrackLimits Driver="Ryan Lewis Fox" ID="3" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="133.0">No Further Action</TrackLimits>
+<TrackLimits Driver="Ryan Lewis Fox" ID="3" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="134.1">No Further Action</TrackLimits>
+<TrackLimits Driver="Ryan Lewis Fox" ID="3" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="134.1">No Further Action</TrackLimits>
+<Score et="135.7">Wellington Jimenez(10) lap=0 point=2 t=-1.000 et=135.580</Score>
+<Score et="136.3">John Wainwright(15) lap=0 point=2 t=-1.000 et=136.260</Score>
+<Score et="137.2">Vince Schaefers(5) lap=0 point=2 t=-1.000 et=137.080</Score>
+<Score et="137.9">Mihai Daniel Ciubotariu(28) lap=0 point=2 t=-1.000 et=137.780</Score>
+<Score et="140.6">Ilkay Erkilincoglu(16) lap=0 point=2 t=-1.000 et=140.600</Score>
+<Score et="141.9">Roberto Cristofanilli(1) lap=0 point=2 t=-1.000 et=141.800</Score>
+<Score et="143.1">Dan Davis#8264(18) lap=0 point=2 t=-1.000 et=143.000</Score>
+<Score et="145.0">Matthew J Wright(6) lap=0 point=2 t=-1.000 et=144.960</Score>
+<Score et="146.0">Mark Bell(11) lap=0 point=2 t=-1.000 et=145.960</Score>
+<Score et="148.7">Riccardo Gabetti(17) lap=1 point=0 t=-1.000 et=148.660</Score>
+<Score et="149.2">Sebastian Vorhauer(9) lap=1 point=0 t=-1.000 et=149.160</Score>
+<Score et="149.6">Eoin Skene(20) lap=0 point=1 t=-1.000 et=149.540</Score>
+<Score et="152.2">Mike Hunt#4317(21) lap=0 point=2 t=-1.000 et=152.120</Score>
+<Score et="156.2">Davide Masi(2) lap=1 point=0 t=-1.000 et=156.120</Score>
+<Score et="158.4">Gray Langley(4) lap=1 point=0 t=-1.000 et=158.220</Score>
+<Score et="158.8">Benjamin Rook(0) lap=1 point=0 t=-1.000 et=158.720</Score>
+<Score et="160.0">Morgan Kalseth(13) lap=1 point=0 t=-1.000 et=159.940</Score>
+<Score et="160.1">Rick Aalders(19) lap=1 point=0 t=-1.000 et=159.980</Score>
+<Score et="161.3">Jamahl Clouden(7) lap=1 point=0 t=-1.000 et=161.200</Score>
+<Score et="161.7">Tony Garona(23) lap=1 point=0 t=-1.000 et=161.640</Score>
+<Score et="165.7">Mattias Claes(14) lap=1 point=0 t=-1.000 et=165.560</Score>
+<Score et="168.0">Roydon Stapley(24) lap=1 point=0 t=-1.000 et=167.920</Score>
+<TrackLimits Driver="Wellington Jimenez" ID="10" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="168.6">No Further Action</TrackLimits>
+<TrackLimits Driver="Wellington Jimenez" ID="10" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="168.6">No Further Action</TrackLimits>
+<Score et="169.3">Wellington Jimenez(10) lap=1 point=0 t=-1.000 et=169.200</Score>
+<TrackLimits Driver="Wellington Jimenez" ID="10" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="169.7">No Further Action</TrackLimits>
+<TrackLimits Driver="Wellington Jimenez" ID="10" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="169.7">No Further Action</TrackLimits>
+<Score et="170.9">Michael Harris#8907(26) lap=1 point=2 t=-1.000 et=170.800</Score>
+<Score et="171.6">James Wright(22) lap=0 point=2 t=-1.000 et=171.580</Score>
+<Score et="172.8">Vince Schaefers(5) lap=1 point=0 t=-1.000 et=172.720</Score>
+<Score et="173.1">John Wainwright(15) lap=1 point=0 t=-1.000 et=173.060</Score>
+<Score et="174.5">Mihai Daniel Ciubotariu(28) lap=1 point=0 t=-1.000 et=174.380</Score>
+<Score et="175.0">Ryan Lewis Fox(3) lap=0 point=2 t=-1.000 et=174.980</Score>
+<Score et="175.3">Roberto Cristofanilli(1) lap=1 point=0 t=-1.000 et=175.260</Score>
+<Score et="175.6">Dan Davis#8264(18) lap=1 point=0 t=-1.000 et=175.480</Score>
+<Score et="176.8">Ilkay Erkilincoglu(16) lap=1 point=0 t=-1.000 et=176.720</Score>
+<Score et="178.1">Matthew J Wright(6) lap=1 point=0 t=-1.000 et=178.080</Score>
+<Sector Driver="Riccardo Gabetti" ID="17" Sector="1" Class="Hyper" et="180.5">Riccardo Gabetti(17) set new best for sector 1</Sector>
+<Score et="180.5">Riccardo Gabetti(17) lap=1 point=1 t=31.810 et=180.460</Score>
+<Score et="181.3">Sebastian Vorhauer(9) lap=1 point=1 t=32.074 et=181.220</Score>
+<TrackLimits Driver="Dan Davis#8264" ID="18" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="181.7">No Further Action</TrackLimits>
+<TrackLimits Driver="Dan Davis#8264" ID="18" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="181.7">No Further Action</TrackLimits>
+<Sector Driver="Riccardo Gabetti" ID="17" Sector="1" Class="Hyper" et="181.7">Riccardo Gabetti(17) set new best for sector 1</Sector>
+<Score et="182.0">Mark Bell(11) lap=1 point=0 t=-1.000 et=181.960</Score>
+<TrackLimits Driver="Dan Davis#8264" ID="18" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="182.8">No Further Action</TrackLimits>
+<TrackLimits Driver="Dan Davis#8264" ID="18" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="182.8">No Further Action</TrackLimits>
+<Score et="185.1">Gareth Anderson(8) lap=0 point=2 t=-1.000 et=185.080</Score>
+<Score et="188.3">Davide Masi(2) lap=1 point=1 t=32.055 et=188.180</Score>
+<Score et="188.5">Mike Hunt#4317(21) lap=1 point=0 t=-1.000 et=188.500</Score>
+<Score et="194.7">Jamahl Clouden(7) lap=1 point=1 t=33.376 et=194.580</Score>
+<Sector Driver="Gray Langley" ID="4" Sector="1" Class="GT3" et="195.0">Gray Langley(4) set new best for sector 1</Sector>
+<Score et="195.1">Gray Langley(4) lap=1 point=1 t=36.656 et=194.880</Score>
+<Sector Driver="Benjamin Rook" ID="0" Sector="1" Class="GT3" et="195.3">Benjamin Rook(0) set new best for sector 1</Sector>
+<Score et="195.3">Benjamin Rook(0) lap=1 point=1 t=36.506 et=195.220</Score>
+<Sector Driver="Gray Langley" ID="4" Sector="1" Class="GT3" et="196.1">Gray Langley(4) set new best for sector 1</Sector>
+<Sector Driver="Benjamin Rook" ID="0" Sector="1" Class="GT3" et="196.4">Benjamin Rook(0) set new best for sector 1</Sector>
+<Sector Driver="Morgan Kalseth" ID="13" Sector="1" Class="GT3" et="196.5">Morgan Kalseth(13) set new best for sector 1</Sector>
+<Score et="196.5">Morgan Kalseth(13) lap=1 point=1 t=36.489 et=196.440</Score>
+<Score et="196.6">Rick Aalders(19) lap=1 point=1 t=36.548 et=196.520</Score>
+<Sector Driver="Morgan Kalseth" ID="13" Sector="1" Class="GT3" et="197.7">Morgan Kalseth(13) set new best for sector 1</Sector>
+<Sector Driver="Tony Garona" ID="23" Sector="1" Class="GT3" et="198.0">Tony Garona(23) set new best for sector 1</Sector>
+<Score et="198.0">Tony Garona(23) lap=1 point=1 t=36.322 et=197.960</Score>
+<Score et="198.2">Eoin Skene(20) lap=0 point=2 t=-1.000 et=198.160</Score>
+<Sector Driver="Tony Garona" ID="23" Sector="1" Class="GT3" et="199.2">Tony Garona(23) set new best for sector 1</Sector>
+<Sector Driver="Mattias Claes" ID="14" Sector="1" Class="GT3" et="201.5">Mattias Claes(14) set new best for sector 1</Sector>
+<Score et="201.6">Mattias Claes(14) lap=1 point=1 t=35.956 et=201.500</Score>
+<Score et="202.2">Wellington Jimenez(10) lap=1 point=1 t=32.938 et=202.140</Score>
+<Sector Driver="Mattias Claes" ID="14" Sector="1" Class="GT3" et="202.7">Mattias Claes(14) set new best for sector 1</Sector>
+<TrackLimits Driver="Roberto Cristofanilli" ID="1" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="203.4">No Further Action</TrackLimits>
+<TrackLimits Driver="Roberto Cristofanilli" ID="1" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="203.4">No Further Action</TrackLimits>
+<Score et="204.4">James Wright(22) lap=1 point=0 t=-1.000 et=204.400</Score>
+<TrackLimits Driver="Roberto Cristofanilli" ID="1" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="204.6">No Further Action</TrackLimits>
+<TrackLimits Driver="Roberto Cristofanilli" ID="1" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="204.6">No Further Action</TrackLimits>
+<Score et="205.1">Roydon Stapley(24) lap=1 point=1 t=37.139 et=205.060</Score>
+<Score et="207.8">Michael Harris#8907(26) lap=2 point=0 t=-1.000 et=207.740</Score>
+<Score et="208.1">Dan Davis#8264(18) lap=1 point=1 t=32.542 et=208.020</Score>
+<Score et="208.9">Roberto Cristofanilli(1) lap=1 point=1 t=33.593 et=208.860</Score>
+<Score et="209.4">Vince Schaefers(5) lap=1 point=1 t=36.675 et=209.380</Score>
+<Score et="210.1">John Wainwright(15) lap=1 point=1 t=36.930 et=209.980</Score>
+<Score et="211.0">Matthew J Wright(6) lap=1 point=1 t=32.808 et=210.900</Score>
+<Score et="211.4">Mihai Daniel Ciubotariu(28) lap=1 point=1 t=36.922 et=211.300</Score>
+<Score et="211.7">Ryan Lewis Fox(3) lap=1 point=0 t=-1.000 et=211.600</Score>
+<Score et="213.2">Ilkay Erkilincoglu(16) lap=1 point=1 t=36.419 et=213.140</Score>
+<Score et="218.7">Mark Bell(11) lap=1 point=1 t=36.660 et=218.620</Score>
+<Score et="221.6">Gareth Anderson(8) lap=1 point=0 t=-1.000 et=221.560</Score>
+<Sector Driver="Riccardo Gabetti" ID="17" Sector="2" Class="Hyper" et="224.1">Riccardo Gabetti(17) set new best for sector 2</Sector>
+<Score et="224.1">Riccardo Gabetti(17) lap=1 point=2 t=75.430 et=224.080</Score>
+<Score et="225.1">Sebastian Vorhauer(9) lap=1 point=2 t=75.921 et=225.080</Score>
+<Sector Driver="Riccardo Gabetti" ID="17" Sector="2" Class="Hyper" et="225.3">Riccardo Gabetti(17) set new best for sector 2</Sector>
+<Score et="225.7">Mike Hunt#4317(21) lap=1 point=1 t=37.126 et=225.620</Score>
+<TrackLimits Driver="John Wainwright" ID="15" Lap="1" WarningPoints="0" CurrentPoints="2.25" Resolution="7" et="225.9">No Further Action</TrackLimits>
+<TrackLimits Driver="John Wainwright" ID="15" Lap="1" WarningPoints="0" CurrentPoints="2.25" Resolution="7" et="225.9">No Further Action</TrackLimits>
+<TrackLimits Driver="John Wainwright" ID="15" Lap="1" WarningPoints="0" CurrentPoints="2.25" Resolution="7" et="227.0">No Further Action</TrackLimits>
+<TrackLimits Driver="John Wainwright" ID="15" Lap="1" WarningPoints="0" CurrentPoints="2.25" Resolution="7" et="227.0">No Further Action</TrackLimits>
+<Score et="230.9">Eoin Skene(20) lap=1 point=0 t=-1.000 et=230.880</Score>
+<Score et="232.4">Davide Masi(2) lap=1 point=2 t=76.263 et=232.380</Score>
+<TrackLimits Driver="Benjamin Rook" ID="0" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="236.5">No Further Action</TrackLimits>
+<TrackLimits Driver="Benjamin Rook" ID="0" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="236.5">No Further Action</TrackLimits>
+<Score et="237.3">James Wright(22) lap=1 point=1 t=32.900 et=237.300</Score>
+<TrackLimits Driver="Benjamin Rook" ID="0" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="237.6">No Further Action</TrackLimits>
+<TrackLimits Driver="Benjamin Rook" ID="0" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="237.6">No Further Action</TrackLimits>
+<Score et="239.6">Jamahl Clouden(7) lap=1 point=2 t=78.359 et=239.560</Score>
+<Score et="244.6">Michael Harris#8907(26) lap=2 point=1 t=36.816 et=244.540</Score>
+<Sector Driver="Gray Langley" ID="4" Sector="2" Class="GT3" et="245.1">Gray Langley(4) set new best for sector 2</Sector>
+<Sector Driver="Benjamin Rook" ID="0" Sector="2" Class="GT3" et="245.2">Benjamin Rook(0) set new best for sector 2</Sector>
+<Score et="245.2">Gray Langley(4) lap=1 point=2 t=86.808 et=245.020</Score>
+<Score et="245.2">Benjamin Rook(0) lap=1 point=2 t=86.439 et=245.160</Score>
+<Sector Driver="Gray Langley" ID="4" Sector="2" Class="GT3" et="246.3">Gray Langley(4) set new best for sector 2</Sector>
+<Sector Driver="Benjamin Rook" ID="0" Sector="2" Class="GT3" et="246.4">Benjamin Rook(0) set new best for sector 2</Sector>
+<Score et="246.5">Morgan Kalseth(13) lap=1 point=2 t=86.478 et=246.420</Score>
+<Score et="247.0">Wellington Jimenez(10) lap=1 point=2 t=77.664 et=246.860</Score>
+<Score et="247.2">Rick Aalders(19) lap=1 point=2 t=87.124 et=247.100</Score>
+<Score et="248.4">Tony Garona(23) lap=1 point=2 t=86.697 et=248.340</Score>
+<Score et="248.8">Ryan Lewis Fox(3) lap=1 point=1 t=37.104 et=248.700</Score>
+<Score et="251.6">Mattias Claes(14) lap=1 point=2 t=85.953 et=251.500</Score>
+<Score et="252.1">Dan Davis#8264(18) lap=1 point=2 t=76.565 et=252.040</Score>
+<TrackLimits Driver="Keir Batty" ID="27" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="252.5">No Further Action</TrackLimits>
+<TrackLimits Driver="Keir Batty" ID="27" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="252.5">No Further Action</TrackLimits>
+<TrackLimits Driver="Keir Batty" ID="27" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="253.7">No Further Action</TrackLimits>
+<TrackLimits Driver="Keir Batty" ID="27" Lap="0" WarningPoints="0" CurrentPoints="0" Resolution="7" et="253.7">No Further Action</TrackLimits>
+<Score et="254.0">Roberto Cristofanilli(1) lap=1 point=2 t=78.554 et=253.820</Score>
+<Sector Driver="Riccardo Gabetti" ID="17" Sector="3" Class="Hyper" et="254.6">Riccardo Gabetti(17) set new best for sector 3</Sector>
+<Score et="254.6">Riccardo Gabetti(17) lap=2 point=0 t=105.928 et=254.580</Score>
+<Score et="255.2">Matthew J Wright(6) lap=1 point=2 t=77.044 et=255.140</Score>
+<Sector Driver="Riccardo Gabetti" ID="17" Sector="3" Class="Hyper" et="255.8">Riccardo Gabetti(17) set new best for sector 3</Sector>
+<Score et="256.0">Sebastian Vorhauer(9) lap=2 point=0 t=106.808 et=255.960</Score>
+<Score et="256.2">Roydon Stapley(24) lap=1 point=2 t=88.229 et=256.160</Score>
+<Score et="259.1">Keir Batty(27) lap=0 point=1 t=-1.000 et=259.080</Score>
+<Score et="259.4">Gareth Anderson(8) lap=1 point=1 t=37.747 et=259.300</Score>
+<Score et="259.7">Vince Schaefers(5) lap=1 point=2 t=86.914 et=259.620</Score>
+<Score et="261.1">John Wainwright(15) lap=1 point=2 t=88.069 et=261.120</Score>
+<Score et="262.8">Mihai Daniel Ciubotariu(28) lap=1 point=2 t=88.394 et=262.760</Score>
+<TrackLimits Driver="Gray Langley" ID="4" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="263.0">No Further Action</TrackLimits>
+<TrackLimits Driver="Gray Langley" ID="4" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="263.0">No Further Action</TrackLimits>
+<Score et="263.1">Davide Masi(2) lap=2 point=0 t=106.901 et=263.020</Score>
+<Score et="263.7">Ilkay Erkilincoglu(16) lap=1 point=2 t=86.830 et=263.560</Score>
+<Score et="263.7">Eoin Skene(20) lap=1 point=1 t=32.812 et=263.680</Score>
+<TrackLimits Driver="Gray Langley" ID="4" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="264.2">No Further Action</TrackLimits>
+<TrackLimits Driver="Gray Langley" ID="4" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="264.2">No Further Action</TrackLimits>
+<Score et="269.8">Mark Bell(11) lap=1 point=2 t=87.720 et=269.680</Score>
+<Score et="271.1">Jamahl Clouden(7) lap=2 point=0 t=109.849 et=271.040</Score>
+<TrackLimits Driver="Rick Aalders" ID="19" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="276.9">No Further Action</TrackLimits>
+<TrackLimits Driver="Rick Aalders" ID="19" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="276.9">No Further Action</TrackLimits>
+<Score et="277.6">Mike Hunt#4317(21) lap=1 point=2 t=88.959 et=277.460</Score>
+<Score et="277.8">Wellington Jimenez(10) lap=2 point=0 t=108.530 et=277.720</Score>
+<TrackLimits Driver="Rick Aalders" ID="19" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="278.0">No Further Action</TrackLimits>
+<TrackLimits Driver="Rick Aalders" ID="19" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="278.0">No Further Action</TrackLimits>
+<Sector Driver="Benjamin Rook" ID="0" Sector="3" Class="GT3" et="280.0">Benjamin Rook(0) set new best for sector 3</Sector>
+<Score et="280.0">Benjamin Rook(0) lap=2 point=0 t=121.237 et=279.960</Score>
+<Score et="280.1">Gray Langley(4) lap=2 point=0 t=121.678 et=279.900</Score>
+<Sector Driver="Benjamin Rook" ID="0" Sector="3" Class="GT3" et="281.1">Benjamin Rook(0) set new best for sector 3</Sector>
+<Score et="281.5">Morgan Kalseth(13) lap=2 point=0 t=121.520 et=281.460</Score>
+<Score et="281.9">James Wright(22) lap=1 point=2 t=77.437 et=281.840</Score>
+<Score et="282.3">Rick Aalders(19) lap=2 point=0 t=122.213 et=282.200</Score>
+<Score et="282.9">Dan Davis#8264(18) lap=2 point=0 t=107.287 et=282.760</Score>
+<Score et="283.4">Tony Garona(23) lap=2 point=0 t=121.643 et=283.280</Score>
+<Score et="284.7">Roberto Cristofanilli(1) lap=2 point=0 t=109.321 et=284.580</Score>
+<Sector Driver="Riccardo Gabetti" ID="17" Sector="1" Class="Hyper" et="285.7">Riccardo Gabetti(17) set new best for sector 1</Sector>
+<Score et="285.7">Riccardo Gabetti(17) lap=2 point=1 t=31.081 et=285.660</Score>
+<Score et="286.1">Matthew J Wright(6) lap=2 point=0 t=108.015 et=286.100</Score>
+<Score et="286.5">Mattias Claes(14) lap=2 point=0 t=120.797 et=286.340</Score>
+<Sector Driver="Riccardo Gabetti" ID="17" Sector="1" Class="Hyper" et="286.9">Riccardo Gabetti(17) set new best for sector 1</Sector>
+<Score et="287.3">Sebastian Vorhauer(9) lap=2 point=1 t=31.309 et=287.260</Score>
+<TrackLimits Driver="Tony Garona" ID="23" Lap="2" WarningPoints="0" CurrentPoints="0" Resolution="7" et="290.2">No Further Action</TrackLimits>
+<TrackLimits Driver="Tony Garona" ID="23" Lap="2" WarningPoints="0" CurrentPoints="0" Resolution="7" et="290.2">No Further Action</TrackLimits>
+<TrackLimits Driver="Tony Garona" ID="23" Lap="2" WarningPoints="0" CurrentPoints="0" Resolution="7" et="291.4">No Further Action</TrackLimits>
+<TrackLimits Driver="Tony Garona" ID="23" Lap="2" WarningPoints="0" CurrentPoints="0" Resolution="7" et="291.4">No Further Action</TrackLimits>
+<Score et="292.0">Roydon Stapley(24) lap=2 point=0 t=123.943 et=291.880</Score>
+<Score et="294.3">Davide Masi(2) lap=2 point=1 t=31.172 et=294.180</Score>
+<Sector Driver="Vince Schaefers" ID="5" Sector="3" Class="GT3" et="294.4">Vince Schaefers(5) set new best for sector 3</Sector>
+<Score et="294.5">Vince Schaefers(5) lap=2 point=0 t=121.685 et=294.400</Score>
+<Score et="295.1">Michael Harris#8907(26) lap=2 point=2 t=87.303 et=295.040</Score>
+<Sector Driver="Vince Schaefers" ID="5" Sector="3" Class="GT3" et="295.6">Vince Schaefers(5) set new best for sector 3</Sector>
+<Score et="296.9">John Wainwright(15) lap=2 point=0 t=123.809 et=296.860</Score>
+<Score et="298.5">Ilkay Erkilincoglu(16) lap=2 point=0 t=121.691 et=298.420</Score>
+<Score et="298.6">Mihai Daniel Ciubotariu(28) lap=2 point=0 t=124.135 et=298.500</Score>
+<Score et="300.3">Ryan Lewis Fox(3) lap=1 point=2 t=88.632 et=300.240</Score>
+<TrackLimits Driver="Sebastian Vorhauer" ID="9" Lap="2" WarningPoints="0" CurrentPoints="0" Resolution="7" et="301.6">No Further Action</TrackLimits>
+<TrackLimits Driver="Sebastian Vorhauer" ID="9" Lap="2" WarningPoints="0" CurrentPoints="0" Resolution="7" et="301.6">No Further Action</TrackLimits>
+<Score et="302.4">Jamahl Clouden(7) lap=2 point=1 t=31.351 et=302.400</Score>
+<TrackLimits Driver="Sebastian Vorhauer" ID="9" Lap="2" WarningPoints="0" CurrentPoints="0" Resolution="7" et="302.8">No Further Action</TrackLimits>
+<TrackLimits Driver="Sebastian Vorhauer" ID="9" Lap="2" WarningPoints="0" CurrentPoints="0" Resolution="7" et="302.8">No Further Action</TrackLimits>
+<TrackLimits Driver="Gareth Anderson" ID="8" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="304.8">No Further Action</TrackLimits>
+<TrackLimits Driver="Gareth Anderson" ID="8" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="304.8">No Further Action</TrackLimits>
+<Score et="305.0">Mark Bell(11) lap=2 point=0 t=123.021 et=304.980</Score>
+<TrackLimits Driver="Gareth Anderson" ID="8" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="306.0">No Further Action</TrackLimits>
+<TrackLimits Driver="Gareth Anderson" ID="8" Lap="1" WarningPoints="0" CurrentPoints="0" Resolution="7" et="306.0">No Further Action</TrackLimits>
+<Score et="307.9">Eoin Skene(20) lap=1 point=2 t=76.936 et=307.800</Score>
+<Score et="308.4">Keir Batty(27) lap=0 point=2 t=-1.000 et=308.280</Score>
+<Score et="309.3">Wellington Jimenez(10) lap=2 point=1 t=31.500 et=309.220</Score>
+<Score et="311.0">Gareth Anderson(8) lap=1 point=2 t=89.333 et=310.880</Score>
+<Score et="312.8">James Wright(22) lap=2 point=0 t=108.390 et=312.780</Score>
+<Score et="313.0">Mike Hunt#4317(21) lap=2 point=0 t=124.452 et=312.940</Score>
+<Score et="314.0">Dan Davis#8264(18) lap=2 point=1 t=31.137 et=313.900</Score>
+<Sector Driver="Benjamin Rook" ID="0" Sector="1" Class="GT3" et="315.7">Benjamin Rook(0) set new best for sector 1</Sector>
+<Score et="315.8">Benjamin Rook(0) lap=2 point=1 t=35.702 et=315.660</Score>
+<Score et="315.8">Gray Langley(4) lap=2 point=1 t=35.749 et=315.640</Score>
+<Score et="316.1">Roberto Cristofanilli(1) lap=2 point=1 t=31.490 et=316.080</Score>
+<Sector Driver="Benjamin Rook" ID="0" Sector="1" Class="GT3" et="316.9">Benjamin Rook(0) set new best for sector 1</Sector>
+<Score et="317.3">Morgan Kalseth(13) lap=2 point=1 t=35.794 et=317.260</Score>
+<Score et="317.6">Matthew J Wright(6) lap=2 point=1 t=31.483 et=317.580</Score>
+<Score et="318.1">Rick Aalders(19) lap=2 point=1 t=35.853 et=318.040</Score>
+<Sector Driver="Tony Garona" ID="23" Sector="1" Class="GT3" et="318.9">Tony Garona(23) set new best for sector 1</Sector>
+<Score et="319.0">Tony Garona(23) lap=2 point=1 t=35.636 et=318.920</Score>
+<Sector Driver="Tony Garona" ID="23" Sector="1" Class="GT3" et="320.1">Tony Garona(23) set new best for sector 1</Sector>
+<Sector Driver="Mattias Claes" ID="14" Sector="1" Class="GT3" et="322.1">Mattias Claes(14) set new best for sector 1</Sector>
+<Score et="322.1">Mattias Claes(14) lap=2 point=1 t=35.611 et=321.960</Score>
+<Sector Driver="Mattias Claes" ID="14" Sector="1" Class="GT3" et="323.2">Mattias Claes(14) set new best for sector 1</Sector>
+<TrackLimits Driver="Sebastian Vorhauer" ID="9" Lap="2" WarningPoints="0" CurrentPoints="0" Resolution="7" et="325.9">No Further Action</TrackLimits>
+<TrackLimits Driver="Sebastian Vorhauer" ID="9" Lap="2" WarningPoints="0" CurrentPoints="0" Resolution="7" et="325.9">No Further Action</TrackLimits>
+<TrackLimits Driver="Sebastian Vorhauer" ID="9" Lap="2" WarningPoints="0" CurrentPoints="0" Resolution="7" et="327.0">No Further Action</TrackLimits>
+<TrackLimits Driver="Sebastian Vorhauer" ID="9" Lap="2" WarningPoints="0" CurrentPoints="0" Resolution="7" et="327.0">No Further Action</TrackLimits>
+<Score et="328.0">Roydon Stapley(24) lap=2 point=1 t=36.058 et=327.920</Score>
+<Sector Driver="Riccardo Gabetti" ID="17" Sector="2" Class="Hyper" et="328.7">Riccardo Gabetti(17) set new best for sector 2</Sector>
+<Score et="328.8">Riccardo Gabetti(17) lap=2 point=2 t=74.093 et=328.680</Score>
+<Sector Driver="Riccardo Gabetti" ID="17" Sector="2" Class="Hyper" et="329.9">Riccardo Gabetti(17) set new best for sector 2</Sector>
+<Score et="330.3">Michael Harris#8907(26) lap=3 point=0 t=122.543 et=330.280</Score>
+<Score et="330.3">Vince Schaefers(5) lap=2 point=1 t=35.904 et=330.300</Score>
+<Score et="330.7">Sebastian Vorhauer(9) lap=2 point=2 t=74.679 et=330.640</Score>
+<Score et="333.0">John Wainwright(15) lap=2 point=1 t=36.114 et=332.980</Score>
+<Score et="334.2">Ilkay Erkilincoglu(16) lap=2 point=1 t=35.690 et=334.100</Score>
+<Score et="334.8">Mihai Daniel Ciubotariu(28) lap=2 point=1 t=36.202 et=334.700</Score>
+<Score et="336.4">Ryan Lewis Fox(3) lap=2 point=0 t=124.746 et=336.340</Score>
+<Score et="337.3">Davide Masi(2) lap=2 point=2 t=74.233 et=337.240</Score>
+<Score et="338.9">Eoin Skene(20) lap=2 point=0 t=107.917 et=338.780</Score>
+<Score et="340.3">Keir Batty(27) lap=1 point=0 t=-1.000 et=340.240</Score>
+<Score et="340.9">Mark Bell(11) lap=2 point=1 t=35.925 et=340.900</Score>
+<Score et="344.3">James Wright(22) lap=2 point=1 t=31.482 et=344.260</Score>
+<Score et="345.7">Jamahl Clouden(7) lap=2 point=2 t=74.612 et=345.660</Score>
+<Score et="346.6">Gareth Anderson(8) lap=2 point=0 t=124.995 et=346.540</Score>
+<Score et="349.3">Mike Hunt#4317(21) lap=2 point=1 t=36.262 et=349.200</Score>
+<Score et="353.0">Wellington Jimenez(10) lap=2 point=2 t=75.162 et=352.880</Score>
+<Score et="357.2">Dan Davis#8264(18) lap=2 point=2 t=74.374 et=357.140</Score>
+<Sector Driver="Roberto Cristofanilli" ID="1" Sector="2" Class="Hyper" et="359.0">Roberto Cristofanilli(1) set new best for sector 2</Sector>
+<Score et="359.0">Roberto Cristofanilli(1) lap=2 point=2 t=74.406 et=358.980</Score>
+<Sector Driver="Riccardo Gabetti" ID="17" Sector="3" Class="Hyper" et="359.2">Riccardo Gabetti(17) set new best for sector 3</Sector>
+<Score et="359.2">Riccardo Gabetti(17) lap=3 point=0 t=104.520 et=359.100</Score>
+<Sector Driver="Roberto Cristofanilli" ID="1" Sector="2" Class="Hyper" et="360.2">Roberto Cristofanilli(1) set new best for sector 2</Sector>
+<Sector Driver="Riccardo Gabetti" ID="17" Sector="3" Class="Hyper" et="360.3">Riccardo Gabetti(17) set new best for sector 3</Sector>
+<Score et="361.0">Matthew J Wright(6) lap=2 point=2 t=74.776 et=360.880</Score>
+<Score et="361.2">Sebastian Vorhauer(9) lap=3 point=0 t=105.118 et=361.080</Score>
+<Sector Driver="Gray Langley" ID="4" Sector="2" Class="GT3" et="365.2">Gray Langley(4) set new best for sector 2</Sector>
+<Score et="365.3">Gray Langley(4) lap=2 point=2 t=85.140 et=365.040</Score>
+<Score et="366.2">Michael Harris#8907(26) lap=3 point=1 t=35.887 et=366.160</Score>
+<Sector Driver="Gray Langley" ID="4" Sector="2" Class="GT3" et="366.4">Gray Langley(4) set new best for sector 2</Sector>
+<Score et="367.0">Benjamin Rook(0) lap=2 point=2 t=86.928 et=366.880</Score>
+<Score et="367.0">Morgan Kalseth(13) lap=2 point=2 t=85.452 et=366.920</Score>
+<Sector Driver="Rick Aalders" ID="19" Sector="2" Class="GT3" et="367.4">Rick Aalders(19) set new best for sector 2</Sector>
+<Score et="367.4">Rick Aalders(19) lap=2 point=2 t=85.233 et=367.420</Score>
+<Score et="367.9">Davide Masi(2) lap=3 point=0 t=104.788 et=367.800</Score>
+<Score et="368.6">Tony Garona(23) lap=2 point=2 t=85.199 et=368.480</Score>
+<Sector Driver="Rick Aalders" ID="19" Sector="2" Class="GT3" et="368.6">Rick Aalders(19) set new best for sector 2</Sector>
+<Score et="370.3">Eoin Skene(20) lap=2 point=1 t=31.450 et=370.240</Score>
+<Sector Driver="Mattias Claes" ID="14" Sector="2" Class="GT3" et="371.1">Mattias Claes(14) set new best for sector 2</Sector>
+<Score et="371.2">Mattias Claes(14) lap=2 point=2 t=84.772 et=371.120</Score>
+<Sector Driver="Mattias Claes" ID="14" Sector="2" Class="GT3" et="372.3">Mattias Claes(14) set new best for sector 2</Sector>
+<Score et="372.5">Keir Batty(27) lap=1 point=1 t=32.174 et=372.400</Score>
+<Score et="373.2">Ryan Lewis Fox(3) lap=2 point=1 t=36.793 et=373.140</Score>
+<Score et="376.4">Jamahl Clouden(7) lap=3 point=0 t=105.216 et=376.260</Score>
+<Score et="378.6">Roydon Stapley(24) lap=2 point=2 t=86.613 et=378.480</Score>
+<Score et="380.1">Vince Schaefers(5) lap=2 point=2 t=85.609 et=380.000</Score>
+<Score et="383.1">Gareth Anderson(8) lap=2 point=1 t=36.537 et=383.080</Score>
+<Score et="383.2">John Wainwright(15) lap=2 point=2 t=86.291 et=383.160</Score>
+<Score et="383.7">Ilkay Erkilincoglu(16) lap=2 point=2 t=85.229 et=383.640</Score>
+<Score et="383.9">Wellington Jimenez(10) lap=3 point=0 t=106.062 et=383.780</Score>
+<Score et="385.2">Mihai Daniel Ciubotariu(28) lap=2 point=2 t=86.690 et=385.200</Score>
+<Score et="387.6">James Wright(22) lap=2 point=2 t=74.731 et=387.520</Score>
+<Sector Driver="Dan Davis#8264" ID="18" Sector="3" Class="Hyper" et="387.6">Dan Davis#8264(18) set new best for sector 3</Sector>
+<Score et="387.7">Dan Davis#8264(18) lap=3 point=0 t=104.799 et=387.560</Score>
+<Sector Driver="Dan Davis#8264" ID="18" Sector="3" Class="Hyper" et="388.8">Dan Davis#8264(18) set new best for sector 3</Sector>
+<Sector Driver="Roberto Cristofanilli" ID="1" Sector="3" Class="Hyper" et="389.4">Roberto Cristofanilli(1) set new best for sector 3</Sector>
+<Score et="389.4">Roberto Cristofanilli(1) lap=3 point=0 t=104.752 et=389.340</Score>
+<Sector Driver="Riccardo Gabetti" ID="17" Sector="1" Class="Hyper" et="390.0">Riccardo Gabetti(17) set new best for sector 1</Sector>
+<Score et="390.0">Riccardo Gabetti(17) lap=3 point=1 t=30.903 et=390.000</Score>
+<Sector Driver="Roberto Cristofanilli" ID="1" Sector="3" Class="Hyper" et="390.6">Roberto Cristofanilli(1) set new best for sector 3</Sector>
+<Score et="391.0">Mark Bell(11) lap=2 point=2 t=86.013 et=391.000</Score>
+<Sector Driver="Riccardo Gabetti" ID="17" Sector="1" Class="Hyper" et="391.2">Riccardo Gabetti(17) set new best for sector 1</Sector>
+<Score et="391.7">Matthew J Wright(6) lap=3 point=0 t=105.492 et=391.600</Score>
+<Score et="392.2">Sebastian Vorhauer(9) lap=3 point=1 t=31.041 et=392.120</Score>
+<Score et="398.9">Davide Masi(2) lap=3 point=1 t=31.048 et=398.860</Score>
+<Sector Driver="Gray Langley" ID="4" Sector="3" Class="GT3" et="399.8">Gray Langley(4) set new best for sector 3</Sector>
+<Score et="399.8">Gray Langley(4) lap=3 point=0 t=119.792 et=399.680</Score>
+<Score et="399.9">Mike Hunt#4317(21) lap=2 point=2 t=86.875 et=399.820</Score>
+<Sector Driver="Gray Langley" ID="4" Sector="3" Class="GT3" et="400.9">Gray Langley(4) set new best for sector 3</Sector>
+<Sector Driver="Benjamin Rook" ID="0" Sector="3" Class="GT3" et="401.5">Benjamin Rook(0) set new best for sector 3</Sector>
+<Sector Driver="Morgan Kalseth" ID="13" Sector="3" Class="GT3" et="401.5">Morgan Kalseth(13) set new best for sector 3</Sector>
+<Score et="401.5">Benjamin Rook(0) lap=3 point=0 t=121.472 et=401.420</Score>
+<Score et="401.5">Morgan Kalseth(13) lap=3 point=0 t=119.983 et=401.460</Score>
+<Score et="402.2">Rick Aalders(19) lap=3 point=0 t=119.924 et=402.120</Score>
+<Sector Driver="Benjamin Rook" ID="0" Sector="3" Class="GT3" et="402.6">Benjamin Rook(0) set new best for sector 3</Sector>
+<Sector Driver="Morgan Kalseth" ID="13" Sector="3" Class="GT3" et="402.7">Morgan Kalseth(13) set new best for sector 3</Sector>
+<Score et="403.1">Tony Garona(23) lap=3 point=0 t=119.820 et=403.100</Score>
+<Score et="403.3">Vince Schaefers(5) lap=3 point=0 t=-1.000 et=403.207</Score>
+<Score et="403.3">Vince Schaefers(5) lap=3 point=1 t=-1.000 et=403.207</Score>
+<Score et="403.3">Vince Schaefers(5) lap=3 point=2 t=-1.000 et=403.207</Score>
+<Score et="403.3">Vince Schaefers(5) lap=4 point=0 t=-1.000 et=403.207</Score>
+<TrackLimits Driver="Gareth Anderson" ID="8" Lap="2" WarningPoints="0.25" CurrentPoints="0.25" Resolution="5" et="404.9">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Gareth Anderson" ID="8" Lap="2" WarningPoints="0.25" CurrentPoints="0.25" Resolution="5" et="404.9">Invalid Lap Cut Track</TrackLimits>
+<Sector Driver="Mattias Claes" ID="14" Sector="3" Class="GT3" et="405.7">Mattias Claes(14) set new best for sector 3</Sector>
+<Score et="405.7">Mattias Claes(14) lap=3 point=0 t=119.293 et=405.640</Score>
+<TrackLimits Driver="Gareth Anderson" ID="8" Lap="2" WarningPoints="0.25" CurrentPoints="0.25" Resolution="5" et="406.1">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Gareth Anderson" ID="8" Lap="2" WarningPoints="0.25" CurrentPoints="0.25" Resolution="5" et="406.1">Invalid Lap Cut Track</TrackLimits>
+<Sector Driver="Mattias Claes" ID="14" Sector="3" Class="GT3" et="406.8">Mattias Claes(14) set new best for sector 3</Sector>
+<Score et="407.5">Jamahl Clouden(7) lap=3 point=1 t=31.216 et=407.480</Score>
+<TrackLimits Driver="Mark Bell" ID="11" Lap="2" WarningPoints="0" CurrentPoints="0" Resolution="7" et="409.1">No Further Action</TrackLimits>
+<TrackLimits Driver="Mark Bell" ID="11" Lap="2" WarningPoints="0" CurrentPoints="0" Resolution="7" et="409.1">No Further Action</TrackLimits>
+<TrackLimits Driver="Mark Bell" ID="11" Lap="2" WarningPoints="0" CurrentPoints="0" Resolution="7" et="410.3">No Further Action</TrackLimits>
+<TrackLimits Driver="Mark Bell" ID="11" Lap="2" WarningPoints="0" CurrentPoints="0" Resolution="7" et="410.3">No Further Action</TrackLimits>
+<Score et="413.2">Eoin Skene(20) lap=2 point=2 t=74.392 et=413.180</Score>
+<Score et="413.9">Roydon Stapley(24) lap=3 point=0 t=121.938 et=413.800</Score>
+<Score et="415.0">Wellington Jimenez(10) lap=3 point=1 t=31.030 et=414.820</Score>
+<Score et="415.9">Michael Harris#8907(26) lap=3 point=2 t=85.612 et=415.880</Score>
+<Score et="416.1">Keir Batty(27) lap=1 point=2 t=75.792 et=416.020</Score>
+<Sector Driver="James Wright" ID="22" Sector="3" Class="Hyper" et="417.9">James Wright(22) set new best for sector 3</Sector>
+<Score et="417.9">James Wright(22) lap=3 point=0 t=105.066 et=417.840</Score>
+<Score et="418.3">John Wainwright(15) lap=3 point=0 t=121.273 et=418.140</Score>
+<Score et="418.3">Ilkay Erkilincoglu(16) lap=3 point=0 t=119.778 et=418.200</Score>
+<Score et="418.7">Dan Davis#8264(18) lap=3 point=1 t=31.087 et=418.640</Score>
+<Sector Driver="James Wright" ID="22" Sector="3" Class="Hyper" et="419.0">James Wright(22) set new best for sector 3</Sector>
+<Score et="420.4">Roberto Cristofanilli(1) lap=3 point=1 t=31.007 et=420.340</Score>
+<Score et="420.5">Mihai Daniel Ciubotariu(28) lap=3 point=0 t=121.977 et=420.480</Score>
+<Score et="423.2">Matthew J Wright(6) lap=3 point=1 t=31.479 et=423.080</Score>
+<Score et="424.3">Ryan Lewis Fox(3) lap=2 point=2 t=87.822 et=424.160</Score>
+<Score et="426.1">Mark Bell(11) lap=3 point=0 t=121.066 et=426.040</Score>
+<TrackLimits Driver="Gareth Anderson" ID="8" Lap="2" WarningPoints="0" CurrentPoints="0.25" Resolution="7" et="426.7">No Further Action</TrackLimits>
+<TrackLimits Driver="Gareth Anderson" ID="8" Lap="2" WarningPoints="0" CurrentPoints="0.25" Resolution="7" et="426.7">No Further Action</TrackLimits>
+<TrackLimits Driver="Gareth Anderson" ID="8" Lap="2" WarningPoints="0" CurrentPoints="0.25" Resolution="7" et="427.9">No Further Action</TrackLimits>
+<TrackLimits Driver="Gareth Anderson" ID="8" Lap="2" WarningPoints="0" CurrentPoints="0.25" Resolution="7" et="427.9">No Further Action</TrackLimits>
+<Sector Driver="Riccardo Gabetti" ID="17" Sector="2" Class="Hyper" et="432.5">Riccardo Gabetti(17) set new best for sector 2</Sector>
+<Score et="432.5">Riccardo Gabetti(17) lap=3 point=2 t=73.357 et=432.460</Score>
+<Sector Driver="Riccardo Gabetti" ID="17" Sector="2" Class="Hyper" et="433.7">Riccardo Gabetti(17) set new best for sector 2</Sector>
+<Score et="434.0">Gareth Anderson(8) lap=2 point=2 t=-1.000 et=433.960</Score>
+<Score et="435.4">Mike Hunt#4317(21) lap=3 point=0 t=122.320 et=435.260</Score>
+<Score et="435.4">Sebastian Vorhauer(9) lap=3 point=2 t=74.182 et=435.260</Score>
+<Sector Driver="Gray Langley" ID="4" Sector="1" Class="GT3" et="435.5">Gray Langley(4) set new best for sector 1</Sector>
+<Score et="435.5">Gray Langley(4) lap=3 point=1 t=35.604 et=435.300</Score>
+<Sector Driver="Gray Langley" ID="4" Sector="1" Class="GT3" et="436.6">Gray Langley(4) set new best for sector 1</Sector>
+<Sector Driver="Morgan Kalseth" ID="13" Sector="1" Class="GT3" et="436.9">Morgan Kalseth(13) set new best for sector 1</Sector>
+<Score et="437.0">Morgan Kalseth(13) lap=3 point=1 t=35.410 et=436.860</Score>
+<Score et="437.1">Benjamin Rook(0) lap=3 point=1 t=35.623 et=437.040</Score>
+<Sector Driver="Rick Aalders" ID="19" Sector="1" Class="GT3" et="437.5">Rick Aalders(19) set new best for sector 1</Sector>
+<Score et="437.5">Rick Aalders(19) lap=3 point=1 t=35.408 et=437.520</Score>
+<Sector Driver="Morgan Kalseth" ID="13" Sector="1" Class="GT3" et="438.1">Morgan Kalseth(13) set new best for sector 1</Sector>
+<Score et="438.7">Tony Garona(23) lap=3 point=1 t=35.529 et=438.640</Score>
+<Sector Driver="Rick Aalders" ID="19" Sector="1" Class="GT3" et="438.7">Rick Aalders(19) set new best for sector 1</Sector>
+<Sector Driver="Mattias Claes" ID="14" Sector="1" Class="GT3" et="441.1">Mattias Claes(14) set new best for sector 1</Sector>
+<Score et="441.1">Mattias Claes(14) lap=3 point=1 t=35.362 et=441.000</Score>
+<Score et="442.2">Davide Masi(2) lap=3 point=2 t=74.317 et=442.120</Score>
+<Sector Driver="Mattias Claes" ID="14" Sector="1" Class="GT3" et="442.2">Mattias Claes(14) set new best for sector 1</Sector>
+<TrackLimits Driver="Mike Hunt#4317" ID="21" Lap="3" WarningPoints="0.25" CurrentPoints="0.25" Resolution="5" et="443.4">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Mike Hunt#4317" ID="21" Lap="3" WarningPoints="0.25" CurrentPoints="0.25" Resolution="5" et="443.4">Invalid Lap Cut Track</TrackLimits>
+<Score et="443.6">Eoin Skene(20) lap=3 point=0 t=104.758 et=443.540</Score>
+<TrackLimits Driver="Mike Hunt#4317" ID="21" Lap="3" WarningPoints="0.25" CurrentPoints="0.25" Resolution="5" et="444.6">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Mike Hunt#4317" ID="21" Lap="3" WarningPoints="0.25" CurrentPoints="0.25" Resolution="5" et="444.6">Invalid Lap Cut Track</TrackLimits>
+<Score et="446.6">Keir Batty(27) lap=2 point=0 t=106.314 et=446.540</Score>
+<Score et="448.9">James Wright(22) lap=3 point=1 t=30.982 et=448.840</Score>
+<Score et="449.8">Roydon Stapley(24) lap=3 point=1 t=35.970 et=449.780</Score>
+<Score et="450.6">Jamahl Clouden(7) lap=3 point=2 t=74.207 et=450.460</Score>
+<Score et="450.7">Michael Harris#8907(26) lap=4 point=0 t=120.341 et=450.620</Score>
+<Score et="453.7">Ilkay Erkilincoglu(16) lap=3 point=1 t=35.508 et=453.700</Score>
+<Score et="454.1">John Wainwright(15) lap=3 point=1 t=35.882 et=454.020</Score>
+<TrackLimits Driver="Tony Garona" ID="23" Lap="3" WarningPoints="0.25" CurrentPoints="0.25" Resolution="5" et="455.6">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Tony Garona" ID="23" Lap="3" WarningPoints="0.25" CurrentPoints="0.25" Resolution="5" et="455.6">Invalid Lap Cut Track</TrackLimits>
+<Score et="456.3">Mihai Daniel Ciubotariu(28) lap=3 point=1 t=35.671 et=456.160</Score>
+<TrackLimits Driver="Tony Garona" ID="23" Lap="3" WarningPoints="0.25" CurrentPoints="0.25" Resolution="5" et="456.7">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Tony Garona" ID="23" Lap="3" WarningPoints="0.25" CurrentPoints="0.25" Resolution="5" et="456.7">Invalid Lap Cut Track</TrackLimits>
+<Score et="458.0">Wellington Jimenez(10) lap=3 point=2 t=73.984 et=457.780</Score>
+<Score et="459.6">Ryan Lewis Fox(3) lap=3 point=0 t=123.144 et=459.500</Score>
+<Score et="461.7">Mark Bell(11) lap=3 point=1 t=35.660 et=461.700</Score>
+<Score et="461.9">Dan Davis#8264(18) lap=3 point=2 t=74.248 et=461.820</Score>
+<Sector Driver="Riccardo Gabetti" ID="17" Sector="3" Class="Hyper" et="462.8">Riccardo Gabetti(17) set new best for sector 3</Sector>
+<Score et="462.9">Riccardo Gabetti(17) lap=4 point=0 t=103.685 et=462.780</Score>
+<Score et="463.0">Roberto Cristofanilli(1) lap=3 point=2 t=73.548 et=462.880</Score>
+<Sector Driver="Riccardo Gabetti" ID="17" Sector="3" Class="Hyper" et="464.0">Riccardo Gabetti(17) set new best for sector 3</Sector>
+<Score et="465.7">Sebastian Vorhauer(9) lap=4 point=0 t=104.555 et=465.640</Score>
+<Score et="466.4">Vince Schaefers(5) lap=4 point=1 t=-1.000 et=466.320</Score>
+<TrackLimits Driver="Morgan Kalseth" ID="13" Lap="3" WarningPoints="0" CurrentPoints="0" Resolution="7" et="467.3">No Further Action</TrackLimits>
+<TrackLimits Driver="Morgan Kalseth" ID="13" Lap="3" WarningPoints="0" CurrentPoints="0" Resolution="7" et="467.3">No Further Action</TrackLimits>
+<TrackLimits Driver="Matthew J Wright" ID="6" Lap="3" WarningPoints="0" CurrentPoints="0" Resolution="7" et="467.5">No Further Action</TrackLimits>
+<TrackLimits Driver="Matthew J Wright" ID="6" Lap="3" WarningPoints="0" CurrentPoints="0" Resolution="7" et="467.5">No Further Action</TrackLimits>
+<TrackLimits Driver="Morgan Kalseth" ID="13" Lap="3" WarningPoints="0" CurrentPoints="0" Resolution="7" et="468.5">No Further Action</TrackLimits>
+<TrackLimits Driver="Morgan Kalseth" ID="13" Lap="3" WarningPoints="0" CurrentPoints="0" Resolution="7" et="468.5">No Further Action</TrackLimits>
+<TrackLimits Driver="Matthew J Wright" ID="6" Lap="3" WarningPoints="0" CurrentPoints="0" Resolution="7" et="468.7">No Further Action</TrackLimits>
+<TrackLimits Driver="Matthew J Wright" ID="6" Lap="3" WarningPoints="0" CurrentPoints="0" Resolution="7" et="468.7">No Further Action</TrackLimits>
+<Score et="469.1">Gareth Anderson(8) lap=3 point=0 t=-1.000 et=469.080</Score>
+<Score et="471.7">Mike Hunt#4317(21) lap=3 point=1 t=-1.000 et=471.640</Score>
+<Score et="473.0">Davide Masi(2) lap=4 point=0 t=105.109 et=472.920</Score>
+<TrackLimits Driver="Riccardo Gabetti" ID="17" Lap="4" WarningPoints="0" CurrentPoints="0" Resolution="7" et="473.3">No Further Action</TrackLimits>
+<TrackLimits Driver="Riccardo Gabetti" ID="17" Lap="4" WarningPoints="0" CurrentPoints="0" Resolution="7" et="473.3">No Further Action</TrackLimits>
+<Score et="474.5">Eoin Skene(20) lap=3 point=1 t=30.918 et=474.460</Score>
+<TrackLimits Driver="Riccardo Gabetti" ID="17" Lap="4" WarningPoints="0" CurrentPoints="0" Resolution="7" et="474.5">No Further Action</TrackLimits>
+<TrackLimits Driver="Riccardo Gabetti" ID="17" Lap="4" WarningPoints="0" CurrentPoints="0" Resolution="7" et="474.5">No Further Action</TrackLimits>
+<Score et="475.0">Matthew J Wright(6) lap=3 point=2 t=83.363 et=474.960</Score>
+<TrackLimits Driver="Dan Davis#8264" ID="18" Lap="3" WarningPoints="0" CurrentPoints="0" Resolution="7" et="477.2">No Further Action</TrackLimits>
+<TrackLimits Driver="Dan Davis#8264" ID="18" Lap="3" WarningPoints="0" CurrentPoints="0" Resolution="7" et="477.2">No Further Action</TrackLimits>
+<Score et="477.3">Riccardo Gabetti(17) lap=4 point=1 t=-1.000 et=477.225</Score>
+<Score et="477.3">Riccardo Gabetti(17) lap=4 point=2 t=-1.000 et=477.225</Score>
+<Score et="477.3">Riccardo Gabetti(17) lap=5 point=0 t=-1.000 et=477.225</Score>
+<Score et="478.0">Keir Batty(27) lap=2 point=1 t=31.401 et=477.940</Score>
+<TrackLimits Driver="Rick Aalders" ID="19" Lap="3" WarningPoints="0" CurrentPoints="0" Resolution="7" et="478.3">No Further Action</TrackLimits>
+<TrackLimits Driver="Rick Aalders" ID="19" Lap="3" WarningPoints="0" CurrentPoints="0" Resolution="7" et="478.3">No Further Action</TrackLimits>
+<TrackLimits Driver="Dan Davis#8264" ID="18" Lap="3" WarningPoints="0" CurrentPoints="0" Resolution="7" et="478.4">No Further Action</TrackLimits>
+<TrackLimits Driver="Dan Davis#8264" ID="18" Lap="3" WarningPoints="0" CurrentPoints="0" Resolution="7" et="478.4">No Further Action</TrackLimits>
+<TrackLimits Driver="Rick Aalders" ID="19" Lap="3" WarningPoints="0" CurrentPoints="0" Resolution="7" et="479.4">No Further Action</TrackLimits>
+<TrackLimits Driver="Rick Aalders" ID="19" Lap="3" WarningPoints="0" CurrentPoints="0" Resolution="7" et="479.4">No Further Action</TrackLimits>
+<Score et="480.9">Jamahl Clouden(7) lap=4 point=0 t=104.601 et=480.860</Score>
+<Score et="484.7">Gray Langley(4) lap=3 point=2 t=84.838 et=484.520</Score>
+<Score et="486.2">Morgan Kalseth(13) lap=3 point=2 t=84.625 et=486.080</Score>
+<Score et="486.4">Michael Harris#8907(26) lap=4 point=1 t=35.668 et=486.280</Score>
+<Score et="486.4">Benjamin Rook(0) lap=3 point=2 t=84.898 et=486.320</Score>
+<Sector Driver="Rick Aalders" ID="19" Sector="2" Class="GT3" et="486.6">Rick Aalders(19) set new best for sector 2</Sector>
+<Score et="486.7">Rick Aalders(19) lap=3 point=2 t=84.503 et=486.620</Score>
+<Sector Driver="Rick Aalders" ID="19" Sector="2" Class="GT3" et="487.8">Rick Aalders(19) set new best for sector 2</Sector>
+<Score et="487.9">Tony Garona(23) lap=3 point=2 t=-1.000 et=487.740</Score>
+<Score et="488.4">Wellington Jimenez(10) lap=4 point=0 t=104.411 et=488.200</Score>
+<TrackLimits Driver="Dan Davis#8264" ID="18" Lap="3" WarningPoints="0" CurrentPoints="0" Resolution="7" et="490.1">No Further Action</TrackLimits>
+<TrackLimits Driver="Dan Davis#8264" ID="18" Lap="3" WarningPoints="0" CurrentPoints="0" Resolution="7" et="490.1">No Further Action</TrackLimits>
+<Score et="490.2">Mattias Claes(14) lap=3 point=2 t=84.476 et=490.120</Score>
+<TrackLimits Driver="Dan Davis#8264" ID="18" Lap="3" WarningPoints="0" CurrentPoints="0" Resolution="7" et="491.3">No Further Action</TrackLimits>
+<TrackLimits Driver="Dan Davis#8264" ID="18" Lap="3" WarningPoints="0" CurrentPoints="0" Resolution="7" et="491.3">No Further Action</TrackLimits>
+<Score et="491.5">Dan Davis#8264(18) lap=4 point=0 t=-1.000 et=491.440</Score>
+<Score et="491.9">James Wright(22) lap=3 point=2 t=73.987 et=491.840</Score>
+<Sector Driver="Roberto Cristofanilli" ID="1" Sector="3" Class="Hyper" et="493.2">Roberto Cristofanilli(1) set new best for sector 3</Sector>
+<Score et="493.2">Roberto Cristofanilli(1) lap=4 point=0 t=103.808 et=493.140</Score>
+<Sector Driver="Roberto Cristofanilli" ID="1" Sector="3" Class="Hyper" et="494.3">Roberto Cristofanilli(1) set new best for sector 3</Sector>
+<Score et="495.8">Ryan Lewis Fox(3) lap=3 point=1 t=36.297 et=495.780</Score>
+<Score et="496.7">Sebastian Vorhauer(9) lap=4 point=1 t=31.040 et=496.680</Score>
+<TrackLimits Driver="Jamahl Clouden" ID="7" Lap="4" WarningPoints="0" CurrentPoints="0" Resolution="7" et="497.0">No Further Action</TrackLimits>
+<TrackLimits Driver="Jamahl Clouden" ID="7" Lap="4" WarningPoints="0" CurrentPoints="0" Resolution="7" et="497.0">No Further Action</TrackLimits>
+<TrackLimits Driver="Jamahl Clouden" ID="7" Lap="4" WarningPoints="0" CurrentPoints="0" Resolution="7" et="498.2">No Further Action</TrackLimits>
+<TrackLimits Driver="Jamahl Clouden" ID="7" Lap="4" WarningPoints="0" CurrentPoints="0" Resolution="7" et="498.2">No Further Action</TrackLimits>
+<Score et="500.2">Roydon Stapley(24) lap=3 point=2 t=86.309 et=500.120</Score>
+<Score et="503.1">Ilkay Erkilincoglu(16) lap=3 point=2 t=84.822 et=503.020</Score>
+<TrackLimits Driver="John Wainwright" ID="15" Lap="3" WarningPoints="0" CurrentPoints="2.25" Resolution="7" et="503.6">No Further Action</TrackLimits>
+<TrackLimits Driver="John Wainwright" ID="15" Lap="3" WarningPoints="0" CurrentPoints="2.25" Resolution="7" et="503.6">No Further Action</TrackLimits>
+<Score et="504.0">Davide Masi(2) lap=4 point=1 t=30.977 et=503.900</Score>
+<TrackLimits Driver="John Wainwright" ID="15" Lap="3" WarningPoints="0" CurrentPoints="2.25" Resolution="7" et="504.8">No Further Action</TrackLimits>
+<TrackLimits Driver="John Wainwright" ID="15" Lap="3" WarningPoints="0" CurrentPoints="2.25" Resolution="7" et="504.8">No Further Action</TrackLimits>
+<Score et="505.2">Gareth Anderson(8) lap=3 point=1 t=36.029 et=505.120</Score>
+<Score et="506.1">Matthew J Wright(6) lap=4 point=0 t=114.502 et=506.100</Score>
+<Score et="506.3">Mihai Daniel Ciubotariu(28) lap=3 point=2 t=85.780 et=506.260</Score>
+<Score et="509.1">John Wainwright(15) lap=3 point=2 t=90.895 et=509.020</Score>
+<Score et="511.8">Mark Bell(11) lap=3 point=2 t=85.738 et=511.780</Score>
+<Score et="514.2">Jamahl Clouden(7) lap=4 point=1 t=33.240 et=514.100</Score>
+<Score et="516.2">Vince Schaefers(5) lap=4 point=2 t=-1.000 et=516.060</Score>
+<Score et="517.3">Eoin Skene(20) lap=3 point=2 t=73.684 et=517.240</Score>
+<Score et="519.2">Wellington Jimenez(10) lap=4 point=1 t=30.931 et=519.120</Score>
+<Score et="519.3">Gray Langley(4) lap=4 point=0 t=119.439 et=519.120</Score>
+<Score et="520.7">Morgan Kalseth(13) lap=4 point=0 t=119.211 et=520.660</Score>
+<Score et="520.9">Benjamin Rook(0) lap=4 point=0 t=119.479 et=520.900</Score>
+<Score et="521.0">Keir Batty(27) lap=2 point=2 t=74.420 et=520.960</Score>
+<Sector Driver="Rick Aalders" ID="19" Sector="3" Class="GT3" et="521.1">Rick Aalders(19) set new best for sector 3</Sector>
+<Score et="521.1">Rick Aalders(19) lap=4 point=0 t=118.935 et=521.060</Score>
+<Score et="522.2">Mike Hunt#4317(21) lap=3 point=2 t=-1.000 et=522.120</Score>
+<Sector Driver="Rick Aalders" ID="19" Sector="3" Class="GT3" et="522.3">Rick Aalders(19) set new best for sector 3</Sector>
+<Score et="522.3">James Wright(22) lap=4 point=0 t=104.407 et=522.260</Score>
+<Score et="522.9">Tony Garona(23) lap=4 point=0 t=-1.000 et=522.800</Score>
+<Score et="524.4">Roberto Cristofanilli(1) lap=4 point=1 t=31.086 et=524.220</Score>
+<Score et="524.9">Mattias Claes(14) lap=4 point=0 t=119.168 et=524.820</Score>
+<Score et="535.4">Roydon Stapley(24) lap=4 point=0 t=121.580 et=535.380</Score>
+<Score et="535.9">Michael Harris#8907(26) lap=4 point=2 t=85.149 et=535.760</Score>
+<Score et="537.2">Morgan Kalseth(13) lap=4 point=1 t=-1.000 et=537.104</Score>
+<Score et="537.2">Morgan Kalseth(13) lap=4 point=2 t=-1.000 et=537.104</Score>
+<Score et="537.2">Morgan Kalseth(13) lap=5 point=0 t=-1.000 et=537.104</Score>
+<Score et="537.3">Matthew J Wright(6) lap=4 point=1 t=31.196 et=537.300</Score>
+<Sector Driver="Ilkay Erkilincoglu" ID="16" Sector="3" Class="GT3" et="537.5">Ilkay Erkilincoglu(16) set new best for sector 3</Sector>
+<Score et="537.5">Ilkay Erkilincoglu(16) lap=4 point=0 t=119.231 et=537.420</Score>
+<Sector Driver="Ilkay Erkilincoglu" ID="16" Sector="3" Class="GT3" et="538.6">Ilkay Erkilincoglu(16) set new best for sector 3</Sector>
+<Score et="539.6">Sebastian Vorhauer(9) lap=4 point=2 t=73.855 et=539.480</Score>
+<Score et="541.5">Mihai Daniel Ciubotariu(28) lap=4 point=0 t=120.920 et=541.400</Score>
+<Score et="543.7">Dan Davis#8264(18) lap=4 point=1 t=-1.000 et=543.600</Score>
+<Score et="544.5">John Wainwright(15) lap=4 point=0 t=126.258 et=544.400</Score>
+<Score et="546.7">Ryan Lewis Fox(3) lap=3 point=2 t=87.195 et=546.680</Score>
+<Score et="546.8">Mark Bell(11) lap=4 point=0 t=120.657 et=546.700</Score>
+<Score et="547.3">Davide Masi(2) lap=4 point=2 t=74.337 et=547.260</Score>
+<Score et="547.9">Eoin Skene(20) lap=4 point=0 t=104.303 et=547.860</Score>
+<Score et="550.9">Vince Schaefers(5) lap=5 point=0 t=-1.000 et=550.840</Score>
+<Score et="551.4">Keir Batty(27) lap=3 point=0 t=104.728 et=551.280</Score>
+<Sector Driver="James Wright" ID="22" Sector="1" Class="Hyper" et="553.1">James Wright(22) set new best for sector 1</Sector>
+<Score et="553.1">James Wright(22) lap=4 point=1 t=30.851 et=553.100</Score>
+<Sector Driver="James Wright" ID="22" Sector="1" Class="Hyper" et="554.3">James Wright(22) set new best for sector 1</Sector>
+<Score et="555.0">Gray Langley(4) lap=4 point=1 t=35.752 et=554.880</Score>
+<Score et="556.0">Gareth Anderson(8) lap=3 point=2 t=86.780 et=555.860</Score>
+<Sector Driver="Rick Aalders" ID="19" Sector="1" Class="GT3" et="556.4">Rick Aalders(19) set new best for sector 1</Sector>
+<Score et="556.4">Rick Aalders(19) lap=4 point=1 t=35.313 et=556.360</Score>
+<Score et="556.6">Benjamin Rook(0) lap=4 point=1 t=35.602 et=556.500</Score>
+<Score et="557.3">Mike Hunt#4317(21) lap=4 point=0 t=-1.000 et=557.240</Score>
+<Score et="557.3">Jamahl Clouden(7) lap=4 point=2 t=76.452 et=557.320</Score>
+<Sector Driver="Rick Aalders" ID="19" Sector="1" Class="GT3" et="557.5">Rick Aalders(19) set new best for sector 1</Sector>
+<Score et="558.2">Tony Garona(23) lap=4 point=1 t=35.338 et=558.140</Score>
+<Score et="560.3">Mattias Claes(14) lap=4 point=1 t=35.488 et=560.300</Score>
+<Score et="562.4">Wellington Jimenez(10) lap=4 point=2 t=74.111 et=562.300</Score>
+<Sector Driver="Roberto Cristofanilli" ID="1" Sector="2" Class="Hyper" et="566.5">Roberto Cristofanilli(1) set new best for sector 2</Sector>
+<Score et="566.6">Roberto Cristofanilli(1) lap=4 point=2 t=73.343 et=566.480</Score>
+<Sector Driver="Roberto Cristofanilli" ID="1" Sector="2" Class="Hyper" et="567.7">Roberto Cristofanilli(1) set new best for sector 2</Sector>
+<Score et="569.9">Sebastian Vorhauer(9) lap=5 point=0 t=104.264 et=569.900</Score>
+<Score et="570.8">Michael Harris#8907(26) lap=5 point=0 t=120.162 et=570.780</Score>
+<Score et="571.5">Roydon Stapley(24) lap=4 point=1 t=36.092 et=571.480</Score>
+<TrackLimits Driver="Dan Davis#8264" ID="18" Lap="4" WarningPoints="0" CurrentPoints="0" Resolution="7" et="572.5">No Further Action</TrackLimits>
+<TrackLimits Driver="Dan Davis#8264" ID="18" Lap="4" WarningPoints="0" CurrentPoints="0" Resolution="7" et="572.5">No Further Action</TrackLimits>
+<Score et="573.2">Ilkay Erkilincoglu(16) lap=4 point=1 t=35.727 et=573.140</Score>
+<TrackLimits Driver="Dan Davis#8264" ID="18" Lap="4" WarningPoints="0" CurrentPoints="0" Resolution="7" et="573.7">No Further Action</TrackLimits>
+<TrackLimits Driver="Dan Davis#8264" ID="18" Lap="4" WarningPoints="0" CurrentPoints="0" Resolution="7" et="573.7">No Further Action</TrackLimits>
+<Score et="577.1">Mihai Daniel Ciubotariu(28) lap=4 point=1 t=35.664 et=577.060</Score>
+<Score et="577.9">Davide Masi(2) lap=5 point=0 t=104.849 et=577.760</Score>
+<Score et="578.9">Eoin Skene(20) lap=4 point=1 t=30.931 et=578.780</Score>
+<Score et="580.1">John Wainwright(15) lap=4 point=1 t=35.648 et=580.040</Score>
+<Score et="580.6">Matthew J Wright(6) lap=4 point=2 t=74.377 et=580.480</Score>
+<Score et="582.3">Keir Batty(27) lap=3 point=1 t=30.923 et=582.200</Score>
+<Score et="582.3">Ryan Lewis Fox(3) lap=4 point=0 t=122.762 et=582.260</Score>
+<Score et="582.6">Mark Bell(11) lap=4 point=1 t=35.769 et=582.480</Score>
+<TrackLimits Driver="Gray Langley" ID="4" Lap="4" WarningPoints="0" CurrentPoints="0" Resolution="7" et="586.3">No Further Action</TrackLimits>
+<TrackLimits Driver="Gray Langley" ID="4" Lap="4" WarningPoints="0" CurrentPoints="0" Resolution="7" et="586.3">No Further Action</TrackLimits>
+<Score et="586.5">Vince Schaefers(5) lap=5 point=1 t=35.635 et=586.460</Score>
+<Score et="587.2">Dan Davis#8264(18) lap=4 point=2 t=-1.000 et=587.080</Score>
+<TrackLimits Driver="Gray Langley" ID="4" Lap="4" WarningPoints="0" CurrentPoints="0" Resolution="7" et="587.5">No Further Action</TrackLimits>
+<TrackLimits Driver="Gray Langley" ID="4" Lap="4" WarningPoints="0" CurrentPoints="0" Resolution="7" et="587.5">No Further Action</TrackLimits>
+<Score et="587.9">Jamahl Clouden(7) lap=5 point=0 t=106.962 et=587.820</Score>
+<TrackLimits Driver="Rick Aalders" ID="19" Lap="4" WarningPoints="0.25" CurrentPoints="0.25" Resolution="5" et="588.8">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Rick Aalders" ID="19" Lap="4" WarningPoints="0.25" CurrentPoints="0.25" Resolution="5" et="588.8">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Rick Aalders" ID="19" Lap="4" WarningPoints="0.25" CurrentPoints="0.25" Resolution="5" et="589.9">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Rick Aalders" ID="19" Lap="4" WarningPoints="0.25" CurrentPoints="0.25" Resolution="5" et="589.9">Invalid Lap Cut Track</TrackLimits>
+<Score et="591.2">Gareth Anderson(8) lap=4 point=0 t=122.051 et=591.140</Score>
+<Score et="593.0">Wellington Jimenez(10) lap=5 point=0 t=104.632 et=592.820</Score>
+<Score et="593.7">Mike Hunt#4317(21) lap=4 point=1 t=36.370 et=593.600</Score>
+<Score et="594.8">Gray Langley(4) lap=4 point=2 t=-1.000 et=594.521</Score>
+<Score et="594.8">Gray Langley(4) lap=5 point=0 t=-1.000 et=594.521</Score>
+<Score et="596.7">James Wright(22) lap=4 point=2 t=74.366 et=596.620</Score>
+<Score et="596.9">Roberto Cristofanilli(1) lap=5 point=0 t=103.691 et=596.840</Score>
+<TrackLimits Driver="Wellington Jimenez" ID="10" Lap="5" WarningPoints="0" CurrentPoints="0" Resolution="7" et="599.0">No Further Action</TrackLimits>
+<TrackLimits Driver="Wellington Jimenez" ID="10" Lap="5" WarningPoints="0" CurrentPoints="0" Resolution="7" et="599.0">No Further Action</TrackLimits>
+<Incident et="599.3">Benjamin Rook(0) reported contact (159.96) with Immovable</Incident>
+<TrackLimits Driver="Wellington Jimenez" ID="10" Lap="5" WarningPoints="0" CurrentPoints="0" Resolution="7" et="600.1">No Further Action</TrackLimits>
+<TrackLimits Driver="Wellington Jimenez" ID="10" Lap="5" WarningPoints="0" CurrentPoints="0" Resolution="7" et="600.1">No Further Action</TrackLimits>
+<Score et="601.0">Sebastian Vorhauer(9) lap=5 point=1 t=31.011 et=600.900</Score>
+<TrackLimits Driver="Mattias Claes" ID="14" Lap="4" WarningPoints="0" CurrentPoints="0.5" Resolution="7" et="601.3">No Further Action</TrackLimits>
+<TrackLimits Driver="Mattias Claes" ID="14" Lap="4" WarningPoints="0" CurrentPoints="0.5" Resolution="7" et="601.3">No Further Action</TrackLimits>
+<TrackLimits Driver="Mattias Claes" ID="14" Lap="4" WarningPoints="0" CurrentPoints="0.5" Resolution="7" et="602.5">No Further Action</TrackLimits>
+<TrackLimits Driver="Mattias Claes" ID="14" Lap="4" WarningPoints="0" CurrentPoints="0.5" Resolution="7" et="602.5">No Further Action</TrackLimits>
+<Score et="605.3">Benjamin Rook(0) lap=4 point=2 t=-1.000 et=605.240</Score>
+<Score et="605.3">Benjamin Rook(0) lap=5 point=0 t=-1.000 et=605.240</Score>
+<Score et="605.6">Rick Aalders(19) lap=4 point=2 t=-1.000 et=605.500</Score>
+<Score et="606.5">Michael Harris#8907(26) lap=5 point=1 t=35.643 et=606.420</Score>
+<Score et="607.8">Tony Garona(23) lap=4 point=2 t=84.834 et=607.640</Score>
+<TrackLimits Driver="Mattias Claes" ID="14" Lap="4" WarningPoints="0" CurrentPoints="0.5" Resolution="7" et="608.4">No Further Action</TrackLimits>
+<TrackLimits Driver="Mattias Claes" ID="14" Lap="4" WarningPoints="0" CurrentPoints="0.5" Resolution="7" et="608.4">No Further Action</TrackLimits>
+<Score et="608.8">Davide Masi(2) lap=5 point=1 t=30.951 et=608.720</Score>
+<TrackLimits Driver="Mattias Claes" ID="14" Lap="4" WarningPoints="0" CurrentPoints="0.5" Resolution="7" et="609.6">No Further Action</TrackLimits>
+<TrackLimits Driver="Mattias Claes" ID="14" Lap="4" WarningPoints="0" CurrentPoints="0.5" Resolution="7" et="609.6">No Further Action</TrackLimits>
+<Score et="609.6">Mattias Claes(14) lap=4 point=2 t=84.751 et=609.560</Score>
+<Score et="610.8">Matthew J Wright(6) lap=5 point=0 t=104.713 et=610.800</Score>
+<Score et="611.6">Wellington Jimenez(10) lap=5 point=1 t=-1.000 et=611.353</Score>
+<Score et="611.6">Wellington Jimenez(10) lap=5 point=2 t=-1.000 et=611.353</Score>
+<Score et="611.6">Wellington Jimenez(10) lap=6 point=0 t=-1.000 et=611.353</Score>
+<Score et="617.5">Dan Davis#8264(18) lap=5 point=0 t=-1.000 et=617.500</Score>
+<Score et="618.7">Ryan Lewis Fox(3) lap=4 point=1 t=36.319 et=618.580</Score>
+<Score et="619.0">Jamahl Clouden(7) lap=5 point=1 t=31.107 et=618.940</Score>
+<Score et="622.0">Roydon Stapley(24) lap=4 point=2 t=86.484 et=621.880</Score>
+<Score et="622.4">Ilkay Erkilincoglu(16) lap=4 point=2 t=84.944 et=622.360</Score>
+<Score et="622.8">Eoin Skene(20) lap=4 point=2 t=-1.000 et=622.805</Score>
+<Score et="622.8">Eoin Skene(20) lap=5 point=0 t=-1.000 et=622.805</Score>
+<TrackLimits Driver="Rick Aalders" ID="19" Lap="4" WarningPoints="0.25" CurrentPoints="0.5" Resolution="5" et="625.0">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Rick Aalders" ID="19" Lap="4" WarningPoints="0.25" CurrentPoints="0.5" Resolution="5" et="625.0">Invalid Lap Cut Track</TrackLimits>
+<Score et="625.1">Keir Batty(27) lap=3 point=2 t=73.753 et=625.020</Score>
+<TrackLimits Driver="Rick Aalders" ID="19" Lap="4" WarningPoints="0.25" CurrentPoints="0.5" Resolution="5" et="626.1">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Rick Aalders" ID="19" Lap="4" WarningPoints="0.25" CurrentPoints="0.5" Resolution="5" et="626.1">Invalid Lap Cut Track</TrackLimits>
+<Sector Driver="James Wright" ID="22" Sector="3" Class="Hyper" et="626.9">James Wright(22) set new best for sector 3</Sector>
+<Score et="626.9">James Wright(22) lap=5 point=0 t=104.582 et=626.840</Score>
+<Score et="626.9">Mihai Daniel Ciubotariu(28) lap=4 point=2 t=85.472 et=626.880</Score>
+<Score et="627.4">Gareth Anderson(8) lap=4 point=1 t=36.194 et=627.320</Score>
+<TrackLimits Driver="Mattias Claes" ID="14" Lap="4" WarningPoints="0" CurrentPoints="0.5" Resolution="7" et="627.8">No Further Action</TrackLimits>
+<TrackLimits Driver="Mattias Claes" ID="14" Lap="4" WarningPoints="0" CurrentPoints="0.5" Resolution="7" et="627.8">No Further Action</TrackLimits>
+<Sector Driver="James Wright" ID="22" Sector="3" Class="Hyper" et="628.0">James Wright(22) set new best for sector 3</Sector>
+<Score et="628.1">Roberto Cristofanilli(1) lap=5 point=1 t=31.170 et=628.000</Score>
+<TrackLimits Driver="Mattias Claes" ID="14" Lap="4" WarningPoints="0" CurrentPoints="0.5" Resolution="7" et="628.9">No Further Action</TrackLimits>
+<TrackLimits Driver="Mattias Claes" ID="14" Lap="4" WarningPoints="0" CurrentPoints="0.5" Resolution="7" et="628.9">No Further Action</TrackLimits>
+<Incident et="629.9">Roydon Stapley(24) reported contact (374.41) with Immovable</Incident>
+<Score et="630.1">John Wainwright(15) lap=4 point=2 t=85.681 et=630.080</Score>
+<TrackLimits Driver="Sebastian Vorhauer" ID="9" Lap="5" WarningPoints="0.5" CurrentPoints="0.5" Resolution="5" et="630.5">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Sebastian Vorhauer" ID="9" Lap="5" WarningPoints="0.5" CurrentPoints="0.5" Resolution="5" et="630.5">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Sebastian Vorhauer" ID="9" Lap="5" WarningPoints="0.5" CurrentPoints="0.5" Resolution="5" et="631.7">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Sebastian Vorhauer" ID="9" Lap="5" WarningPoints="0.5" CurrentPoints="0.5" Resolution="5" et="631.7">Invalid Lap Cut Track</TrackLimits>
+<Score et="632.4">Mark Bell(11) lap=4 point=2 t=85.636 et=632.340</Score>
+<Incident et="634.1">Roydon Stapley(24) reported contact (35.53) with Sign</Incident>
+<TrackLimits Driver="Roydon Stapley" ID="24" Lap="4" WarningPoints="0" CurrentPoints="0" Resolution="7" et="634.6">No Further Action</TrackLimits>
+<TrackLimits Driver="Roydon Stapley" ID="24" Lap="4" WarningPoints="0" CurrentPoints="0" Resolution="7" et="634.6">No Further Action</TrackLimits>
+<TrackLimits Driver="Roydon Stapley" ID="24" Lap="4" WarningPoints="0" CurrentPoints="0" Resolution="7" et="635.7">No Further Action</TrackLimits>
+<TrackLimits Driver="Roydon Stapley" ID="24" Lap="4" WarningPoints="0" CurrentPoints="0" Resolution="7" et="635.7">No Further Action</TrackLimits>
+<Score et="635.9">Vince Schaefers(5) lap=5 point=2 t=84.988 et=635.820</Score>
+<TrackLimits Driver="Davide Masi" ID="2" Lap="5" WarningPoints="0" CurrentPoints="0" Resolution="7" et="636.2">No Further Action</TrackLimits>
+<TrackLimits Driver="Davide Masi" ID="2" Lap="5" WarningPoints="0" CurrentPoints="0" Resolution="7" et="636.2">No Further Action</TrackLimits>
+<TrackLimits Driver="Davide Masi" ID="2" Lap="5" WarningPoints="0" CurrentPoints="0" Resolution="7" et="637.3">No Further Action</TrackLimits>
+<TrackLimits Driver="Davide Masi" ID="2" Lap="5" WarningPoints="0" CurrentPoints="0" Resolution="7" et="637.3">No Further Action</TrackLimits>
+<Score et="638.3">Sebastian Vorhauer(9) lap=5 point=2 t=-1.000 et=638.250</Score>
+<Score et="638.3">Sebastian Vorhauer(9) lap=6 point=0 t=-1.000 et=638.250</Score>
+<Score et="640.1">Rick Aalders(19) lap=5 point=0 t=-1.000 et=640.100</Score>
+<Score et="642.2">Matthew J Wright(6) lap=5 point=1 t=31.346 et=642.160</Score>
+<TrackLimits Driver="Roydon Stapley" ID="24" Lap="5" WarningPoints="0" CurrentPoints="0" Resolution="7" et="642.2">No Further Action</TrackLimits>
+<Score et="642.2">Roydon Stapley(24) lap=5 point=0 t=-1.000 et=642.178</Score>
+<TrackLimits Driver="Roydon Stapley" ID="24" Lap="5" WarningPoints="0" CurrentPoints="0" Resolution="7" et="642.2">No Further Action</TrackLimits>
+<Score et="642.3">Tony Garona(23) lap=5 point=0 t=119.460 et=642.260</Score>
+<TrackLimits Driver="Roydon Stapley" ID="24" Lap="5" WarningPoints="0" CurrentPoints="0" Resolution="7" et="643.4">No Further Action</TrackLimits>
+<TrackLimits Driver="Roydon Stapley" ID="24" Lap="5" WarningPoints="0" CurrentPoints="0" Resolution="7" et="643.4">No Further Action</TrackLimits>
+<Score et="643.5">Mike Hunt#4317(21) lap=4 point=2 t=86.235 et=643.460</Score>
+<Score et="644.5">Mattias Claes(14) lap=5 point=0 t=119.543 et=644.360</Score>
+<Score et="648.8">Dan Davis#8264(18) lap=5 point=1 t=31.176 et=648.680</Score>
+<Score et="652.0">Davide Masi(2) lap=5 point=2 t=74.202 et=651.960</Score>
+<Score et="653.1">John Wainwright(15) lap=5 point=0 t=-1.000 et=653.027</Score>
+<Score et="653.1">John Wainwright(15) lap=5 point=1 t=-1.000 et=653.027</Score>
+<Score et="653.1">John Wainwright(15) lap=5 point=2 t=-1.000 et=653.027</Score>
+<Score et="653.1">John Wainwright(15) lap=6 point=0 t=-1.000 et=653.027</Score>
+<Score et="654.1">Mattias Claes(14) lap=5 point=1 t=-1.000 et=654.008</Score>
+<Score et="654.1">Mattias Claes(14) lap=5 point=2 t=-1.000 et=654.008</Score>
+<Score et="654.1">Mattias Claes(14) lap=6 point=0 t=-1.000 et=654.008</Score>
+<Score et="655.5">Keir Batty(27) lap=4 point=0 t=104.149 et=655.420</Score>
+<Score et="656.0">Michael Harris#8907(26) lap=5 point=2 t=85.157 et=655.940</Score>
+<Score et="656.7">Rick Aalders(19) lap=5 point=1 t=-1.000 et=656.701</Score>
+<Score et="656.7">Rick Aalders(19) lap=5 point=2 t=-1.000 et=656.701</Score>
+<Score et="656.7">Rick Aalders(19) lap=6 point=0 t=-1.000 et=656.701</Score>
+<Score et="658.0">James Wright(22) lap=5 point=1 t=31.103 et=657.940</Score>
+<TrackLimits Driver="Roberto Cristofanilli" ID="1" Lap="5" WarningPoints="0" CurrentPoints="0" Resolution="7" et="660.6">No Further Action</TrackLimits>
+<TrackLimits Driver="Roberto Cristofanilli" ID="1" Lap="5" WarningPoints="0" CurrentPoints="0" Resolution="7" et="660.6">No Further Action</TrackLimits>
+<TrackLimits Driver="Roberto Cristofanilli" ID="1" Lap="5" WarningPoints="0" CurrentPoints="0" Resolution="7" et="661.7">No Further Action</TrackLimits>
+<TrackLimits Driver="Roberto Cristofanilli" ID="1" Lap="5" WarningPoints="0" CurrentPoints="0" Resolution="7" et="661.7">No Further Action</TrackLimits>
+<Score et="661.9">Jamahl Clouden(7) lap=5 point=2 t=74.014 et=661.840</Score>
+<Score et="662.0">Mihai Daniel Ciubotariu(28) lap=5 point=0 t=120.569 et=661.980</Score>
+<Score et="663.1">Ilkay Erkilincoglu(16) lap=5 point=0 t=-1.000 et=662.940</Score>
+<Score et="665.9">Tony Garona(23) lap=5 point=1 t=-1.000 et=665.807</Score>
+<Score et="665.9">Tony Garona(23) lap=5 point=2 t=-1.000 et=665.807</Score>
+<Score et="665.9">Tony Garona(23) lap=6 point=0 t=-1.000 et=665.807</Score>
+<Score et="667.1">Mark Bell(11) lap=5 point=0 t=120.312 et=667.020</Score>
+<TrackLimits Driver="Vince Schaefers" ID="5" Lap="5" WarningPoints="0.25" CurrentPoints="0.25" Resolution="5" et="667.2">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Vince Schaefers" ID="5" Lap="5" WarningPoints="0.25" CurrentPoints="0.25" Resolution="5" et="667.2">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Vince Schaefers" ID="5" Lap="5" WarningPoints="0.25" CurrentPoints="0.25" Resolution="5" et="668.3">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Vince Schaefers" ID="5" Lap="5" WarningPoints="0.25" CurrentPoints="0.25" Resolution="5" et="668.3">Invalid Lap Cut Track</TrackLimits>
+<Score et="669.0">Roberto Cristofanilli(1) lap=5 point=2 t=-1.000 et=668.940</Score>
+<Score et="669.0">Roberto Cristofanilli(1) lap=6 point=0 t=-1.000 et=668.940</Score>
+<Score et="669.5">Ryan Lewis Fox(3) lap=4 point=2 t=87.216 et=669.460</Score>
+<Score et="670.6">Vince Schaefers(5) lap=6 point=0 t=-1.000 et=670.520</Score>
+<TrackLimits Driver="Matthew J Wright" ID="6" Lap="5" WarningPoints="0.25" CurrentPoints="0.25" Resolution="5" et="671.7">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Matthew J Wright" ID="6" Lap="5" WarningPoints="0.25" CurrentPoints="0.25" Resolution="5" et="671.7">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Matthew J Wright" ID="6" Lap="5" WarningPoints="0.25" CurrentPoints="0.25" Resolution="5" et="672.9">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Matthew J Wright" ID="6" Lap="5" WarningPoints="0.25" CurrentPoints="0.25" Resolution="5" et="672.9">Invalid Lap Cut Track</TrackLimits>
+<Score et="677.2">Keir Batty(27) lap=4 point=1 t=-1.000 et=677.125</Score>
+<Score et="677.2">Keir Batty(27) lap=4 point=2 t=-1.000 et=677.125</Score>
+<Score et="677.2">Keir Batty(27) lap=5 point=0 t=-1.000 et=677.125</Score>
+<TrackLimits Driver="Michael Harris#8907" ID="26" Lap="5" WarningPoints="0.5" CurrentPoints="0.5" Resolution="5" et="678.0">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Michael Harris#8907" ID="26" Lap="5" WarningPoints="0.5" CurrentPoints="0.5" Resolution="5" et="678.0">Invalid Lap Cut Track</TrackLimits>
+<Score et="678.1">Mark Bell(11) lap=5 point=1 t=-1.000 et=678.020</Score>
+<Score et="678.1">Mark Bell(11) lap=5 point=2 t=-1.000 et=678.020</Score>
+<Score et="678.1">Mark Bell(11) lap=6 point=0 t=-1.000 et=678.020</Score>
+<Score et="678.8">Mike Hunt#4317(21) lap=5 point=0 t=121.484 et=678.720</Score>
+<TrackLimits Driver="Michael Harris#8907" ID="26" Lap="5" WarningPoints="0.5" CurrentPoints="0.5" Resolution="5" et="679.2">Invalid Lap Cut Track</TrackLimits>
+<TrackLimits Driver="Michael Harris#8907" ID="26" Lap="5" WarningPoints="0.5" CurrentPoints="0.5" Resolution="5" et="679.2">Invalid Lap Cut Track</TrackLimits>
+<Score et="679.5">Gareth Anderson(8) lap=4 point=2 t=88.329 et=679.460</Score>
+<Score et="679.8">Matthew J Wright(6) lap=5 point=2 t=-1.000 et=679.720</Score>
+<Score et="679.8">Matthew J Wright(6) lap=6 point=0 t=-1.000 et=679.720</Score>
+<Score et="680.1">Vince Schaefers(5) lap=6 point=1 t=-1.000 et=680.066</Score>
+<Score et="680.1">Vince Schaefers(5) lap=6 point=2 t=-1.000 et=680.066</Score>
+<Score et="680.1">Vince Schaefers(5) lap=7 point=0 t=-1.000 et=680.066</Score>
+<Score et="682.6">Davide Masi(2) lap=6 point=0 t=104.729 et=682.500</Score>
+<Score et="684.5">Mihai Daniel Ciubotariu(28) lap=5 point=1 t=-1.000 et=684.456</Score>
+<Score et="684.5">Mihai Daniel Ciubotariu(28) lap=5 point=2 t=-1.000 et=684.456</Score>
+<Score et="684.5">Mihai Daniel Ciubotariu(28) lap=6 point=0 t=-1.000 et=684.456</Score>
+<ChatMessage et="686.7">K Batty: rip</ChatMessage>
+<Score et="691.9">Dan Davis#8264(18) lap=5 point=2 t=74.352 et=691.860</Score>
+<Score et="692.4">Jamahl Clouden(7) lap=6 point=0 t=104.551 et=692.380</Score>
+<Score et="692.7">Michael Harris#8907(26) lap=6 point=0 t=-1.000 et=692.617</Score>
+<Score et="700.1">Davide Masi(2) lap=6 point=1 t=-1.000 et=699.995</Score>
+<Score et="700.1">Davide Masi(2) lap=6 point=2 t=-1.000 et=699.995</Score>
+<Score et="700.1">Davide Masi(2) lap=7 point=0 t=-1.000 et=699.995</Score>
+<Score et="700.3">Jamahl Clouden(7) lap=6 point=1 t=-1.000 et=700.302</Score>
+<Score et="700.3">Jamahl Clouden(7) lap=6 point=2 t=-1.000 et=700.302</Score>
+<Score et="700.3">Jamahl Clouden(7) lap=7 point=0 t=-1.000 et=700.302</Score>
+<Score et="700.9">James Wright(22) lap=5 point=2 t=74.051 et=700.880</Score>
+<Score et="703.4">Mike Hunt#4317(21) lap=5 point=1 t=-1.000 et=703.332</Score>
+<Score et="703.4">Mike Hunt#4317(21) lap=5 point=2 t=-1.000 et=703.332</Score>
+<Score et="703.4">Mike Hunt#4317(21) lap=6 point=0 t=-1.000 et=703.332</Score>
+<Score et="704.7">Ryan Lewis Fox(3) lap=5 point=0 t=122.399 et=704.660</Score>
+<Score et="710.4">Ryan Lewis Fox(3) lap=5 point=1 t=-1.000 et=710.349</Score>
+<Score et="710.4">Ryan Lewis Fox(3) lap=5 point=2 t=-1.000 et=710.349</Score>
+<Score et="710.4">Ryan Lewis Fox(3) lap=6 point=0 t=-1.000 et=710.349</Score>
+<Incident et="714.2">Dan Davis#8264(18) reported contact (31.16) with Immovable</Incident>
+<Incident et="715.4">Dan Davis#8264(18) reported contact (4.78) with Immovable</Incident>
+<TrackLimits Driver="Dan Davis#8264" ID="18" Lap="6" WarningPoints="0" CurrentPoints="0" Resolution="7" et="722.4">No Further Action</TrackLimits>
+<Score et="722.4">Dan Davis#8264(18) lap=6 point=0 t=-1.000 et=722.368</Score>
+<TrackLimits Driver="Dan Davis#8264" ID="18" Lap="6" WarningPoints="0" CurrentPoints="0" Resolution="7" et="722.4">No Further Action</TrackLimits>
+<Score et="722.4">Dan Davis#8264(18) lap=6 point=1 t=-1.000 et=722.368</Score>
+<Score et="722.4">Dan Davis#8264(18) lap=6 point=2 t=-1.000 et=722.368</Score>
+<Score et="722.4">Dan Davis#8264(18) lap=7 point=0 t=-1.000 et=722.368</Score>
+<Score et="722.7">Gareth Anderson(8) lap=5 point=0 t=-1.000 et=722.616</Score>
+<TrackLimits Driver="Dan Davis#8264" ID="18" Lap="6" WarningPoints="0" CurrentPoints="0" Resolution="7" et="723.6">No Further Action</TrackLimits>
+<TrackLimits Driver="Dan Davis#8264" ID="18" Lap="6" WarningPoints="0" CurrentPoints="0" Resolution="7" et="723.6">No Further Action</TrackLimits>
+<Score et="731.2">James Wright(22) lap=6 point=0 t=104.282 et=731.120</Score>
+</Stream>
+<MostLapsCompleted>7</MostLapsCompleted>
+<Driver>
+<Name>Riccardo Gabetti</Name>
+<Connected>1</Connected>
+<VehFile>397_26_499P.VEH</VehFile>
+<UpgradeCode>600c0000 00000000 00000000 00000000</UpgradeCode>
+<VehName>499P Custom Team 2026 #397</VehName>
+<Category>WEC 2026, Hypercar, Ferrari 499P</Category>
+<CarType>Ferrari 499P</CarType>
+<CarClass>Hyper</CarClass>
+<CarNumber>69</CarNumber>
+<TeamName>Riccardo Gabetti</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>1</Position>
+<ClassPosition>1</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="2" et="--.---" topspeed="282.88" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="1" et="148.6599" s1="31.8102" s2="43.6196" s3="30.4981" topspeed="296.39" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">105.9278</Lap>
+<Lap num="3" p="1" et="254.5801" s1="31.0807" s2="43.0119" s3="30.4271" topspeed="295.04" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">104.5197</Lap>
+<Lap num="4" p="1" et="359.1001" s1="30.9032" s2="42.4541" s3="30.3277" topspeed="295.94" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">103.6850</Lap>
+<Lap num="5" p="1" et="462.7800" topspeed="269.36" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<BestLapTime>103.6850</BestLapTime>
+<Laps>5</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="5">PlayerControl,Clutch</ControlAndAids>
+</Driver>
+<Driver>
+<Name>Roberto Cristofanilli</Name>
+<Connected>1</Connected>
+<VehFile>397_25_499P.VEH</VehFile>
+<UpgradeCode>600c0000 00000000 00000000 00000000</UpgradeCode>
+<VehName>499P Custom Team 2025 #397</VehName>
+<Category>WEC 2025, Hypercar, Ferrari 499P</Category>
+<CarType>Ferrari 499P</CarType>
+<CarClass>Hyper</CarClass>
+<CarNumber>173</CarNumber>
+<TeamName>Roberto Cristofanilli</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>2</Position>
+<ClassPosition>2</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="17" et="--.---" topspeed="288.73" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="6" et="175.2600" s1="33.5926" s2="44.9616" s3="30.7669" topspeed="293.24" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">109.3211</Lap>
+<Lap num="3" p="2" et="284.5801" s1="31.4903" s2="42.9158" s3="30.3460" topspeed="294.59" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">104.7521</Lap>
+<Lap num="4" p="2" et="389.3401" s1="31.0074" s2="42.5405" s3="30.2604" topspeed="294.14" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">103.8083</Lap>
+<Lap num="5" p="2" et="493.1399" s1="31.0863" s2="42.2563" s3="30.3487" topspeed="294.59" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">103.6913</Lap>
+<Lap num="6" p="2" et="596.8401" s1="31.1701" topspeed="283.78" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<BestLapTime>103.6913</BestLapTime>
+<Laps>6</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="6">PlayerControl,Clutch,AutoBlip</ControlAndAids>
+</Driver>
+<Driver>
+<Name>Keir Batty</Name>
+<Connected>1</Connected>
+<VehFile>397_23_9X8.VEH</VehFile>
+<UpgradeCode>c0180000 00000000 00000000 00000000</UpgradeCode>
+<VehName>Peugeot 9x8 Custom Team 2023 #397</VehName>
+<Category>WEC 2023, Hypercar, Peugeot 9x8</Category>
+<CarType>Peugeot 9x8</CarType>
+<CarClass>Hyper</CarClass>
+<CarNumber>60</CarNumber>
+<TeamName>Keir Batty</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>3</Position>
+<ClassPosition>3</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="27" et="--.---" topspeed="293.24" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="11" et="340.2400" s1="32.1741" s2="43.6175" s3="30.5221" topspeed="295.94" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">106.3137</Lap>
+<Lap num="3" p="8" et="446.5400" s1="31.4011" s2="43.0185" s3="30.3083" topspeed="297.29" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">104.7278</Lap>
+<Lap num="4" p="3" et="551.2800" s1="30.9233" s2="42.8297" s3="30.3965" topspeed="297.74" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">104.1495</Lap>
+<Lap num="5" p="3" et="655.4199" topspeed="254.05" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<BestLapTime>104.1495</BestLapTime>
+<Laps>5</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="5">PlayerControl,Clutch,AutoBlip</ControlAndAids>
+</Driver>
+<Driver>
+<Name>Sebastian Vorhauer</Name>
+<Connected>1</Connected>
+<VehFile>397_26_BMWMH.VEH</VehFile>
+<UpgradeCode>600c0000 00000000 00000000 00000000</UpgradeCode>
+<VehName>BMWMH Custom Team 2026 #397</VehName>
+<Category>WEC 2026, Hypercar, BMW M Hybrid V8</Category>
+<CarType>BMW M Hybrid V8</CarType>
+<CarClass>Hyper</CarClass>
+<CarNumber>25</CarNumber>
+<TeamName>Sebastian Vorhauer</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>4</Position>
+<ClassPosition>4</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="3" et="--.---" topspeed="292.34" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="2" et="149.1599" s1="32.0741" s2="43.8470" s3="30.8871" topspeed="297.74" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">106.8082</Lap>
+<Lap num="3" p="2" et="255.9600" s1="31.3088" s2="43.3704" s3="30.4389" topspeed="298.19" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">105.1181</Lap>
+<Lap num="4" p="2" et="361.0801" s1="31.0406" s2="43.1412" s3="30.3729" topspeed="299.09" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">104.5547</Lap>
+<Lap num="5" p="3" et="465.6399" s1="31.0399" s2="42.8149" s3="30.4094" topspeed="299.54" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">104.2642</Lap>
+<Lap num="6" p="3" et="569.8999" s1="31.0108" topspeed="287.83" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<BestLapTime>104.2642</BestLapTime>
+<Laps>6</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="6">PlayerControl,Clutch,AutoBlip</ControlAndAids>
+</Driver>
+<Driver>
+<Name>James Wright</Name>
+<Connected>1</Connected>
+<VehFile>397_25_963.VEH</VehFile>
+<UpgradeCode>c0180000 00000000 00000000 00000000</UpgradeCode>
+<VehName>Porsche 963 Custom Team 2025 #397</VehName>
+<Category>WEC 2025, Hypercar, Porsche 963</Category>
+<CarType>Porsche 963</CarType>
+<CarClass>Hyper</CarClass>
+<CarNumber>46</CarNumber>
+<TeamName>James Wright</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>5</Position>
+<ClassPosition>5</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="23" et="--.---" topspeed="289.18" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="6" et="204.3999" s1="32.9003" s2="44.5362" s3="30.9536" topspeed="295.49" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">108.3901</Lap>
+<Lap num="3" p="5" et="312.7800" s1="31.4819" s2="43.2490" s3="30.3351" topspeed="298.19" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">105.0661</Lap>
+<Lap num="4" p="3" et="417.8401" s1="30.9819" s2="43.0055" s3="30.4191" topspeed="297.74" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">104.4065</Lap>
+<Lap num="5" p="5" et="522.2600" s1="30.8508" s2="43.5153" s3="30.2157" topspeed="298.19" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">104.5818</Lap>
+<Lap num="6" p="5" et="626.8401" s1="31.1033" s2="42.9481" s3="30.2303" topspeed="298.19" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">104.2817</Lap>
+<BestLapTime>104.2817</BestLapTime>
+<Laps>6</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="6">PlayerControl,Clutch,AutoBlip</ControlAndAids>
+</Driver>
+<Driver>
+<Name>Eoin Skene</Name>
+<Connected>1</Connected>
+<VehFile>397_25_963.VEH</VehFile>
+<UpgradeCode>c0180000 00000000 00000000 00000000</UpgradeCode>
+<VehName>Porsche 963 Custom Team 2025 #397</VehName>
+<Category>WEC 2025, Hypercar, Porsche 963</Category>
+<CarType>Porsche 963</CarType>
+<CarClass>Hyper</CarClass>
+<CarNumber>373</CarNumber>
+<TeamName>Eoin Skene</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>6</Position>
+<ClassPosition>6</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="26" et="--.---" topspeed="290.98" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="5" et="230.8799" s1="32.8121" s2="44.1234" s3="30.9813" topspeed="296.39" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">107.9168</Lap>
+<Lap num="3" p="3" et="338.7800" s1="31.4499" s2="42.9417" s3="30.3666" topspeed="297.74" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">104.7582</Lap>
+<Lap num="4" p="3" et="443.5400" s1="30.9180" s2="42.7664" s3="30.6185" topspeed="298.19" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">104.3029</Lap>
+<Lap num="5" p="4" et="547.8601" s1="30.9314" topspeed="287.83" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<BestLapTime>104.3029</BestLapTime>
+<Laps>5</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="5">PlayerControl,Clutch,AutoBlip</ControlAndAids>
+</Driver>
+<Driver>
+<Name>Wellington Jimenez</Name>
+<Connected>1</Connected>
+<VehFile>397_26_VLMDH.VEH</VehFile>
+<UpgradeCode>600c0000 00000000 00000000 00000000</UpgradeCode>
+<VehName>VLMDH Custom Team 2026 #397</VehName>
+<Category>WEC 2026, Hypercar, Cadillac V-Series.R</Category>
+<CarType>Cadillac V-Series.R</CarType>
+<CarClass>Hyper</CarClass>
+<CarNumber>217</CarNumber>
+<TeamName>Wellington Jimenez</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>7</Position>
+<ClassPosition>7</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="13" et="--.---" topspeed="291.43" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="4" et="169.2000" s1="32.9383" s2="44.7257" s3="30.8661" topspeed="295.49" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">108.5301</Lap>
+<Lap num="3" p="5" et="277.7200" s1="31.4998" s2="43.6622" s3="30.8996" topspeed="296.39" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">106.0616</Lap>
+<Lap num="4" p="2" et="383.7800" s1="31.0296" s2="42.9545" s3="30.4268" topspeed="298.64" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">104.4108</Lap>
+<Lap num="5" p="6" et="488.2000" s1="30.9312" s2="43.1797" s3="30.5207" topspeed="298.64" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">104.6316</Lap>
+<Lap num="6" p="6" et="592.8201" topspeed="272.52" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<BestLapTime>104.4108</BestLapTime>
+<Laps>6</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="6">PlayerControl,Clutch,AutoBlip</ControlAndAids>
+</Driver>
+<Driver>
+<Name>Jamahl Clouden</Name>
+<Connected>1</Connected>
+<VehFile>397_25_963.VEH</VehFile>
+<UpgradeCode>c0180000 00000000 00000000 00000000</UpgradeCode>
+<VehName>Porsche 963 Custom Team 2025 #397</VehName>
+<Category>WEC 2025, Hypercar, Porsche 963</Category>
+<CarType>Porsche 963</CarType>
+<CarClass>Hyper</CarClass>
+<CarNumber>36</CarNumber>
+<TeamName>Jamahl Clouden</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>8</Position>
+<ClassPosition>8</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="9" et="--.---" topspeed="290.53" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="4" et="161.2000" s1="33.3758" s2="44.9828" s3="31.4908" topspeed="295.49" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">109.8494</Lap>
+<Lap num="3" p="4" et="271.0400" s1="31.3514" s2="43.2604" s3="30.6046" topspeed="296.84" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">105.2164</Lap>
+<Lap num="4" p="3" et="376.2600" s1="31.2159" s2="42.9908" s3="30.3946" topspeed="298.19" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">104.6013</Lap>
+<Lap num="5" p="7" et="480.8601" s1="33.2399" s2="43.2120" s3="30.5103" topspeed="298.64" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">106.9622</Lap>
+<Lap num="6" p="8" et="587.8201" s1="31.1068" s2="42.9072" s3="30.5367" topspeed="299.09" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">104.5508</Lap>
+<Lap num="7" p="8" et="692.3799" topspeed="251.35" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<BestLapTime>104.5508</BestLapTime>
+<Laps>7</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="7">PlayerControl,Clutch,AutoBlip</ControlAndAids>
+</Driver>
+<Driver>
+<Name>Matthew J Wright</Name>
+<Connected>1</Connected>
+<VehFile>397_26_VLMDH.VEH</VehFile>
+<UpgradeCode>600c0000 00000000 00000000 00000000</UpgradeCode>
+<VehName>VLMDH Custom Team 2026 #397</VehName>
+<Category>WEC 2026, Hypercar, Cadillac V-Series.R</Category>
+<CarType>Cadillac V-Series.R</CarType>
+<CarClass>Hyper</CarClass>
+<CarNumber>135</CarNumber>
+<TeamName>Matthew J Wright</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>9</Position>
+<ClassPosition>9</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="20" et="--.---" topspeed="291.89" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="5" et="178.0801" s1="32.8081" s2="44.2361" s3="30.9713" topspeed="295.94" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">108.0155</Lap>
+<Lap num="3" p="7" et="286.1001" s1="31.4829" s2="43.2927" s3="30.7161" topspeed="295.49" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">105.4916</Lap>
+<Lap num="4" p="10" et="391.6001" s1="31.4794" s2="51.8832" s3="31.1390" topspeed="292.79" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">114.5016</Lap>
+<Lap num="5" p="8" et="506.1001" s1="31.1959" s2="43.1810" s3="30.3359" topspeed="298.64" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">104.7129</Lap>
+<Lap num="6" p="9" et="610.8000" s1="31.3459" topspeed="288.28" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<BestLapTime>104.7129</BestLapTime>
+<Laps>6</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="6">PlayerControl,Clutch,AutoBlip</ControlAndAids>
+</Driver>
+<Driver>
+<Name>Davide Masi</Name>
+<Connected>1</Connected>
+<VehFile>397_26_BMWMH.VEH</VehFile>
+<UpgradeCode>600c0000 00000000 00000000 00000000</UpgradeCode>
+<VehName>BMWMH Custom Team 2026 #397</VehName>
+<Category>WEC 2026, Hypercar, BMW M Hybrid V8</Category>
+<CarType>BMW M Hybrid V8</CarType>
+<CarClass>Hyper</CarClass>
+<CarNumber>19</CarNumber>
+<TeamName>Davide Masi</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>10</Position>
+<ClassPosition>10</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="4" et="--.---" topspeed="282.43" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="3" et="156.1201" s1="32.0548" s2="44.2081" s3="30.6377" topspeed="297.29" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">106.9006</Lap>
+<Lap num="3" p="2" et="263.0200" s1="31.1719" s2="43.0609" s3="30.5556" topspeed="297.74" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">104.7883</Lap>
+<Lap num="4" p="5" et="367.8000" s1="31.0481" s2="43.2687" s3="30.7923" topspeed="297.29" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">105.1091</Lap>
+<Lap num="5" p="9" et="472.9199" s1="30.9767" s2="43.3600" s3="30.5121" topspeed="298.19" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">104.8488</Lap>
+<Lap num="6" p="10" et="577.7600" s1="30.9507" s2="43.2517" s3="30.5266" topspeed="299.54" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">104.7290</Lap>
+<Lap num="7" p="10" et="682.5000" topspeed="253.60" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<BestLapTime>104.7290</BestLapTime>
+<Laps>7</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="7">PlayerControl</ControlAndAids>
+</Driver>
+<Driver>
+<Name>Dan Davis#8264</Name>
+<Connected>1</Connected>
+<VehFile>397_26_BMWMH.VEH</VehFile>
+<UpgradeCode>600c0000 00000000 00000000 00000000</UpgradeCode>
+<VehName>BMWMH Custom Team 2026 #397</VehName>
+<Category>WEC 2026, Hypercar, BMW M Hybrid V8</Category>
+<CarType>BMW M Hybrid V8</CarType>
+<CarClass>Hyper</CarClass>
+<CarNumber>16</CarNumber>
+<TeamName>Dan Davis#8264</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>11</Position>
+<ClassPosition>11</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="18" et="--.---" topspeed="289.18" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="4" et="175.4800" s1="32.5418" s2="44.0227" s3="30.7226" topspeed="297.29" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">107.2871</Lap>
+<Lap num="3" p="3" et="282.7600" s1="31.1369" s2="43.2369" s3="30.4252" topspeed="297.74" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">104.7990</Lap>
+<Lap num="4" p="8" et="387.5601" s1="31.0870" s2="43.1612" topspeed="298.19" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium" pit="1">--.----</Lap>
+<Lap num="5" p="11" et="491.4397" topspeed="297.74" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="6" p="11" et="617.5000" s1="31.1765" s2="43.1758" topspeed="298.64" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="7" p="11" et="722.3679" topspeed="0.00" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<BestLapTime>104.7990</BestLapTime>
+<Laps>7</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="6">PlayerControl,Stability=1,Clutch,AutoBlip</ControlAndAids>
+<ControlAndAids startLap="7" endLap="7">UnknownControl</ControlAndAids>
+</Driver>
+<Driver>
+<Name>Rick Aalders</Name>
+<Connected>1</Connected>
+<VehFile>92_26_MANT22466058.VEH</VehFile>
+<UpgradeCode>14a51800 00000000 00000000 00000000</UpgradeCode>
+<VehName>The Bend Manthey 2026 #92:WEC</VehName>
+<Category>WEC 2026, GT3, Porsche 911 GT3 R LMGT3</Category>
+<CarType>Porsche 911 GT3 R LMGT3</CarType>
+<CarClass>GT3</CarClass>
+<CarNumber>88</CarNumber>
+<TeamName>Rick Aalders</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>12</Position>
+<ClassPosition>1</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="8" et="--.---" topspeed="249.99" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="9" et="159.9800" s1="36.5478" s2="50.5762" s3="35.0885" topspeed="250.90" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">122.2125</Lap>
+<Lap num="3" p="12" et="282.2000" s1="35.8528" s2="49.3800" s3="34.6917" topspeed="252.25" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">119.9245</Lap>
+<Lap num="4" p="12" et="402.1201" s1="35.4085" s2="49.0941" s3="34.4323" topspeed="252.70" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">118.9349</Lap>
+<Lap num="5" p="12" et="521.0601" s1="35.3135" topspeed="251.80" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="6" p="12" et="640.1001" topspeed="220.72" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<BestLapTime>118.9349</BestLapTime>
+<Laps>6</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="6">PlayerControl,Clutch,AutoBlip</ControlAndAids>
+</Driver>
+<Driver>
+<Name>Mattias Claes</Name>
+<Connected>1</Connected>
+<VehFile>85_25_IRON71169233.VEH</VehFile>
+<UpgradeCode>14a51800 00000000 00000000 00000000</UpgradeCode>
+<VehName>Iron Dames 2025 #85:LM</VehName>
+<Category>WEC 2025, GT3, Porsche 911 GT3 R LMGT3</Category>
+<CarType>Porsche 911 GT3 R LMGT3</CarType>
+<CarClass>GT3</CarClass>
+<CarNumber>444</CarNumber>
+<TeamName>Mattias Claes</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>13</Position>
+<ClassPosition>2</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="11" et="--.---" topspeed="239.63" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="9" et="165.5601" s1="35.9556" s2="49.9976" s3="34.8440" topspeed="251.35" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">120.7972</Lap>
+<Lap num="3" p="11" et="286.3401" s1="35.6111" s2="49.1606" s3="34.5215" topspeed="251.80" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">119.2931</Lap>
+<Lap num="4" p="13" et="405.6399" s1="35.3618" s2="49.1143" s3="34.6923" topspeed="252.25" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">119.1684</Lap>
+<Lap num="5" p="13" et="524.8201" s1="35.4881" s2="49.2625" s3="34.7924" topspeed="251.35" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">119.5430</Lap>
+<Lap num="6" p="13" et="644.3601" topspeed="221.62" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<BestLapTime>119.1684</BestLapTime>
+<Laps>6</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="6">PlayerControl</ControlAndAids>
+</Driver>
+<Driver>
+<Name>Morgan Kalseth</Name>
+<Connected>1</Connected>
+<VehFile>397_25_LEXUS.VEH</VehFile>
+<UpgradeCode>14a51800 00000000 00000000 00000000</UpgradeCode>
+<VehName>Lexus Custom Team 2025 #397</VehName>
+<Category>WEC 2025, GT3, Lexus RCF LMGT3</Category>
+<CarType>Lexus RCF LMGT3</CarType>
+<CarClass>GT3</CarClass>
+<CarNumber>27</CarNumber>
+<TeamName>Morgan Kalseth</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>14</Position>
+<ClassPosition>3</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="7" et="--.---" topspeed="247.74" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="7" et="159.9399" s1="36.4889" s2="49.9893" s3="35.0415" topspeed="252.70" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">121.5197</Lap>
+<Lap num="3" p="12" et="281.4600" s1="35.7940" s2="49.6575" s3="34.5318" topspeed="253.60" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">119.9834</Lap>
+<Lap num="4" p="12" et="401.4600" s1="35.4098" s2="49.2151" s3="34.5861" topspeed="253.60" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">119.2111</Lap>
+<Lap num="5" p="14" et="520.6599" topspeed="218.91" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<BestLapTime>119.2111</BestLapTime>
+<Laps>5</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="5">PlayerControl,Clutch,AutoBlip</ControlAndAids>
+</Driver>
+<Driver>
+<Name>Ilkay Erkilincoglu</Name>
+<Connected>1</Connected>
+<VehFile>397_25_LEXUS.VEH</VehFile>
+<UpgradeCode>14a51800 00000000 00000000 00000000</UpgradeCode>
+<VehName>Lexus Custom Team 2025 #397</VehName>
+<Category>WEC 2025, GT3, Lexus RCF LMGT3</Category>
+<CarType>Lexus RCF LMGT3</CarType>
+<CarClass>GT3</CarClass>
+<CarNumber>35</CarNumber>
+<TeamName>Ilkay Erkilincoglu</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>15</Position>
+<ClassPosition>4</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="19" et="--.---" topspeed="252.70" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="15" et="176.7200" s1="36.4194" s2="50.4107" s3="34.8607" topspeed="253.60" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">121.6909</Lap>
+<Lap num="3" p="12" et="298.4199" s1="35.6904" s2="49.5382" s3="34.5495" topspeed="254.50" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">119.7781</Lap>
+<Lap num="4" p="15" et="418.2000" s1="35.5076" s2="49.3145" s3="34.4084" topspeed="254.50" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">119.2305</Lap>
+<Lap num="5" p="15" et="537.4199" s1="35.7266" s2="49.2176" topspeed="254.95" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium" pit="1">--.----</Lap>
+<BestLapTime>119.2305</BestLapTime>
+<Laps>5</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="5">PlayerControl,Clutch,AutoBlip</ControlAndAids>
+</Driver>
+<Driver>
+<Name>Gray Langley</Name>
+<Connected>1</Connected>
+<VehFile>397_26_911GT3R.VEH</VehFile>
+<UpgradeCode>14a51800 00000000 00000000 00000000</UpgradeCode>
+<VehName>911GT3R Custom Team 2026 #397</VehName>
+<Category>WEC 2026, GT3, Porsche 911 GT3 R LMGT3</Category>
+<CarType>Porsche 911 GT3 R LMGT3</CarType>
+<CarClass>GT3</CarClass>
+<CarNumber>225</CarNumber>
+<TeamName>Gray Langley</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>16</Position>
+<ClassPosition>5</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="5" et="--.---" topspeed="249.09" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="7" et="158.2200" s1="36.6558" s2="50.1521" s3="34.8703" topspeed="250.44" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">121.6782</Lap>
+<Lap num="3" p="11" et="279.8999" s1="35.7487" s2="49.3909" s3="34.6529" topspeed="250.90" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">119.7925</Lap>
+<Lap num="4" p="13" et="399.6799" s1="35.6039" s2="49.2341" s3="34.6010" topspeed="251.80" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">119.4390</Lap>
+<Lap num="5" p="16" et="519.1201" s1="35.7523" topspeed="242.79" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<BestLapTime>119.4390</BestLapTime>
+<Laps>5</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="5">PlayerControl,Clutch,AutoBlip</ControlAndAids>
+</Driver>
+<Driver>
+<Name>Tony Garona</Name>
+<Connected>1</Connected>
+<VehFile>397_25_911GT3R.VEH</VehFile>
+<UpgradeCode>14a51800 00000000 00000000 00000000</UpgradeCode>
+<VehName>911GT3R Custom Team 2025 #397</VehName>
+<Category>WEC 2025, GT3, Porsche 911 GT3 R LMGT3</Category>
+<CarType>Porsche 911 GT3 R LMGT3</CarType>
+<CarClass>GT3</CarClass>
+<CarNumber>777</CarNumber>
+<TeamName>Tony Garona</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>17</Position>
+<ClassPosition>6</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="10" et="--.---" topspeed="250.44" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="9" et="161.6399" s1="36.3217" s2="50.3751" s3="34.9460" topspeed="252.25" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">121.6428</Lap>
+<Lap num="3" p="12" et="283.2800" s1="35.6359" s2="49.5633" s3="34.6205" topspeed="252.25" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">119.8197</Lap>
+<Lap num="4" p="18" et="403.1001" s1="35.5290" topspeed="251.80" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="5" p="17" et="522.8000" s1="35.3384" s2="49.4954" s3="34.6265" topspeed="252.25" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">119.4604</Lap>
+<Lap num="6" p="17" et="642.2600" topspeed="214.41" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<BestLapTime>119.4604</BestLapTime>
+<Laps>6</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="6">PlayerControl,Clutch,AutoBlip</ControlAndAids>
+</Driver>
+<Driver>
+<Name>Benjamin Rook</Name>
+<Connected>1</Connected>
+<VehFile>397_26_BMW.VEH</VehFile>
+<UpgradeCode>14a51800 00000000 00000000 00000000</UpgradeCode>
+<VehName>BMW GT3 Custom Team 2026 #397</VehName>
+<Category>WEC 2026, GT3, BMW M4 LMGT3</Category>
+<CarType>BMW M4 LMGT3</CarType>
+<CarClass>GT3</CarClass>
+<CarNumber>14</CarNumber>
+<TeamName>Benjamin Rook</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>18</Position>
+<ClassPosition>7</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="6" et="--.---" topspeed="247.74" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="6" et="158.7200" s1="36.5063" s2="49.9322" s3="34.7980" topspeed="254.50" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">121.2366</Lap>
+<Lap num="3" p="13" et="279.9600" s1="35.7018" s2="51.2265" s3="34.5437" topspeed="254.95" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">121.4721</Lap>
+<Lap num="4" p="15" et="401.4199" s1="35.6234" s2="49.2747" s3="34.5809" topspeed="255.40" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">119.4790</Lap>
+<Lap num="5" p="17" et="520.8999" s1="35.6022" topspeed="245.94" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<BestLapTime>119.4790</BestLapTime>
+<Laps>5</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="5">PlayerControl,Clutch,AutoBlip</ControlAndAids>
+</Driver>
+<Driver>
+<Name>Michael Harris#8907</Name>
+<Connected>1</Connected>
+<VehFile>397_26_BMW.VEH</VehFile>
+<UpgradeCode>14a51800 00000000 00000000 00000000</UpgradeCode>
+<VehName>BMW GT3 Custom Team 2026 #397</VehName>
+<Category>WEC 2026, GT3, BMW M4 LMGT3</Category>
+<CarType>BMW M4 LMGT3</CarType>
+<CarClass>GT3</CarClass>
+<CarNumber>34</CarNumber>
+<TeamName>Michael Harris#8907</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>19</Position>
+<ClassPosition>8</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="27" et="--.---" topspeed="189.64" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="1" et="64.2034" topspeed="240.53" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="3" p="18" et="207.7400" s1="36.8163" s2="50.4868" s3="35.2404" topspeed="253.60" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">122.5435</Lap>
+<Lap num="4" p="18" et="330.2800" s1="35.8874" s2="49.7247" s3="34.7290" topspeed="253.60" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">120.3411</Lap>
+<Lap num="5" p="19" et="450.6201" s1="35.6677" s2="49.4809" s3="35.0132" topspeed="254.05" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">120.1617</Lap>
+<Lap num="6" p="19" et="570.7800" s1="35.6429" s2="49.5138" topspeed="253.60" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium" pit="1">--.----</Lap>
+<BestLapTime>120.1617</BestLapTime>
+<Laps>6</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="6">PlayerControl,Clutch,AutoBlip</ControlAndAids>
+</Driver>
+<Driver>
+<Name>Mark Bell</Name>
+<Connected>1</Connected>
+<VehFile>397_25_LEXUS.VEH</VehFile>
+<UpgradeCode>14a51800 00000000 00000000 00000000</UpgradeCode>
+<VehName>Lexus Custom Team 2025 #397</VehName>
+<Category>WEC 2025, GT3, Lexus RCF LMGT3</Category>
+<CarType>Lexus RCF LMGT3</CarType>
+<CarClass>GT3</CarClass>
+<CarNumber>82</CarNumber>
+<TeamName>Mark Bell</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>20</Position>
+<ClassPosition>9</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="21" et="--.---" topspeed="250.90" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="17" et="181.9600" s1="36.6605" s2="51.0591" s3="35.3018" topspeed="252.25" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">123.0214</Lap>
+<Lap num="3" p="17" et="304.9800" s1="35.9250" s2="50.0883" s3="35.0525" topspeed="253.15" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">121.0659</Lap>
+<Lap num="4" p="20" et="426.0400" s1="35.6601" s2="50.0779" s3="34.9189" topspeed="253.15" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">120.6570</Lap>
+<Lap num="5" p="20" et="546.7000" s1="35.7687" s2="49.8675" s3="34.6761" topspeed="252.70" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">120.3123</Lap>
+<Lap num="6" p="20" et="667.0200" topspeed="226.57" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<BestLapTime>120.3123</BestLapTime>
+<Laps>6</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="6">PlayerControl,Clutch,AutoBlip</ControlAndAids>
+</Driver>
+<Driver>
+<Name>Mihai Daniel Ciubotariu</Name>
+<Connected>1</Connected>
+<VehFile>397_26_296GT3.VEH</VehFile>
+<UpgradeCode>284a3100 00000000 00000000 00000000</UpgradeCode>
+<VehName>296GT3 Custom Team 2026 #397</VehName>
+<Category>WEC 2026, GT3, Ferrari 296 LMGT3 Evo</Category>
+<CarType>Ferrari 296 LMGT3 Evo</CarType>
+<CarClass>GT3</CarClass>
+<CarNumber>99</CarNumber>
+<TeamName>Mihai Daniel Ciubotariu</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>21</Position>
+<ClassPosition>10</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="16" et="--.---" topspeed="249.54" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="19" et="174.3799" s1="36.9223" s2="51.4715" s3="35.7417" topspeed="251.35" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">124.1355</Lap>
+<Lap num="3" p="21" et="298.5000" s1="36.2022" s2="50.4876" s3="35.2873" topspeed="252.25" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">121.9771</Lap>
+<Lap num="4" p="20" et="420.4800" s1="35.6710" s2="50.1087" s3="35.1400" topspeed="251.80" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">120.9197</Lap>
+<Lap num="5" p="20" et="541.3999" s1="35.6637" s2="49.8081" s3="35.0970" topspeed="251.35" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">120.5688</Lap>
+<Lap num="6" p="21" et="661.9800" topspeed="213.06" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<BestLapTime>120.5688</BestLapTime>
+<Laps>6</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="6">PlayerControl,Clutch,AutoBlip</ControlAndAids>
+</Driver>
+<Driver>
+<Name>John Wainwright</Name>
+<Connected>1</Connected>
+<VehFile>397_26_LEXUS.VEH</VehFile>
+<UpgradeCode>14a51800 00000000 00000000 00000000</UpgradeCode>
+<VehName>Lexus Custom Team 2026 #397</VehName>
+<Category>WEC 2026, GT3, Lexus RCF LMGT3</Category>
+<CarType>Lexus RCF LMGT3</CarType>
+<CarClass>GT3</CarClass>
+<CarNumber>62</CarNumber>
+<TeamName>John Wainwright</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>22</Position>
+<ClassPosition>11</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="15" et="--.---" topspeed="250.90" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="16" et="173.0601" s1="36.9301" s2="51.1392" s3="35.7394" topspeed="253.60" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">123.8086</Lap>
+<Lap num="3" p="17" et="296.8601" s1="36.1144" s2="50.1767" s3="34.9820" topspeed="254.50" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">121.2731</Lap>
+<Lap num="4" p="22" et="418.1399" s1="35.8824" s2="55.0122" s3="35.3636" topspeed="250.90" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">126.2583</Lap>
+<Lap num="5" p="22" et="544.3999" s1="35.6483" s2="50.0325" topspeed="255.40" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="6" p="22" et="653.0269" topspeed="0.00" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<BestLapTime>121.2731</BestLapTime>
+<Laps>6</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="5">PlayerControl,Clutch,AutoBlip</ControlAndAids>
+<ControlAndAids startLap="6" endLap="6">UnknownControl</ControlAndAids>
+</Driver>
+<Driver>
+<Name>Mike Hunt#4317</Name>
+<Connected>1</Connected>
+<VehFile>69_26_WRT_29233637.VEH</VehFile>
+<UpgradeCode>14a51800 00000000 00000000 00000000</UpgradeCode>
+<VehName>Team WRT 2026 #69:Spa</VehName>
+<Category>WEC 2026, GT3, BMW M4 LMGT3</Category>
+<CarType>BMW M4 LMGT3</CarType>
+<CarClass>GT3</CarClass>
+<CarNumber>68</CarNumber>
+<TeamName>Mike Hunt#4317</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>23</Position>
+<ClassPosition>12</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="22" et="--.---" topspeed="250.90" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="22" et="188.5000" s1="37.1265" s2="51.8323" s3="35.4929" topspeed="251.35" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">124.4517</Lap>
+<Lap num="3" p="23" et="312.9399" s1="36.2622" s2="50.6131" s3="35.4449" topspeed="251.35" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">122.3203</Lap>
+<Lap num="4" p="25" et="435.2600" topspeed="251.80" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="5" p="23" et="557.2400" s1="36.3703" s2="49.8649" s3="35.2486" topspeed="251.80" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">121.4838</Lap>
+<Lap num="6" p="23" et="678.7200" topspeed="226.57" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<BestLapTime>121.4838</BestLapTime>
+<Laps>6</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="6">PlayerControl,Clutch,AutoBlip</ControlAndAids>
+</Driver>
+<Driver>
+<Name>Roydon Stapley</Name>
+<Connected>1</Connected>
+<VehFile>397_26_MUSTANG.VEH</VehFile>
+<UpgradeCode>14a51800 00000000 00000000 00000000</UpgradeCode>
+<VehName>Mustang Custom Team 2026 #397</VehName>
+<Category>WEC 2026, GT3, Ford Mustang LMGT3</Category>
+<CarType>Ford Mustang LMGT3</CarType>
+<CarClass>GT3</CarClass>
+<CarNumber>45</CarNumber>
+<TeamName>Roydon Stapley</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>24</Position>
+<ClassPosition>13</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="12" et="--.---" topspeed="249.09" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="15" et="167.9199" s1="37.1392" s2="51.0900" s3="35.7143" topspeed="252.25" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">123.9435</Lap>
+<Lap num="3" p="19" et="291.8799" s1="36.0577" s2="50.5552" s3="35.3247" topspeed="253.15" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">121.9376</Lap>
+<Lap num="4" p="22" et="413.8000" s1="35.9702" s2="50.3387" s3="35.2708" topspeed="252.25" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">121.5797</Lap>
+<Lap num="5" p="23" et="535.3799" s1="36.0917" s2="50.3920" topspeed="245.04" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<BestLapTime>121.5797</BestLapTime>
+<Laps>5</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="5">PlayerControl,Clutch,AutoBlip</ControlAndAids>
+</Driver>
+<Driver>
+<Name>Vince Schaefers</Name>
+<Connected>1</Connected>
+<VehFile>397_24_HURACAN.VEH</VehFile>
+<UpgradeCode>284a3100 00000000 00000000 00000000</UpgradeCode>
+<VehName>Huracan Custom Team 2024 #397</VehName>
+<Category>WEC 2024, GT3, Lamborghini Huracan LMGT3 Evo2</Category>
+<CarType>Lamborghini Huracan LMGT3 Evo2</CarType>
+<CarClass>GT3</CarClass>
+<CarNumber>669</CarNumber>
+<TeamName>Vince Schaefers</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>25</Position>
+<ClassPosition>14</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="14" et="--.---" topspeed="253.60" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="14" et="172.7200" s1="36.6749" s2="50.2387" s3="34.7709" topspeed="251.35" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">121.6846</Lap>
+<Lap num="3" p="17" et="294.3999" s1="35.9044" s2="49.7049" topspeed="254.95" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="4" p="17" et="403.2070" topspeed="0.00" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="5" p="24" et="403.2070" topspeed="250.90" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="6" p="24" et="550.8401" s1="35.6349" s2="49.3530" topspeed="254.95" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="7" p="25" et="670.5200" topspeed="212.61" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<BestLapTime>121.6846</BestLapTime>
+<Laps>7</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="3">PlayerControl,Clutch,AutoBlip</ControlAndAids>
+<ControlAndAids startLap="4" endLap="4">UnknownControl</ControlAndAids>
+<ControlAndAids startLap="5" endLap="7">PlayerControl,Clutch,AutoBlip</ControlAndAids>
+</Driver>
+<Driver>
+<Name>Gareth Anderson</Name>
+<Connected>1</Connected>
+<VehFile>397_24_BMW.VEH</VehFile>
+<UpgradeCode>14a51800 00000000 00000000 00000000</UpgradeCode>
+<VehName>BMW GT3 Custom Team #397</VehName>
+<Category>WEC 2024, GT3, BMW M4 LMGT3</Category>
+<CarType>BMW M4 LMGT3</CarType>
+<CarClass>GT3</CarClass>
+<CarNumber>95</CarNumber>
+<TeamName>Gareth Anderson</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>26</Position>
+<ClassPosition>15</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="25" et="--.---" topspeed="251.35" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="26" et="221.5601" s1="37.7467" s2="51.5866" s3="35.6618" topspeed="252.25" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">124.9951</Lap>
+<Lap num="3" p="27" et="346.5400" s1="36.5366" topspeed="253.15" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="4" p="25" et="469.0801" s1="36.0287" s2="50.7511" s3="35.2714" topspeed="253.15" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">122.0511</Lap>
+<Lap num="5" p="26" et="591.1399" s1="36.1942" s2="52.1344" topspeed="253.60" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium" pit="1">--.----</Lap>
+<BestLapTime>122.0511</BestLapTime>
+<Laps>5</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="5">PlayerControl,Clutch,AutoBlip</ControlAndAids>
+</Driver>
+<Driver>
+<Name>Ryan Lewis Fox</Name>
+<Connected>1</Connected>
+<VehFile>397_24_BMW.VEH</VehFile>
+<UpgradeCode>14a51800 00000000 00000000 00000000</UpgradeCode>
+<VehName>BMW GT3 Custom Team #397</VehName>
+<Category>WEC 2024, GT3, BMW M4 LMGT3</Category>
+<CarType>BMW M4 LMGT3</CarType>
+<CarClass>GT3</CarClass>
+<CarNumber>305</CarNumber>
+<TeamName>Ryan Lewis Fox</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>27</Position>
+<ClassPosition>16</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Lap num="1" p="24" et="--.---" topspeed="250.90" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<Lap num="2" p="24" et="211.6001" s1="37.1038" s2="51.5278" s3="36.1144" topspeed="251.80" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">124.7460</Lap>
+<Lap num="3" p="26" et="336.3401" s1="36.7932" s2="51.0287" s3="35.3221" topspeed="252.25" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">123.1441</Lap>
+<Lap num="4" p="26" et="459.5000" s1="36.2971" s2="50.8979" s3="35.5668" topspeed="253.15" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">122.7618</Lap>
+<Lap num="5" p="27" et="582.2600" s1="36.3189" s2="50.8975" s3="35.1824" topspeed="252.70" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">122.3987</Lap>
+<Lap num="6" p="27" et="704.6599" topspeed="215.31" fcompound="0,Medium" rcompound="0,Medium" FL="0,Medium" FR="0,Medium" RL="0,Medium" RR="0,Medium">--.----</Lap>
+<BestLapTime>122.3987</BestLapTime>
+<Laps>6</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+<ControlAndAids startLap="1" endLap="6">PlayerControl,Clutch,AutoBlip</ControlAndAids>
+</Driver>
+<Driver>
+<Name>Daniel Zlatnik</Name>
+<Connected>1</Connected>
+<VehFile>397_25_911GT3R.VEH</VehFile>
+<UpgradeCode>14a51800 00000000 00000000 00000000</UpgradeCode>
+<VehName>911GT3R Custom Team 2025 #397</VehName>
+<Category>WEC 2025, GT3, Porsche 911 GT3 R LMGT3</Category>
+<CarType>Porsche 911 GT3 R LMGT3</CarType>
+<CarClass>GT3</CarClass>
+<CarNumber>981</CarNumber>
+<TeamName>Daniel Zlatnik</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>28</Position>
+<ClassPosition>17</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Laps>0</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+</Driver>
+<Driver>
+<Name>Matt Townsend</Name>
+<Connected>1</Connected>
+<VehFile>397_26_Z06GT3R.VEH</VehFile>
+<UpgradeCode>14a51800 00000000 00000000 00000000</UpgradeCode>
+<VehName>Z06GT3R Custom Team 2026 #397:CS</VehName>
+<Category>WEC 2026, GT3, Chevrolet Corvette Z06 LMGT3.R</Category>
+<CarType>Chevrolet Corvette Z06 LMGT3.R</CarType>
+<CarClass>GT3</CarClass>
+<CarNumber>85</CarNumber>
+<TeamName>Matt Townsend</TeamName>
+<isPlayer>1</isPlayer>
+<ServerScored>1</ServerScored>
+<Position>29</Position>
+<ClassPosition>18</ClassPosition>
+<LapRankIncludingDiscos>30</LapRankIncludingDiscos>
+<Laps>0</Laps>
+<Pitstops>0</Pitstops>
+<FinishStatus>Finished Normally</FinishStatus>
+</Driver>
+</Qualify>
+</RaceResults>
+</rFactorXML>
