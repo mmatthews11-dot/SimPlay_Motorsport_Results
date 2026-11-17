@@ -26,6 +26,33 @@ Keep the files' original names — they are only used to tell qualifying from th
 2. **Add file → Upload files**, and drag in the round's folder (e.g. `Round 2 Imola`) with its files inside.
 3. Commit. The "Build LMU results from uploaded files" action then runs and updates the site.
 
+## Penalties after the race
+
+The game's file can't contain the stewards' decisions, so they go in a plain text
+file called `penalties.txt` in that round's folder (a template is in the Round 1
+folder). One line per penalty:
+
+```
+24, Race 1, +30s, Cut the chicane on lap 12
+117, Race 1, DSQ, Unsafe release
+9, Race 1, drop 2, Avoidable contact
+35, Qualifying, lap deleted, Track limits
+```
+
+The site then adds the time, re-orders that class, and updates the gaps and
+places gained. Under the driver you'll see the penalty, the reason and where they
+finished before it. The original XML is never changed.
+
+- **First time for a round:** open the round's folder on github.com → **Add file →
+  Create new file** → name it `penalties.txt`, paste the lines, **Commit**.
+- **Adding more later:** click `penalties.txt` → the pencil icon → add a line → **Commit**.
+- **Undoing one:** delete the line, or put `# ` at the start of it.
+- **A typo is never silent.** If a line can't be applied (wrong car number, a driver
+  who didn't finish, an unknown penalty), the Actions run shows a yellow note naming
+  the file and line, and that line is skipped.
+- Penalties the game itself issued during the race (e.g. a drive-through for track
+  limits) are already in the results. Only add the stewards' ones.
+
 ## Good to know
 
 - **A file in the wrong place or one that isn't a race/qualifying file** is skipped, and the Actions run shows a yellow note saying which one and why.

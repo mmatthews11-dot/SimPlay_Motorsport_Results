@@ -136,16 +136,113 @@ function statusOf(finishStatus, lapCount) {
   return fs.startsWith("finished") ? "FINISHED" : "DNF";
 }
 
+// ---- Stewards' penalties (see parse-penalties.mjs) --------------------------
+// These are applied to the raw data here, so the game's XML is never edited.
+
+const placesText = (n) => `${n} place${n === 1 ? "" : "s"}`;
+
+function applyPenaltiesToRows(rows, penalties, sessionKey, isRace, sessionName) {
+  for (const p of penalties) {
+    if (p.session !== sessionKey) continue;
+    const matches = rows.filter(
+      (r) =>
+        String(r.raceNumber) === p.car &&
+        (!p.classHint || r.driverClass.toLowerCase() === p.classHint || String(r._rawClass).toLowerCase() === p.classHint)
+    );
+    if (matches.length === 0) {
+      p.problem = `${p.where}: car ${p.car} wasn't found in ${sessionName}`;
+      continue;
+    }
+    if (matches.length > 1) {
+      p.problem = `${p.where}: car ${p.car} is in more than one class — put the class first, e.g. "LMGT3 ${p.car}"`;
+      continue;
+    }
+    const r = matches[0];
+    const finished = r.status === "FINISHED";
+    const reason = p.reason || null;
+
+    if (p.kind === "dsq") {
+      r.status = "DSQ";
+      r.statusNote = reason || "Disqualified";
+      r.penalties.push({ kind: "dsq", reason });
+    } else if (p.kind === "time") {
+      if (!isRace) { p.problem = `${p.where}: time penalties only apply to races (use "lap deleted" or DSQ for qualifying)`; continue; }
+      if (!finished) { p.problem = `${p.where}: ${r.driver} didn't finish, so a time penalty has no effect`; continue; }
+      r._penaltyMs += Math.round(p.seconds * 1000);
+      r.penalties.push({ kind: "time", seconds: p.seconds, reason });
+    } else if (p.kind === "drop") {
+      if (!isRace) { p.problem = `${p.where}: place drops only apply to races`; continue; }
+      if (!finished) { p.problem = `${p.where}: ${r.driver} didn't finish, so a place drop has no effect`; continue; }
+      r._drop += p.places;
+      r.penalties.push({ kind: "drop", places: p.places, reason });
+    } else if (p.kind === "deleteLap") {
+      if (isRace) { p.problem = `${p.where}: "lap deleted" only applies to qualifying`; continue; }
+      const timed = r._laps.filter((l) => l.ms != null && !l.deleted);
+      if (!timed.length) { p.problem = `${p.where}: ${r.driver} has no timed lap to delete`; continue; }
+      timed.reduce((a, b) => (b.ms < a.ms ? b : a)).deleted = true; // their fastest remaining lap
+      const left = r._laps.filter((l) => !l.deleted);
+      const best = left.filter((l) => l.ms != null).reduce((m, l) => (m == null || l.ms < m ? l.ms : m), null);
+      r.bestLapMs = best;
+      r.referenceTimeMs = best;
+      r.bestLap = msToLap(best);
+      Object.assign(r, sectorBests(left));
+      r.penalties.push({ kind: "deleteLap", reason });
+    }
+    r._touched = true;
+    p.applied = true;
+  }
+}
+
+// Re-orders one class after penalties, using the same rule the game itself
+// uses (most laps first, then lowest finish time) with penalty time added.
+function reorderClass(list, isRace) {
+  const active = list.filter((r) => r.status !== "DSQ");
+  const dsq = list.filter((r) => r.status === "DSQ"); // disqualified: listed last
+  if (!isRace) {
+    const timed = active.filter((r) => r.bestLapMs != null).sort((a, b) => a.bestLapMs - b.bestLapMs);
+    return [...timed, ...active.filter((r) => r.bestLapMs == null), ...dsq];
+  }
+  const finishers = active.filter((r) => r.status === "FINISHED");
+  const others = active.filter((r) => r.status !== "FINISHED"); // DNF / DNS keep the game's order
+  const adj = (r) => r.finishMs + r._penaltyMs;
+  const beats = (a, b) => a.laps > b.laps || (a.laps === b.laps && adj(a) <= adj(b));
+
+  // Time penalties: slide the driver down past anyone now ahead of them.
+  for (const r of finishers.filter((x) => x._penaltyMs > 0)) {
+    let i = finishers.indexOf(r);
+    while (i + 1 < finishers.length && beats(finishers[i + 1], r)) {
+      [finishers[i], finishers[i + 1]] = [finishers[i + 1], finishers[i]];
+      i++;
+    }
+  }
+  // Fixed place drops, after any time-based movement.
+  for (const r of finishers.filter((x) => x._drop > 0)) {
+    const i = finishers.indexOf(r);
+    finishers.splice(i, 1);
+    finishers.splice(Math.min(i + r._drop, finishers.length), 0, r);
+  }
+  return [...finishers, ...others, ...dsq];
+}
+
 /**
  * @param {string} xml  the file contents
  * @param {object} meta { season, seasonOrder, roundLabel, sourceFile }
  * @returns the session summary, or null if the file has no race/qualifying session
  */
-export function parseLmuXml(xml, meta = {}) {
+export function parseLmuXml(xml, meta = {}, penalties = []) {
   const sessionMatch = xml.match(/<(Race|Qualify\d*)>([\s\S]*?)<\/\1>/);
   if (!sessionMatch) return null;
   const isRace = sessionMatch[1] === "Race";
   const block = sessionMatch[2];
+
+  const fileName = (meta.sourceFile || "").split("/").pop();
+  const sessionNo = (fileName.match(/\d*[QR](\d)_/i) || [])[1];
+  const nameFromFile = isRace
+    ? `Race ${sessionNo || 1}`
+    : sessionNo && sessionNo !== "1"
+      ? `Qualifying ${sessionNo}`
+      : "Qualifying";
+  const sessionKey = `${isRace ? "race" : "quali"}:${sessionNo || 1}`;
 
   const epoch = toInt(tag(block, "DateTime"));
   const startDate = epoch != null ? new Date(epoch * 1000) : null;
@@ -181,6 +278,12 @@ export function parseLmuXml(xml, meta = {}) {
       status,
       statusNote: status === "DNF" ? tag(d, "DNFReason") : null,
       hasMandatoryPitstopIssue: false,
+      penalties: [],
+      _penaltyMs: 0,
+      _drop: 0,
+      _touched: false,
+      _laps: laps,
+      _rawClass: rawClass,
       pitstops: toInt(tag(d, "Pitstops")),
       topSpeed: speeds.length ? Math.round(Math.max(...speeds) * 10) / 10 : null,
       ...sectorBests(laps),
@@ -190,12 +293,14 @@ export function parseLmuXml(xml, meta = {}) {
             positionsGained: status === "FINISHED" && classGrid != null && classPos != null ? classGrid - classPos : null,
             tyres: tyreStints(laps),
             ...racePace(laps),
-            _finishMs: finishMs, // internal, removed below
+            finishMs,
           }
         : {}),
     });
   }
   if (!rows.length) return null;
+
+  if (penalties.length) applyPenaltiesToRows(rows, penalties, sessionKey, isRace, nameFromFile);
 
   // Group by class (Hypercar first = the class of the best overall finisher),
   // each class in its own finishing order.
@@ -205,40 +310,55 @@ export function parseLmuXml(xml, meta = {}) {
     byClass.get(r.driverClass).push(r);
   }
   const standingsByClass = {};
-  for (const [cls, list] of byClass) {
-    list.sort((a, b) => (a.classPosition ?? 1e9) - (b.classPosition ?? 1e9));
+  for (const [cls, gameOrder] of byClass) {
+    gameOrder.sort((a, b) => (a.classPosition ?? 1e9) - (b.classPosition ?? 1e9));
+    const touched = gameOrder.some((r) => r._touched);
+    const list = touched ? reorderClass(gameOrder, isRace) : gameOrder;
+
+    if (touched) {
+      list.forEach((r, i) => {
+        if (r.classPosition !== i + 1) r.originalClassPosition = r.classPosition;
+        r.position = r.classPosition = i + 1;
+        if (isRace) r.positionsGained = r.status === "FINISHED" && r.gridPosition != null ? r.gridPosition - r.classPosition : null;
+      });
+    }
+
+    const timeOf = (r) => (r.finishMs != null ? r.finishMs + r._penaltyMs : null); // race time including penalties
     const leader = list[0];
-    const leaderFinishMs = leader._finishMs ?? null; // read before any row's internal field is cleared
+    const leaderTime = timeOf(leader);
     const bestPace = Math.min(...list.map((r) => r.avgPaceMs ?? Infinity));
+    let previousGap = 0; // keeps gaps from shrinking down the order after a place-drop penalty
     for (const r of list) {
       if (r !== leader && r.status === "FINISHED") {
         if (isRace) {
           const down = leader.laps - r.laps;
           if (down >= 1) r.gapDisplay = `+${down} Lap${down > 1 ? "s" : ""}`;
-          else if (r._finishMs != null && leaderFinishMs != null) r.gapDisplay = gapText(r._finishMs - leaderFinishMs);
+          else if (timeOf(r) != null && leaderTime != null) {
+            previousGap = Math.max(timeOf(r) - leaderTime, previousGap);
+            r.gapDisplay = gapText(previousGap);
+          }
         } else if (r.bestLapMs != null && leader.bestLapMs != null) {
           r.gapDisplay = gapText(r.bestLapMs - leader.bestLapMs);
         }
       }
-    }
-    for (const r of list) {
       if (isRace) {
         r.paceGapMs = r.avgPaceMs != null && Number.isFinite(bestPace) ? r.avgPaceMs - bestPace : null;
-        delete r._finishMs;
+        if (r._penaltyMs > 0 && r.status === "FINISHED" && timeOf(r) != null) r.totalTimeDisplay = msToTotal(timeOf(r));
       }
+      // what the dashboard shows beside the driver's name
+      const chips = r.penalties.filter((x) => x.kind !== "dsq").map((x) =>
+        x.kind === "time" ? `+${x.seconds}s` : x.kind === "drop" ? `-${placesText(x.places)}` : "Lap deleted");
+      r.penaltyNote = chips.length ? chips.join(" · ") : null;
+      r.penaltyReason = r.penalties.map((x) => x.reason).filter(Boolean).join("; ") || null;
+      if (!r.penalties.length) delete r.penalties;
+      if (r._penaltyMs > 0) r.penaltyMs = r._penaltyMs;
+      for (const k of Object.keys(r)) if (k.startsWith("_")) delete r[k];
+      delete r.overallPosition;
     }
     standingsByClass[cls] = list;
   }
 
   const fastest = rows.filter((r) => r.bestLapMs != null).sort((a, b) => a.bestLapMs - b.bestLapMs)[0];
-  const fileName = (meta.sourceFile || "").split("/").pop();
-  const sessionNo = (fileName.match(/\d*[QR](\d)_/i) || [])[1];
-  const nameFromFile = isRace
-    ? `Race ${sessionNo || 1}`
-    : sessionNo && sessionNo !== "1"
-      ? `Qualifying ${sessionNo}`
-      : "Qualifying";
-
   const venue = tag(xml, "TrackVenue");
   const fileTrack = (fileName.match(/\d*[QR]\d+_(.+?)(?:_Quali(?:fy)?)?\.xml$/i) || [])[1];
 

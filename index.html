@@ -216,6 +216,7 @@
   }
   .view-tab[aria-selected="true"]{color:#fff;border-bottom-color:var(--amber);}
   td.nw{white-space:nowrap;}
+  .pen-line{display:block;color:var(--amber);font-size:.72rem;margin-top:.15rem;}
   .up{color:var(--green);}
   .down{color:var(--red);}
 
@@ -569,10 +570,18 @@ const fmtDelta = ms => (ms == null ? '–' : ms === 0 ? '-' : `+${(ms / 1000).to
 
 const VIEW_LABELS = { results: 'Results', pace: 'Race pace', sectors: 'Sectors' };
 
+// Stewards' penalties, shown as a visible line (a hover tooltip wouldn't work on a phone).
+function penaltyLine(s) {
+  let text = [s.status === 'DSQ' ? 'Disqualified' : null, s.penaltyNote].filter(Boolean).join(' · ');
+  if (s.penaltyReason) text += (text ? ' — ' : '') + s.penaltyReason;
+  if (text && s.originalClassPosition && s.status !== 'DSQ') text += ` (was P${s.originalClassPosition})`;
+  return text ? `<span class="pen-line">${esc(text)}</span>` : '';
+}
+
 function driverCell(s) {
   const flag = s.status && s.status !== 'FINISHED'
     ? `<span class="status-flag"${s.statusNote ? ` title="${esc(s.statusNote)}"` : ''}>${esc(s.status)}</span>` : '';
-  return `<td class="driver">${esc(s.driver)}${flag}<span class="car">${esc(s.car || '')}</span></td>`;
+  return `<td class="driver">${esc(s.driver)}${flag}<span class="car">${esc(s.car || '')}</span>${penaltyLine(s)}</td>`;
 }
 
 // The standard results table (same as before).

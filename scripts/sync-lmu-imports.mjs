@@ -17,6 +17,11 @@
 // the same session appears twice in a round (e.g. a corrected re-upload), the
 // later one wins.
 //
+// A round folder can also hold a penalties.txt with the stewards' post-race
+// decisions (time penalties, disqualifications...). They are applied on top of
+// the game's results here; the XML files themselves are never changed. See
+// parse-penalties.mjs for the format.
+//
 // This writes only data/lmu-imports.json, a file no other workflow touches, so
 // it can never clash with the ACC or SimGrid syncs.
 
@@ -24,6 +29,7 @@ import { promises as fs } from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { parseLmuXml } from "./parse-lmu-xml.mjs";
+import { parsePenalties } from "./parse-penalties.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
@@ -46,6 +52,22 @@ async function findXmlFiles(dir) {
     else if (e.name.toLowerCase().endsWith(".xml")) files.push(full);
   }
   return files.sort();
+}
+
+// penalties.txt sitting in the same folder as the XML files (any capitalisation).
+const penaltyCache = new Map();
+async function loadPenalties(dir) {
+  if (penaltyCache.has(dir)) return penaltyCache.get(dir);
+  let result = { penalties: [], found: false };
+  const name = (await fs.readdir(dir)).find((n) => n.toLowerCase() === "penalties.txt");
+  if (name) {
+    const label = path.relative(IMPORT_DIR, path.join(dir, name)).split(path.sep).join("/");
+    const { penalties, problems } = parsePenalties(decodeFile(await fs.readFile(path.join(dir, name))), label);
+    problems.forEach(warn);
+    result = { penalties, found: true, label };
+  }
+  penaltyCache.set(dir, result);
+  return result;
 }
 
 function decodeFile(buf) {
@@ -80,7 +102,8 @@ async function main() {
     const roundLabel = rel.length >= 3 ? rel[1].trim() : undefined;
     try {
       const xml = decodeFile(await fs.readFile(file));
-      const session = parseLmuXml(xml, { season, seasonOrder: seasonOrderOf(season), roundLabel, sourceFile: relPath });
+      const { penalties } = await loadPenalties(path.dirname(file));
+      const session = parseLmuXml(xml, { season, seasonOrder: seasonOrderOf(season), roundLabel, sourceFile: relPath }, penalties);
       if (!session) {
         warn(`${relPath}: skipped — no race or qualifying session found in this file`);
         continue;
@@ -91,6 +114,19 @@ async function main() {
       warn(`${relPath}: skipped — could not be read (${err.message})`);
     }
   }
+
+  // Tell the user about any penalty line that changed nothing, so a typo
+  // (wrong car number, a session that isn't there...) is never silent.
+  let penaltyLines = 0, penaltyApplied = 0;
+  for (const { penalties, found, label } of penaltyCache.values()) {
+    if (!found) continue;
+    for (const p of penalties) {
+      penaltyLines++;
+      if (p.applied) { penaltyApplied++; continue; }
+      warn(p.problem || `${p.where}: not applied — there is no "${p.sessionText}" file in this round's folder`);
+    }
+  }
+  if (penaltyLines) console.log(`Penalties: ${penaltyApplied} of ${penaltyLines} line(s) applied`);
 
   // If the same session appears more than once in a round, keep the latest.
   const byKey = new Map();
