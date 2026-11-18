@@ -17,3 +17,9 @@
 # 117, Race 1, DSQ, Unsafe release
 # 9, Race 1, drop 2, Avoidable contact
 # 35, Qualifying, lap deleted, Track limits
+
+24, Race 1, +10s, Making contact corner entry
+24, Race 1, +10s, Making contact corner apex
+97, Race 1, +20s, Making contact with a slower class during a corner
+443, Race 1, +10s, Late braking causing contact
+36, Race 1, +20s, Cutting across the track with oncoming traffic whilst laps down
