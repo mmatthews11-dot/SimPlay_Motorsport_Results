@@ -17,3 +17,5 @@
 # 117, Race 1, DSQ, Unsafe release
 # 9, Race 1, drop 2, Avoidable contact
 # 35, Qualifying, lap deleted, Track limits
+
+#173, Race 1, 20s, Causing a collision with a different class
