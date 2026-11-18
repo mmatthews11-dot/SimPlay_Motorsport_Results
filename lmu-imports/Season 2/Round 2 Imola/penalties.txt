@@ -17,3 +17,8 @@
 # 117, Race 1, DSQ, Unsafe release
 # 9, Race 1, drop 2, Avoidable contact
 # 35, Qualifying, lap deleted, Track limits
+
+#65, Race 1, 20s, Failing to hold brakes
+#62, Race 1, 20s, Spinning another car in a different class
+#447, Race 1, 30s, Causing a collision as a back marker
+#27, Race 1, 20s, Failing to hold brakes
