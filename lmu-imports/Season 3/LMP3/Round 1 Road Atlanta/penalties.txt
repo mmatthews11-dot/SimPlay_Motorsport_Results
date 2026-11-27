@@ -1,0 +1,21 @@
+# Stewards' post-race penalties for this round.
+# Nothing below is active yet - delete the "# " in front of a line, or add your own.
+#
+# One penalty per line:   car number, session, penalty, reason
+#
+# Penalties you can use:
+#   +30s          add 30 seconds to their race time (any number of seconds)
+#   DSQ           disqualified (listed at the bottom of their class)
+#   drop 2        move down 2 places
+#   lap deleted   qualifying only - their fastest lap is removed
+#
+# Sessions: Race 1, Race 2 or Qualifying
+# If two classes share a car number, put the class first, e.g.  LMGT3 24
+#
+# Examples (remove the "# " to use):
+# 24, Race 1, +30s, Cut the chicane on lap 12
+# 117, Race 1, DSQ, Unsafe release
+# 9, Race 1, drop 2, Avoidable contact
+# 35, Qualifying, lap deleted, Track limits
+
+

@@ -18,6 +18,28 @@ lmu-imports/
       (the qualifying and race files for round 2)
 ```
 
+### A season with two nights (e.g. Season 3: LMP3 on Tuesdays, Mixed Class on Thursdays)
+
+Add one more folder level, for the night. Its name becomes the button on the site:
+
+```
+lmu-imports/
+  Season 3/
+    LMP3/
+      Round 1 Spa/
+        (qualifying + race files)
+      Round 2 Monza/
+        ...
+    Mixed Class/
+      Round 1 Spa/
+        (qualifying + race files)
+```
+
+Always keep the files inside a round folder (not straight inside `LMP3` or `Mixed Class`).
+Each night can use the same round names, and each round folder can have its own
+`penalties.txt`. Season 2 doesn't need changing: a season with one night goes straight
+from the season folder to the round folders, as above.
+
 Keep the files' original names — they are only used to tell qualifying from the race.
 
 ## Adding a round (on github.com)

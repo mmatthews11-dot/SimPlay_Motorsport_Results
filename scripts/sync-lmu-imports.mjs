@@ -4,7 +4,12 @@
 // Folder layout (the folder names become what shows on the dashboard):
 //
 //   lmu-imports/
-//     Season 2/
+//     Season 3/                      <- a season that runs more than one night has a division folder:
+//       LMP3/
+//         Round 1 Spa/  (xml files)
+//       Mixed Class/
+//         Round 1 Spa/  (xml files)
+//     Season 2/                      <- a season with one night goes straight to the round folders
 //       Round 1 Interlagos/          <- shown as the round name
 //         2026_09_08_20_24_35-96Q1_Interlagos_Quali.xml
 //         2026_09_08_22_09_32-25R1_Interlagos.xml
@@ -98,17 +103,21 @@ async function main() {
       warn(`${relPath}: skipped — put it inside a season folder, e.g. lmu-imports/Season 2/Round 1 Interlagos/`);
       continue;
     }
+    // Season / Round / file                      (e.g. Season 2/Round 1 Interlagos/…)
+    // Season / Division / Round / file           (e.g. Season 3/LMP3/Round 1 Spa/…)
+    // The extra folder is only read as a division when there are four levels.
     const season = canonicalSeason(rel[0]);
-    const roundLabel = rel.length >= 3 ? rel[1].trim() : undefined;
+    const division = rel.length >= 4 ? rel[1].trim() : null;
+    const roundLabel = rel.length >= 4 ? rel[2].trim() : rel.length === 3 ? rel[1].trim() : undefined;
     try {
       const xml = decodeFile(await fs.readFile(file));
       const { penalties } = await loadPenalties(path.dirname(file));
-      const session = parseLmuXml(xml, { season, seasonOrder: seasonOrderOf(season), roundLabel, sourceFile: relPath }, penalties);
+      const session = parseLmuXml(xml, { season, division, seasonOrder: seasonOrderOf(season), roundLabel, sourceFile: relPath }, penalties);
       if (!session) {
         warn(`${relPath}: skipped — no race or qualifying session found in this file`);
         continue;
       }
-      console.log(`  ✓ ${season} / ${session.trackName} — ${session.sessionName} (${session.totalDrivers} drivers)`);
+      console.log(`  ✓ ${season}${division ? " / " + division : ""} / ${session.trackName} — ${session.sessionName} (${session.totalDrivers} drivers)`);
       found.push(session);
     } catch (err) {
       warn(`${relPath}: skipped — could not be read (${err.message})`);
@@ -131,7 +140,7 @@ async function main() {
   // If the same session appears more than once in a round, keep the latest.
   const byKey = new Map();
   for (const s of found) {
-    const key = `${s.season}|${s.trackName}|${s.sessionName}`;
+    const key = `${s.season}|${s.division ?? ""}|${s.trackName}|${s.sessionName}`; // division matters: LMP3 and Mixed Class can both have a "Round 1 Spa"
     const existing = byKey.get(key);
     if (!existing || (s.startTime ?? "") > (existing.startTime ?? "")) {
       if (existing) warn(`${existing.sourceFile}: replaced by the later file ${s.sourceFile} (same session)`);

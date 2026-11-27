@@ -367,6 +367,7 @@ export function parseLmuXml(xml, meta = {}, penalties = []) {
     game: "LMU",
     source: "xml",
     season: meta.season ?? null,
+    division: meta.division ?? null, // e.g. "LMP3" / "Mixed Class" when a season runs more than one night
     seasonOrder: meta.seasonOrder ?? 0,
     sourceFile: meta.sourceFile ?? fileName,
     sessionType: isRace ? "R" : "Q",

@@ -110,8 +110,11 @@
     color:#111;
   }
 
-  .category-tabs{display:flex;gap:.5rem;margin-bottom:1rem;}
-  .category-tab{
+  .category-tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem;}
+  .division-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem;}
+  .division-tabs:empty{display:none;}
+  .category-tab,
+  .division-tab{
     background:transparent;
     border:1px solid var(--line);
     color:var(--text-dim);
@@ -124,7 +127,8 @@
     border-radius:20px;
     cursor:pointer;
   }
-  .category-tab[aria-selected="true"]{
+  .category-tab[aria-selected="true"],
+  .division-tab[aria-selected="true"]{
     background:var(--amber);
     border-color:var(--amber);
     color:#111;
@@ -305,6 +309,7 @@
 <main>
   <nav class="game-tabs" id="game-tabs"></nav>
   <nav class="category-tabs" id="category-tabs"></nav>
+  <nav class="division-tabs" id="division-tabs"></nav>
   <nav class="session-tabs" id="session-tabs"></nav>
   <section class="board" id="board"></section>
 </main>
@@ -319,6 +324,11 @@ let GAME = 'ACC';
 let ACTIVE_ID = null;
 let ACTIVE_CATEGORY = 'All';
 let ACTIVE_SEASON = 'All';
+let ACTIVE_DIVISION = null;
+
+// Order of the division buttons (first = leftmost). Anything not listed goes after these.
+const DIVISION_ORDER = ['LMP3', 'Mixed Class'];
+const divisionRank = d => { const i = DIVISION_ORDER.indexOf(d); return i === -1 ? 99 : i; };
 let ACTIVE_CLASS = 'Overall';
 let ACTIVE_VIEW = 'results';
 
@@ -383,6 +393,7 @@ function render() {
       ACTIVE_ID = null;
       ACTIVE_CATEGORY = 'All';
       ACTIVE_SEASON = 'All';
+      ACTIVE_DIVISION = null;
       ACTIVE_CLASS = 'Overall';
       render();
     });
@@ -395,6 +406,7 @@ function render() {
 
   if (gameSessions.length === 0) {
     document.getElementById('category-tabs').innerHTML = '';
+    document.getElementById('division-tabs').innerHTML = '';
     document.getElementById('session-tabs').innerHTML = '';
     document.getElementById('board').innerHTML = `
       <div class="empty">
@@ -431,6 +443,7 @@ function render() {
     document.querySelectorAll('.category-tab').forEach(btn => {
       btn.addEventListener('click', () => {
         ACTIVE_SEASON = btn.dataset.season;
+        ACTIVE_DIVISION = null;
         ACTIVE_ID = null;
         ACTIVE_CLASS = 'Overall';
         render();
@@ -438,9 +451,37 @@ function render() {
     });
   }
 
-  const sessions = GAME === 'ACC'
+  let sessions = GAME === 'ACC'
     ? (ACTIVE_CATEGORY !== 'All' ? gameSessions.filter(s => (s.category || 'Other') === ACTIVE_CATEGORY) : gameSessions)
     : (ACTIVE_SEASON !== 'All' ? gameSessions.filter(s => (s.season || 'Other') === ACTIVE_SEASON) : gameSessions);
+
+  // Some LMU seasons run more than one night (e.g. an LMP3 night and a Mixed Class
+  // night). With a season picked, a second row of buttons switches between them.
+  // With "All" seasons showing, the division is added to each session's label instead.
+  const divisionBox = document.getElementById('division-tabs');
+  divisionBox.innerHTML = '';
+  let showDivisionInTabs = false;
+  if (GAME === 'LMU' && sessions.some(x => x.division)) {
+    if (ACTIVE_SEASON === 'All') {
+      showDivisionInTabs = true;
+    } else {
+      const divisions = [...new Set(sessions.map(x => x.division || 'Other'))]
+        .sort((a, b) => divisionRank(a) - divisionRank(b) || a.localeCompare(b));
+      if (!divisions.includes(ACTIVE_DIVISION)) ACTIVE_DIVISION = sessions[0].division || 'Other'; // newest session's division
+      divisionBox.innerHTML = divisions.map(d => `
+        <button class="division-tab" data-division="${esc(d)}" aria-selected="${d === ACTIVE_DIVISION}">${esc(d)}</button>
+      `).join('');
+      divisionBox.querySelectorAll('.division-tab').forEach(btn => {
+        btn.addEventListener('click', () => {
+          ACTIVE_DIVISION = btn.dataset.division;
+          ACTIVE_ID = null;
+          ACTIVE_CLASS = 'Overall';
+          render();
+        });
+      });
+      sessions = sessions.filter(x => (x.division || 'Other') === ACTIVE_DIVISION);
+    }
+  }
 
   if (sessions.length === 0) {
     document.getElementById('session-tabs').innerHTML = '';
@@ -455,7 +496,7 @@ function render() {
 
   document.getElementById('session-tabs').innerHTML = sessions.map(s => `
     <button class="session-tab" data-id="${s.id}" aria-selected="${s.id === ACTIVE_ID}">
-      <span class="tab-main">${s.sessionName}<span class="track">${s.trackName}</span></span>
+      <span class="tab-main">${s.sessionName}<span class="track">${s.trackName}${showDivisionInTabs && s.division ? ' · ' + esc(s.division) : ''}</span></span>
       <span class="date">${s.sessionDate || ''}</span>
     </button>
   `).join('');
@@ -708,7 +749,7 @@ function renderLmuBoard(session) {
   document.getElementById('board').innerHTML = `
     <div class="board-head">
       <h2>${esc(session.sessionName)} — ${esc(session.trackName)}</h2>
-      <span class="meta">${duration}${session.totalDrivers ?? rows.length} driver(s)</span>
+      <span class="meta">${session.division ? esc(session.division) + ' · ' : ''}${duration}${session.totalDrivers ?? rows.length} driver(s)</span>
     </div>
     <div class="class-tabs">
       ${classNames.map(cls => `<button class="class-tab" data-class="${esc(cls)}" aria-selected="${cls === ACTIVE_CLASS}">${esc(cls)}</button>`).join('')}
